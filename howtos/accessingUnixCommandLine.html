@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>accessingUnixCommandLine</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p>You have several options for UNIX command-line access. You’ll need to choose one of these and get it working.</p>
+<h3 id="mac-os">Mac OS:</h3>
+<p>Open a Terminal by going to Applications -&gt; Utilities -&gt; Terminal</p>
+<h3 id="windows">Windows:</h3>
+<ol type="1">
+<li><p>You may be able to use the Ubuntu bash shell available in Windows.</p>
+<p>Your PC must be running a 64-bit version of Windows 10 Anniversary Update or later (build 1607+).</p>
+<p>Please see these links for more information:</p>
+<p>http://blog.revolutionanalytics.com/2017/12/r-in-the-windows-subsystem-for-linux.html</p>
+<p>https://msdn.microsoft.com/en-us/commandline/wsl/install_guide</p>
+<p>For more detailed instructions, see the <a href="./windowsAndLinux.md">Windows and Linux</a> tutorial.</p></li>
+<li><p>(Not recommended) There’s an older program called cygwin that provides a UNIX command-line interface.</p></li>
+</ol>
+<p>Note that when you install Git on Windows, you will get Git Bash. While you can use this to control Git, the functionality is limited so this will not be enough for general UNIX command-line access for the course.</p>
+<h3 id="linux">Linux:</h3>
+<p>If you have access to a Linux machine, you very likely know how to access a terminal.</p>
+<h3 id="access-via-datahub-provided-by-uc-berkeleys-data-science-education-program">Access via DataHub (provided by UC Berkeley’s Data Science Education Program)</h3>
+<ol type="1">
+<li>Go to <a href="https://datahub.berkeley.edu">https://datahub.berkeley.edu</a></li>
+<li>Click on <code>Sign in with bCourses</code>, sign in via CalNet, and authorize DataHub to have access to your account.</li>
+<li>In the mid-upper right, click on <code>New</code> and <code>Terminal</code>.</li>
+<li>To end your session, click on <code>Control Panel</code> and <code>Stop My Server</code>. Note that <code>Logout</code> will not end your running session, it will just log you out of it.</li>
+</ol>
+<h3 id="access-via-the-statistical-computing-facility-scf">Access via the Statistical Computing Facility (SCF)</h3>
+<p>With an SCF account (available <a href="https://scf.berkeley.edu/account">here</a>, you can access a bash shell in the ways listed below.</p>
+<p>Those of you in the Statistics Department should be in the process of getting an SCF account. Everyone else will need an SCF account when we get to the unit on parallel computing, but you can request an account now if you prefer.</p>
+<ol type="1">
+<li><p>You can login to our various Linux servers and access a bash shell that way. Please see <a href="http://statistics.berkeley.edu/computing/access">http://statistics.berkeley.edu/computing/access</a>.</p></li>
+<li><p>You can also access a bash shell via the SCF JupyterHub interface; please see the JupyterLogin.md instructions. This is very similar to the DataHub functionality discussed above.</p></li>
+</ol>
+</body>
+</html>

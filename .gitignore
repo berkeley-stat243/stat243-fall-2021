@@ -37,3 +37,9 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Emacs files
+~
+
+# SQLite files
+*.db
