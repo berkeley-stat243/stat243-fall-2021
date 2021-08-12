@@ -8,10 +8,8 @@ You can view the [UNDER CONSTRUCTION][syllabus here](https://github.com/berkeley
 ## Course content
 
  - This site: most non-recorded course material
- - SCF tutorials (see below)
+ - [Various SCF tutorials](http://statistics.berkeley.edu/computing/training/tutorials): These include the various tutorials referred to in the class materials (e.g., the UNIX and bash shell tutorials, the dynamic documents tutorial, the Git tutorial, the string processing tutorial, etc.)
  - bCourses: links to class course captures and any pre-recorded material.
-
-Note that the various tutorials referred to in the class materials (e.g., the UNIX and bash shell tutorials, the dynamic documents tutorial, the Git tutorial, the string processing tutorial, etc.), are available [here](http://statistics.berkeley.edu/computing/training/tutorials).
 
 If you're not yet familiar with Git, go to the upper right of this page and click on 'Clone or download' and then 'Download ZIP'.
 
