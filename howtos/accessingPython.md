@@ -20,6 +20,6 @@ More details on using SSH are [here](https://statistics.berkeley.edu/computing/s
 
 ## Python via Jupyter notebook
 
-You can use a Jupyter notebook to run Python code from [here](https://jupyter.stat.berkeley.edu). Select `Start My Server`. Then, unless you are running long or parallelized code, just click `Spawn` (in other words, accept the default 'standalone' partition). On the next page select 'New' and 'Python 3'. 
+You can use a Jupyter notebook to run Python code from the [SCF JupyterHub](https://jupyter.stat.berkeley.edu) or the [Berkeley DataHub](https://datahub.berkeley.edu). Select `Start My Server`. Then, unless you are running long or parallelized code, just click `Spawn` (in other words, accept the default 'standalone' partition). On the next page select 'New' and 'Python 3'. 
 
 To finish your session, click on `Control Panel` and `Stop My Server`. Do not click `Logout`.

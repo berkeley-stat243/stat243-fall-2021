@@ -41,5 +41,5 @@ Those of you in the Statistics Department should be in the process of getting an
 
 1. You can login to our various Linux servers and access a bash shell that way. Please see [http://statistics.berkeley.edu/computing/access](http://statistics.berkeley.edu/computing/access).
 
-2. You can also access a bash shell via the SCF JupyterHub interface; please see the JupyterLogin.md instructions. This is very similar to the DataHub functionality discussed above. 
+2. You can also access a bash shell via the SCF JupyterHub interface; please see the `accessingPython.md` instructions but when you click on `New`, choose `Terminal`. This is very similar to the DataHub functionality discussed above. 
 

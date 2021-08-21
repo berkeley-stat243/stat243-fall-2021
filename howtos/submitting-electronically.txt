@@ -11,7 +11,7 @@ Nothing else needs to be done, just log in and log out.
 
 2. After accounts are created (may take a couple days after first login), when 
 you log-in again, you should see one private repository listed on the left side 
-(mine reads `stat243-fall-2020/zoe-vernon`). This is your class repository.
+(mine reads `stat243-fall-2021/ahv36`). This is your class repository.
 Do not change the repository settings! They are set up for this class.
 
 3. Clone the repo to your home directory (I would clone it into a directory
