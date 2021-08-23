@@ -1,6 +1,8 @@
-# Assignments / to-dos
+# First Three Weeks 
 
-## Week 1
+## Assignments / to-dos
+
+### Week 1
 
 - (Required) By Friday August 27 at noon, fill out this class survey: https://forms.gle/iwXEoibrdHRG7aGu6. This is required and will be 'counted' in the class participation portion of your grade.
 
@@ -12,7 +14,7 @@
 
 - (Optional) By Monday August 30, if you are not comfortable with the basic UNIX usage we saw in the first class, please work through the [UNIX basics tutorial here](https://github.com/berkeley-scf/tutorial-unix-basics/archive/master.zip) and answer the questions at the end. You don't need to turn anything in. If you'd think you're going to like help, please come to the UNIX help session on Friday August 27.
 
-## Weeks 2-3
+### Weeks 2-3
 
 - (Optional) If you are not familiar with R at the level of [modules
 1-5 of the R bootcamp](https://github.com/berkeley-scf/r-bootcamp-fall-2021/archive/main.zip),
@@ -31,7 +33,7 @@ You don't need to look at all the sections in the tutorial. Please see Section 2
 - (Required) By Friday September 10 at 10 am, read the regular expression material in Section 3 of the [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash/archive/master.zip). (You can skip Section 3.6.) Then work through the regular expressions (regex) practice problems and turn in your answers through this online form [UNDER CONSTRUCTION]: https://forms.gle/XYZ. This is not one of the graded problem sets but rather an 'assignment' that will simply be noted as being completed or not.
 
 
-# Events
+## Events
 
 - (Optional) Thursday August 26 or Wednesday September 8, 4-5:30 pm: [introductory LaTeX sessions](https://berkeley.libcal.com/calendar/workshops) run by the library. In particular I highly recommend (in particular if you are a Statistics graduate student) that you know how to create equations in LaTeX.
 
