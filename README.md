@@ -5,6 +5,8 @@ If you would like to audit the class, enroll as a UC Berkeley undergraduate, or 
 
 You can view the [UNDER CONSTRUCTION][syllabus here](https://github.com/berkeley-stat243/stat243-fall-2021/blob/master/syllabus/syllabus.pdf).
 
+The first three weeks involve a lot of moving pieces, in part related to trying to get everyone up to speed with the bash shell and R. Please use [these notes](first_three_weeks.md) to keep on top of what you need to do.
+
 ## Course content
 
  - This site: most non-recorded course material
