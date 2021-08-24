@@ -108,10 +108,6 @@ STAT 243: Introduction to Statistical Computing
 \end_inset
 
 Fall 2021 (Paciorek)
-\begin_inset Newline newline
-\end_inset
-
-DRAFT-UNDER CONSTRUCTION
 \end_layout
 
 \begin_layout Subsection*
@@ -124,8 +120,8 @@ Statistics 243 is an introduction to statistical computing, taught using
  The course will cover both programming concepts and statistical computing
  concepts.
  Programming concepts will include data and text manipulation, data structures,
- functions and variable scope, regular expressions, debugging, and parallel
- processing.
+ functions and variable scope, regular expressions, debugging/testing, and
+ parallel processing.
  Statistical computing topics will include working with large datasets,
  numerical linear algebra, computer arithmetic/precision, simulation studies
  and Monte Carlo methods, numerical optimization, and numerical integration/diff
@@ -139,8 +135,8 @@ erentiation.
 
 \begin_layout Standard
 While the course is taught using R and you will learn a lot about using
- R at an advanced level, the focus of the course is statistical computing
- more generally.
+ R at an advanced level, the focus of the course is statistical computing/comput
+ing for data science more generally.
  Also, this is not a course that will cover specific statistical/data analysis
  methods.
 \end_layout
@@ -167,8 +163,8 @@ literal "false"
 \end_inset
 
  (plus I can give you access to the bootcamp videos), we'll have an optional
- hands-on practice session during the second week of class, and the GSI
- can also provide assistance.
+ hands-on practice session during the second or third week of class, and
+ the GSI can also provide assistance.
 \end_layout
 
 \begin_layout Subsection*
@@ -216,7 +212,8 @@ The goals of the course are that, by the end of the course, students be
 \end_layout
 
 \begin_layout Itemize
-operate effectively in a UNIX environment and on remote servers;
+operate effectively in a UNIX environment and on remote servers and compute
+ clusters;
 \end_layout
 
 \begin_layout Itemize
@@ -295,7 +292,7 @@ Key websites for the course are:
 \end_layout
 
 \begin_layout Itemize
-Github for course content: 
+GitHub for course content: 
 \begin_inset CommandInset href
 LatexCommand href
 target "https://github.com/berkeley-stat243/stat243-fall-2021"
@@ -371,8 +368,8 @@ We will use the course Piazza site for communication (announcements, questions,
  and discussion).
  You should ask questions about class material and problem sets through
  Piazza.
- Please use this site for your questions so that either Zoe or I can respond
- and so that everyone can benefit from the discussion.
+ Please use this site for your questions so that either Andrew or I can
+ respond and so that everyone can benefit from the discussion.
  I suggest you to modify your settings on Piazza so you are informed by
  email of postings.
  I strongly encourage you to respond to or comment on each other's questions
@@ -712,8 +709,6 @@ ooting software during the early weeks.
  include demonstrations on various topics (version control, debugging, testing,
  etc.), group work on these topics, discussion of relevant papers, and discussion
  of problem set solutions.
- If anyone cannot make either section time, please see me to discuss alternative
- arrangements.
  The first section generally has more demand, so to avoid having too many
  people in the room, you should go to your assigned section unless you talk
  to me first.
@@ -726,8 +721,8 @@ Computing Resources
 
 \begin_layout Standard
 Most work for the course can be done on your laptop.
- Later in the course we'll also use the Statistics department cluster.
- You can also use the campus Datahub to access a bash shell or run RStudio.
+ Later in the course we'll also use the Statistics Department cluster.
+ You can also use the campus DataHub to access a bash shell or run RStudio.
 \end_layout
 
 \begin_layout Standard
@@ -766,12 +761,14 @@ My goal is to have classes be an interactive environment.
  This is both more interesting for all of us and more effective in learning
  the material.
  I encourage you to ask questions and will pose questions to the class to
- think about, respond to via Google forms, and discuss.
+ think about, respond to via Google forms, and discuss (though I may have
+ to adjust discussion given mask wearing and the public health situation).
  To increase time for discussion and assimilation of the material in class,
  before some classes I may ask that you read material or work through tutorials
  in advance of class.
  Occasionally, I will ask you to submit answers to questions in advance
  of class as well.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -784,8 +781,8 @@ Student backgrounds with computing will vary.
  For those of you with limited background on a topic, I encourage you to
  ask questions during class so I know what you find confusing.
  For those of you with extensive background on a topic (there will invariably
- be some topics where one of you will know more about it than I do), I encourage
- you to pitch in with your perspective.
+ be some topics where one of you will know more about it than I do or have
+ more real-world experience), I encourage you to pitch in with your perspective.
  In general, there are many ways to do things on a computer, particularly
  in a UNIX environment and in R, so it will help everyone (including me)
  if we hear multiple perspectives/ideas.
@@ -808,13 +805,13 @@ Course grades
 
 \begin_layout Standard
 The grade for this course is primarily based on assignments due every 1-2
- weeks, a short exam in November (or possibly two quizzes - one in early
- October and one in mid-November), and a final group project.
+ weeks, two quizzes (likely in early-mid October and mid-late November,
+ or possibly a single quiz/exam in November, and a final group project.
  I will also provide extra credit questions on some problem sets.
  There is no final exam.
- 50% of the grade is based on the problem sets, 25% on the exam, 15% on
- the project, and 10% on your participation in discussions on Piazza, your
- responses to the in-class Google forms questions, as well as occasional
+ 50% of the grade is based on the problem sets, 25% on the quizzes, 15%
+ on the project, and 10% on your participation in discussions on Piazza,
+ your responses to the in-class Google forms questions, as well as occasional
  brief questions that I will ask you to answer in advance of the next class.
  
 \end_layout
@@ -822,8 +819,8 @@ The grade for this course is primarily based on assignments due every 1-2
 \begin_layout Standard
 Grades will generally be As and Bs.
  An A involves doing all the work, getting full credit on most of the problem
- sets, showing competence on the exam, and doing a thorough job on the final
- project.
+ sets, showing competence on the quizzes, and doing a thorough job on the
+ final project.
  
 \end_layout
 
@@ -843,10 +840,9 @@ There are several rules for submitting your assignments.
 \end_layout
 
 \begin_layout Enumerate
-You should prepare your assignments using either \SpecialChar LaTeX
- plus knitr or R Markdown.
- (If you're a Statistics student, I encourage you use \SpecialChar LaTeX
- plus knitr).
+You should prepare your assignments using either R Markdown or \SpecialChar LaTeX
+ plus knitr.
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -909,9 +905,12 @@ Note: knitr is a tool that allows one to embed chunks of code within \SpecialCha
 .
  R Markdown is an extension to the Markdown markup language that allows
  one to embed R code within an HTML document.
- Please see the dynamics document tutorial on the SCF tutorials website;
- there will be additional information in the first section and on the first
- problem set.
+ Please see the 
+\emph on
+dynamics document tutorial
+\emph default
+ on the SCF tutorials website; there will be additional information in the
+ first section and on the first problem set.
 \end_layout
 
 \begin_layout Standard
@@ -1000,7 +999,7 @@ I encourage you to work together and help each other out.
  out a given problem on your own.
  After that, if you're stuck or want to explore alternative approaches,
  feel free to consult with your fellow students and with the GSI and me.
- You can share tips on general strategy or syntax for how to do individual
+ You can share tips on general strategy or syntax for how to do small individual
  tasks within a problem, but 
 \series bold
 you should not ask for and you should not share complete code or solutions
@@ -1068,8 +1067,8 @@ Campus asks that I include this information about conflicts: Please notify
 \end_layout
 
 \begin_layout Standard
-The main conflict that would be a problem would be the exam (or quizzes),
- whose date(s) is(are) TBD.
+The main conflict that would be a problem would be the quizzes, whose date(s)
+ is(are) TBD.
 \end_layout
 
 \begin_layout Section*

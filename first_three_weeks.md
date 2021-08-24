@@ -37,7 +37,7 @@ You don't need to look at all the sections in the tutorial. Please see Section 2
 
 - (Optional) Thursday August 26 or Wednesday September 8, 4-5:30 pm: [introductory LaTeX sessions](https://berkeley.libcal.com/calendar/workshops) run by the library. In particular I highly recommend (in particular if you are a Statistics graduate student) that you know how to create equations in LaTeX.
 
-- (Optional) Friday August 27, noon-3:30 pm in Evans 344: Help session for installing software, accessing a UNIX-style command line, and basic UNIX usage (e.g., the UNIX basics tutorial)
+- (Optional) Friday August 27, noon-3:30 pm in Evans 344: Help session for installing software, accessing a UNIX-style command line, and basic UNIX usage (e.g., the UNIX basics tutorial). You should have software installed, be able to accesss the command line, and have started to become familiar with basic UNIX usage before class on Wednesday September 1.
 
 - (Optional) TBD: two-hour R help session, date/time/location TBD, for those not yet familiar with R at the level of modules 1-5 of the R bootcamp (https://github.com/berkeley-scf/r-bootcamp-fall-2021/archive/main.zip).
 
