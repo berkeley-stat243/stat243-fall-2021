@@ -473,8 +473,12 @@ RStudio provides a built-in editor for R code files
 \end_layout
 
 \begin_layout Itemize
-VSCode has a powerful code editor that is customized to work with various
- languages, including nicely handling JSON, YAML, and XML files.
+
+\emph on
+VSCode
+\emph default
+ has a powerful code editor that is customized to work with various languages,
+ including nicely handling JSON, YAML, and XML files.
 \end_layout
 
 \begin_layout Standard
@@ -486,7 +490,7 @@ As you get started it's ok to use a very simple text editor such as Notepad
 \end_layout
 
 \begin_layout Subsection
-Basic emacs
+(Optional) Basic emacs
 \end_layout
 
 \begin_layout Standard

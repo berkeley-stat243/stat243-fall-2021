@@ -10,7 +10,7 @@
 
 - (Optional) By Friday August 27 at noon, ONLY if you would like to attend the optional R help session, fill out this survey of potential times for the extra R help session: http://whenisgood.net/ihbwsfw
 
-- (Required) By Friday August 27 at 10 am, please read Sections 1, 2, and 5 of Unit 2, as I'll just touch on an item or two from those sections in class and will assume you're familiar with getting CSV and similar data into and out of R and some of the pitfalls that can arise. 
+- (Required) By Monday August 30, please read Sections 1, 2, and 5 of Unit 2, as I'll just touch on an item or two from those sections in class and will assume you're familiar with getting CSV and similar data into and out of R and some of the pitfalls that can arise. 
 
 - (Optional) By Monday August 30, if you are not comfortable with the basic UNIX usage we saw in the first class, please work through the [UNIX basics tutorial here](https://github.com/berkeley-scf/tutorial-unix-basics/archive/master.zip) and answer the questions at the end. You don't need to turn anything in. If you'd think you're going to like help, please come to the UNIX help session on Friday August 27.
 
@@ -26,7 +26,7 @@ materials, so you could also use those resources. You should do this by the end 
 
 - (Required) By Friday September 3 at 10 am, read through this [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash/archive/master.zip). Work through the first 10 problems at the end of the tutorial and submit answers via bCourses (under Assignments) as a text file or PDF. This is not a formal problem set, so you don't need to worry about formatting nor about explaining/commenting your answers, nor do you need to put your answers in your GitHub class repository. In fact it's even fine with me if you hand-write the answers and scan them to an electronic document. I just want to make sure you've worked through the tutorial. 
 
-You don't need to look at all the sections in the tutorial. Please see Section 2 of units/unit4-bash.pdf in the course repository for a list of the sections you can skip over. I'll be doing demonstrations on using the bash shell in class on Wednesday September 1, so that will be helpful as you work through the tutorial. 
+        - You don't need to look at all the sections in the tutorial. Please see Section 2 of units/unit4-bash.pdf in the course repository for a list of the sections you can skip over. I'll be doing demonstrations on using the bash shell in class on Wednesday September 1, so that will be helpful as you work through the tutorial. 
 
 - (Required) Problem Set (PS) 1 will likely be due Wednesday September 8 at 10 am.
 
