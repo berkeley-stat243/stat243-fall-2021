@@ -3,7 +3,7 @@ This repository holds course materials for the fall 2021 offering of Statistics 
 
 If you would like to audit the class, enroll as a UC Berkeley undergraduate, or enroll as a concurrent enrollment student (i.e., for visiting students), or for some other reason are not enrolled, please fill out [this survey](https://forms.gle/8mDrVJ6XufaTMCPm9) as soon as possible. All those enrolled or wishing to take the class should have filled it out by Friday August 27 at noon.
 
-You can view the [UNDER CONSTRUCTION][syllabus here](https://github.com/berkeley-stat243/stat243-fall-2021/blob/master/syllabus/syllabus.pdf).
+You can view the [syllabus here](https://github.com/berkeley-stat243/stat243-fall-2021/blob/master/syllabus.pdf).
 
 The first three weeks involve a lot of moving pieces, in part related to trying to get everyone up to speed with the bash shell and R. Please use [these notes](first_three_weeks.md) to keep on top of what you need to do.
 
