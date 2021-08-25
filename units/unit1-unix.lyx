@@ -477,8 +477,7 @@ RStudio provides a built-in editor for R code files
 \emph on
 VSCode
 \emph default
- has a powerful code editor that is customized to work with various languages,
- including nicely handling JSON, YAML, and XML files.
+ has a powerful code editor that is customized to work with various languages.
 \end_layout
 
 \begin_layout Standard
