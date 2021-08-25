@@ -161,13 +161,22 @@ UNIX basics
 Please see the material in our tutorial on the 
 \emph on
 basics of UNIX
+\begin_inset CommandInset href
+LatexCommand href
+name "our tutorial on the basics of UNIX"
+target "https://github.com/berkeley-scf/tutorial-unix-basics"
+literal "false"
+
+\end_inset
+
+
 \emph default
  to get up to speed on working in a UNIX-style command line environment.
  We'll do a bit of demo in the first class.
  If what you see seems quite familiar, you can probably skip that tutorial.
  If what you see is not familiar, please work through the tutorial and (optional
-ly) attend section on Friday August 27 to work in groups on the problems
- at the end of the tutorial.
+ly) attend section on Friday August 27 to work on the problems at the end
+ of the tutorial and be able to ask questins of the GSI and other students.
 \end_layout
 
 \begin_layout Standard
