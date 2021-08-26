@@ -179,33 +179,34 @@ sprintf("The temperature in %s was %9.4f C.", city, temps[1])
 library(rvest)  # uses xml2
 URL <- "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
 html <- read_html(URL)
-tbls <- html_table(html_nodes(html, "table"))
+tbls <- html_table(html_elements(html, "table"))
 sapply(tbls, nrow)
 pop <- tbls[[1]]
 head(pop)
 
 ## @knitr https-pipe
 library(magrittr)
-tbls <- URL %>% read_html("table") %>% html_table()
+## Turns out that html_table can take the entire html doc as input
+tbls <- URL %>% read_html() %>% html_table()
 
 ## @knitr htmlLinks
 
 URL <- "http://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year"
-## approach 1: search for elements with href attribute
-links <- read_html(URL) %>% html_nodes("[href]") %>% html_attr('href')
+## approach 1: search for elements with 'href' attribute
+links <- read_html(URL) %>% html_elements("[href]") %>% html_attr('href')
 ## approach 2: search for HTML 'a' tags
-links <- read_html(URL) %>% html_nodes("a") %>% html_attr('href')
+links <- read_html(URL) %>% html_elements("a") %>% html_attr('href')
 head(links, n = 10)
 
 ## @knitr XPath
-## find all 'a' elements that have attribute href; then
+## find all 'a' elements that have attribute 'href'; then
 ## extract the 'href' attribute
-links <- read_html(URL) %>% html_nodes(xpath = "//a[@href]") %>%
+links <- read_html(URL) %>% html_elements(xpath = "//a[@href]") %>%
     html_attr('href')
 head(links)
 
 ## we can extract various information
-listOfANodes <- read_html(URL) %>% html_nodes(xpath = "//a[@href]")
+listOfANodes <- read_html(URL) %>% html_elements(xpath = "//a[@href]")
 listOfANodes %>% html_attr('href') %>% head(n = 10)
 listOfANodes %>% html_name() %>% head(n = 10)
 listOfANodes %>% html_text()  %>% head(n = 10)
@@ -213,8 +214,10 @@ listOfANodes %>% html_text()  %>% head(n = 10)
 
 ## @knitr XPath2
 URL <- "https://www.nytimes.com"
-headlines <- read_html(URL) %>% html_nodes("h2") %>% html_text()
-head(headlines)
+headlines2 <- read_html(URL) %>% html_elements("h2") %>% html_text()
+head(headlines2)
+headlines3 <- read_html(URL) %>% html_elements("h3") %>% html_text()
+head(headlines3)
 
 
 ## @knitr
@@ -232,13 +235,14 @@ data$response$loans[[2]][c('name', 'activity',
                            'sector', 'location', 'loan_amount')]
 
 ## alternatively, extract only the 'loans' info (and use pipes)
-loansNode <- doc %>% xml_nodes('loans')
+loansNode <- doc %>% html_elements('loans')
 loanInfo <- loansNode %>% xml_children() %>% as_list()
 length(loanInfo)
 names(loanInfo[[1]])
 names(loanInfo[[1]]$location)
 
 ## suppose we only want the country locations of the loans (using XPath)
+xml_find_all(loansNode, '//location//country')
 xml_find_all(loansNode, '//location//country') %>% xml_text()
 
 ## or extract the geographic coordinates
@@ -253,9 +257,14 @@ xml_find_all(loansNode, '//location//geo/pairs')
 ## @knitr json
 library(jsonlite)
 data <- fromJSON("http://api.kivaws.org/v1/loans/newest.json")
+class(data)
 names(data)
 class(data$loans) # nice!
 head(data$loans)
+
+data$loans[1, 'location.geo.pairs'] # hmmm...
+data$loans[1, 'location']
+class(data$loans$location)  # yikes, what is the location column?
 
 ## @knitr
 

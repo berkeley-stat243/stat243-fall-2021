@@ -230,12 +230,12 @@ literal "false"
 \end_layout
 
 \begin_layout Section*
-Videos
+(Optional) Videos
 \end_layout
 
 \begin_layout Standard
-There are four videos from 2020 that you can use for reference if you want
- to: 
+There are four videos from 2020 in the bCourses Media Gallery that you can
+ use for reference if you want to: 
 \end_layout
 
 \begin_layout Enumerate
@@ -1738,7 +1738,7 @@ open menu
 
  symbol, see 
 \family typewriter
-Web Developer -> Page Source
+Web Developer (or More Tools) -> Page Source
 \family default
  and in Chrome 
 \family typewriter
@@ -1902,7 +1902,8 @@ XPath
 
 \begin_layout Standard
 Here's another example of extracting specific components of information
- from a webpage.
+ from a webpage (results not shown, since headlines will vary from day to
+ day).
  
 \end_layout
 
@@ -2425,8 +2426,9 @@ Webscraping is the process of extracting data from the web, either directly
 \series bold
 Should you webscrape?
 \series default
- In general, if we can avoid webscraping and instead directly download a
- data file from a website, that is greatly preferred.
+ In general, if we can avoid webscraping (particularly if there is not an
+ API) and instead directly download a data file from a website, that is
+ greatly preferred.
 \end_layout
 
 \begin_layout Enumerate
