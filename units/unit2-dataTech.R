@@ -264,7 +264,6 @@ head(data$loans)
 
 data$loans[1, 'location.geo.pairs'] # hmmm...
 data$loans[1, 'location']
-class(data$loans$location)  # yikes, what is the location column?
 
 ## @knitr
 
