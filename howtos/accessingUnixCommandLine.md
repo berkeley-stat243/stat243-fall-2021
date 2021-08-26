@@ -1,10 +1,10 @@
 You have several options for UNIX command-line access. You'll need to choose one of these and get it working.
 
-### Mac OS:
+### Mac OS (on your personal machine):
 
 Open a Terminal by going to Applications -> Utilities -> Terminal
 
-### Windows:
+### Windows (on your personal machine):
 
 1.  You may be able to use the Ubuntu bash shell available in Windows.
 
@@ -22,7 +22,7 @@ Open a Terminal by going to Applications -> Utilities -> Terminal
 
 Note that when you install Git on Windows, you will get Git Bash. While you can use this to control Git, the functionality is limited so this will not be enough for general UNIX command-line access for the course.
 
-### Linux:
+### Linux (on your personal machine):
 
 If you have access to a Linux machine, you very likely know how to access a terminal.
 
