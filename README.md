@@ -19,12 +19,14 @@ If you're not yet familiar with Git, go to the upper right of this page and clic
 
 Instructor office hours:
 
-  - Chris (Evans 495):
-     - TBD
+  - Chris (Evans 495 or Zoom (see Piazza post for link))
+     - Mondays at 11 am
+     - Wednesdays at 3 pm
+     - Thursdays at 4 pm
      - generally available immediately after class
      - feel free to schedule an appointment or drop by if my door is open
-   - Andrew (location TBD):
-     - TBD
+   - Andrew:
+     - Tuesdays at 5 pm (location TBD or Zoom (see Piazza post))
      - Fridays during unused section time, generally 1-2 pm and 3-3:30 pm (Evans 443)
 
 ## Software
