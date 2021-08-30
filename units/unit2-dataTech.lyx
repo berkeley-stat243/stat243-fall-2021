@@ -2587,13 +2587,15 @@ resources
 
 \begin_layout Standard
 Often the format of the request is a URL (aka an endpoint) plus a query
- string, passed as a GET request, in the form:
+ string, passed as a GET request.
+ Let's search for plumbers near Berkeley, and we'll see the GET request,
+ in the form:
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset href
 LatexCommand href
-target "https://itunes.apple.com/search?country=US&term=purple+rain"
+target "https://www.yelp.com/search?find_desc=plumbers&find_loc=Berkeley+CA&ns=1"
 literal "false"
 
 \end_inset
@@ -2622,7 +2624,20 @@ pairs are separated by &
 \end_layout
 
 \begin_layout Standard
-What kind of content was returned from the iTunes web service?
+We don't always get HTML back - try searching for 
+\begin_inset Quotes eld
+\end_inset
+
+Purple Rain
+\begin_inset Quotes erd
+\end_inset
+
+ at 
+\emph on
+apple.com
+\emph default
+.
+ What format do you get back?
 \end_layout
 
 \begin_layout Standard
@@ -2913,17 +2928,11 @@ In some cases we may need to send a lot of information as part of the URL
  will reject the request.
  Instead we may need to use an HTTP POST request (POST requests are often
  used for submitting web forms).
- A typical request would have syntax like this (using 
+ A typical request would have syntax like this search (using 
 \emph on
 RCurl
 \emph default
-), supposing that the inputs were named 
-\emph on
-start-year
-\emph default
- and 
-\emph on
-end-year.
+):
 \end_layout
 
 \begin_layout Standard
@@ -2948,6 +2957,12 @@ http-post, eval=FALSE
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+Unfortunately that specific search doesn't work because the server URL and/or
+ API seem to have changed.
+ But it gives you an idea of what the format would look like.
 \end_layout
 
 \begin_layout Standard
