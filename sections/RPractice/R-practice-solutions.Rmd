@@ -1,0 +1,422 @@
+---
+title: "R Practice Problems - Solutions"
+output: html_document
+author: Zoe Vernon (many solutions provided by previous GSIs)
+date: 08/29/2020
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Creating data structures 
+### 1. Creating vectors 
+#### a. 
+```{r}
+1:50 
+seq(1, 50)
+```
+
+#### b. 
+```{r}
+!as.logical(1:50%%2)
+```
+
+#### c. 
+```{r}
+50:1
+seq(50, 1)
+```
+
+#### d. 
+```{r}
+c(1:50, 49:1)
+```
+
+#### e. 
+```{r}
+-10:10
+seq(-10, 10)
+```
+#### f. 
+```{r}
+3*1:16
+seq(3, 48, by = 3)
+```
+
+#### g. 
+```{r}
+as.character(seq(3, 48, by = 3))
+```
+
+#### h. 
+```{r}
+rep(c("a", "b", "c", "d"), c(4, 3, 2, 1))
+```
+
+#### i. 
+```{r}
+as.factor(rep(c("a", "b", "c", "d"), c(4, 3, 2, 1)))
+```
+
+#### j. 
+```{r}
+seq(-1,1, length.out=200)
+```
+
+### 2. 
+#### a. 
+```{r}
+x <- 1:50
+```
+
+#### b. 
+```{r}
+y <- cos(x)
+```
+
+#### c. 
+```{r}
+z <- tan(y)
+```
+
+#### d. 
+```{r}
+w <- y*z
+```
+
+#### e. 
+```{r}
+f <- x %in% 10:29
+```
+
+#### f. 
+```{r}
+df1 <- data.frame(x = x, y = y, z = z, w = w, f = f)
+```
+
+#### g. 
+```{r}
+names(df1) <- toupper(names(df1))
+```
+
+#### h. 
+```{r}
+# don't need to use x because rownames are alaready 1:50
+df1 <- data.frame(y = y, z = z, w = w, f = f)
+
+# can set rownames as well
+df1 <- data.frame(y = y, z = z, w = w, f = f, row.names = x)
+```
+
+## Subsetting datastructures 
+### 1. 
+#### a. 
+```{r}
+m1 <- df1[, sapply(df1, is.numeric)]
+```
+
+#### b. 
+```{r}
+m2 <- m1[f, ]
+```
+
+#### c. 
+```{r}
+df2 <- df1[df1$z >= 0, names(df1) != 'z']
+```
+
+#### d. 
+```{r}
+df3 <- df1[-c(3, 17), ]
+```
+
+#### e. 
+```{r}
+df4 <- df1[seq(2, nrow(df1), 2), ]
+```
+
+## Vectorized calculations 
+### 1. 
+```{r}
+x <- seq(1, 3, .1)
+exp(2 * x) * x ^ sqrt(x)
+```
+
+### 2. 
+#### a. 
+```{r}
+x <- matrix(0, nrow = 5, ncol = 5)
+```
+
+#### b. 
+```{r}
+row(x)
+col(x)
+```
+
+#### c. 
+```{r}
+x[abs(row(x) - col(x)) == 1] = 1
+```
+
+#### d. 
+```{r}
+abs(row(x) - col(x))
+```
+
+### 3. 
+#### a. 
+```{r}
+outer(0:4, 0:4, "+")
+```
+
+#### b. 
+```{r}
+outer(0:4, 0:4, "+") %% 5
+```
+
+## Using ```apply```, ```sapply```, and ```lapply```
+### 1. 
+#### a. 
+```{r}
+m1 <- matrix(data = runif(n = 30, min = 1, max = 100), nrow = 5, ncol = 6)
+```
+
+#### b. 
+They are not the same, if we do it this way. R is column major
+```{r}
+m2 <- apply(X = m1, MARGIN = 1, FUN = function(x){ x / sum(x)})
+dim(m1) == dim(m2) 
+```
+
+Now they match.
+```{r}
+m2 <- t(apply(X = m1, MARGIN = 1, FUN = function(x){x / sum(x)}))
+dim(m1) == dim(m2)
+```
+
+#### c. 
+```{r}
+# check that the rows sum to 1
+apply(X = m2, MARGIN = 1, FUN = function(x){sum(x) == 1})
+
+# using rowSums
+m2 <- m1 / rowSums(x = m1)
+```
+
+#### d. 
+```{r}
+m2 <- apply(X = m1, MARGIN = 2, FUN = function(x){x/sum(x)})
+
+# dimensions are the same 
+dim(m1) == dim(m2) 
+
+# rows sum to 1
+apply(X = m2, MARGIN = 2, FUN = function(x){sum(x) == 1})
+```
+
+### 2. 
+#### a. 
+```{r}
+x <- seq.int(from = 1, to = 10, by = 0.1)
+```
+
+#### b. 
+```{r}
+y <- 2 * x + rnorm(n = length(x))
+```
+
+#### c. 
+```{r}
+plot(x, y)
+```
+
+#### d. 
+```{r}
+my_lm <- lm(y ~ x)
+```
+
+#### e. 
+```{r}
+lapply(X = my_lm, FUN = "class")
+```
+
+#### f. 
+```{r}
+sapply(X = my_lm, FUN = "class")
+```
+
+#### g. 
+They are the same here, because a list is the best simplified type of object. ```sapply``` is a "simplified apply", ie, the output is simiplified to something deemed intelligent, like a vector or a list etc. 
+
+## Functions 
+### 1. 
+#### 0. 
+```{r}
+absMedDiff <- function(x){
+	return(sum(abs(x - median(x = x))))
+}
+```
+
+### a. 
+```{r}
+absMedDiff2 <- function(x){
+	# check if numeric
+	stopifnot(is.numeric(x = x))
+	
+	# if numeric, do work and return
+	return(sum(abs(x - median(x = x))))
+}
+```
+
+#### b. 
+```{r}
+absMedDiff3a <- function(x, na.rm = FALSE){
+	# check if numeric
+	stopifnot(is.numeric(x = x))
+	
+	# if numeric, do work and return
+	return(sum(abs(x - median(x = x, na.rm = na.rm)), na.rm = na.rm))
+}
+```
+
+### 2. 
+#### a. 
+```{r}
+x <- sample(x = 0:1, size = 100, replace = TRUE)
+y <- sample(x = 0:1, size = 100, replace = TRUE)
+```
+
+#### b. 
+It doesn't make sense to call set.seed within the function, because the function would always return the same sample.  
+```{r}
+sumHeads <- function(num_flips){
+	# do flipping
+	x <- sample(x = c(0,1), size = num_flips, replace = TRUE)
+	
+	# return heads
+	return(sum(x))
+}
+```
+
+#### c. 
+```{r}
+sums_vec <- replicate(n = 10000, expr = sumHeads(num_flips = 200))
+```
+
+#### d. 
+```{r}
+hist(sums_vec)
+```
+
+### 3. 
+```{r}
+basicFunc <- function(x, y, operation = "add"){
+	switch(operation,
+				 "add" = x + y,
+				 "subtract" = x - y,
+				 "multiply" = x * y,
+				 "divide" = x / y,
+				 "Warning: Not a designated option")
+}
+```
+
+### 4. 
+```{r}
+cumSum <- function(x){
+	# setup return vector
+	ret_vec <- numeric(length = length(x) - 1)
+	
+	# set first element
+	ret_vec[1] <- x[1]
+	
+	# loop over rest
+	for(i in 2:length(x)){
+		ret_vec[i] <- ret_vec[i - 1] + x[i]
+	}
+	
+	# return result
+	return(ret_vec)
+}
+```
+
+## Loading (and saving) data 
+### 1. 
+Note, you will need to install the ```foreign``` package with ```install.packages("foreign")``` if it is not already.  The working directory is assumed to be the sections/01 folder in the stat243-fall-2020 Github. 
+```{r}
+library(foreign)
+earnings <- read.dta("../data/heights.dta")
+```
+
+#### a. 
+```{r}
+class(earnings)
+```
+
+#### b. 
+```{r}
+str(earnings)
+```
+
+#### c. 
+```{r}
+length(earnings)
+```
+
+#### d. 
+```{r}
+dim(earnings)
+```
+
+#### e. 
+```{r}
+sapply(earnings, FUN = class)
+```
+
+#### f. 
+```{r}
+sapply(earnings[, grep("height", colnames(earnings))], summary)
+```
+
+#### g. 
+```{r}
+
+```
+
+#### h. 
+```{r}
+hist(earnings$yearbn)
+```
+
+### 2. 
+```{r}
+# read csv
+cpds <- read.csv("../data/cpds.csv")
+
+# read text file 
+state_income <- read.table("../data/stateIncome.txt", sep = "\t")
+```
+
+### 3. 
+#### a. 
+```{r}
+ls()
+```
+
+#### b. 
+There are number of formats to save data from R.  Below are a couple examples.
+```{r}
+# writing to a csv
+write.csv(earnings, "../earnings.csv")
+
+# writing to a text file 
+write.table(m1, "../matrix.txt")
+
+# write to an RData object, better for large data 
+data_list <- list(earnings, m1, x, my_lm)
+save(data_list, file = "../data_list.RData")
+```
+
+To load the .RData file you can use the ```load()``` function.  
+
