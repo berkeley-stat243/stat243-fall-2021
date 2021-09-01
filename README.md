@@ -26,7 +26,7 @@ Instructor office hours:
      - generally available immediately after class
      - feel free to schedule an appointment or drop by if my door is open
    - Andrew:
-     - Tuesdays at 5 pm (location TBD or Zoom (see Piazza post))
+     - Tuesdays at 5 pm (Evans 444 or Zoom (see Piazza post))
      - Fridays during unused section time, generally 1-2 pm and 3-3:30 pm (Evans 443)
 
 ## Software
