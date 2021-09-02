@@ -1,5 +1,5 @@
 # stat243-fall-2021
-This repository holds course materials for the fall 2021 offering of Statistics 243 at UC Berkeley.
+This repository holds course materials for the Fall 2021 offering of Statistics 243 at UC Berkeley.
 
 If you would like to audit the class, enroll as a UC Berkeley undergraduate, or enroll as a concurrent enrollment student (i.e., for visiting students), or for some other reason are not enrolled, please fill out [this survey](https://forms.gle/8mDrVJ6XufaTMCPm9) as soon as possible. All those enrolled or wishing to take the class should have filled it out by Friday August 27 at noon.
 
