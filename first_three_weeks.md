@@ -25,8 +25,7 @@ resources for R are listed at the end of module 11 of the bootcamp
 materials, so you could also use those resources. You should do this by the end of the week of September 6.
 
 - (Required) By Friday September 3 at 10 am, read through this [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash/archive/master.zip). Work through the first 10 problems at the end of the tutorial and [submit answers via bCourses (under Assignments)](https://bcourses.berkeley.edu/courses/1507757/assignments/8324653) as text copied into bCourses. This is not a formal problem set, so you don't need to worry about formatting nor about explaining/commenting your answers, nor do you need to put your answers in your GitHub class repository. In fact it's even fine with me if you hand-write the answers and scan them to an electronic document. I just want to make sure you've worked through the tutorial. 
-
-        - You don't need to look at all the sections in the tutorial. Please see Section 2 of units/unit4-bash.pdf in the course repository for a list of the sections you can skip over. I'll be doing demonstrations on using the bash shell in class on Wednesday September 1, so that will be helpful as you work through the tutorial. 
+   - You don't need to look at all the sections in the tutorial. Please see Section 2 of units/unit4-bash.pdf in the course repository for a list of the sections you can skip over. I'll be doing demonstrations on using the bash shell in class on Wednesday September 1, so that will be helpful as you work through the tutorial. 
 
 - (Required) Problem Set (PS) 1 will likely be due Wednesday September 8 at 10 am.
 
