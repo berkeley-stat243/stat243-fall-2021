@@ -29,7 +29,7 @@ materials, so you could also use those resources. You should do this by the end 
 
 - (Required) Problem Set (PS) 1 will likely be due Wednesday September 8 at 10 am.
 
-- (Required) By Friday September 10 at 10 am, read the regular expression material in Section 3 of the [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash). (You can skip Section 3.6.) Then work through the regular expressions (regex) practice problems and turn in your answers through this online form [UNDER CONSTRUCTION]: https://forms.gle/XYZ. This is not one of the graded problem sets but rather an 'assignment' that will simply be noted as being completed or not.
+- (Required) By Friday September 10 at 10 am, read the regular expression material in Section 3 of the [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash). (You can skip Section 3.6.) Also read Section 2.1 of the [string processing tutorial](https://github.com/berkeley-scf/tutorial-string-processing) (you can focus on Section 2.1.2 on stringr if you wish). Then answer the regular expressions (regex) practice problems at [this Google form](https://forms.gle/FxJaLSeg8YX5UVXW9). This is not one of the graded problem sets but rather an 'assignment' that will simply be noted as being completed or not.
 
 
 ## Events
