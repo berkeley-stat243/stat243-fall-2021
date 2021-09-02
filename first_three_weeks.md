@@ -24,12 +24,12 @@ please attend the special R catch-up session listed below. Some other
 resources for R are listed at the end of module 11 of the bootcamp
 materials, so you could also use those resources. You should do this by the end of the week of September 6.
 
-- (Required) By Friday September 3 at 10 am, read through this [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash/archive/master.zip). Work through the first 10 problems at the end of the tutorial and [submit answers via bCourses (under Assignments)](https://bcourses.berkeley.edu/courses/1507757/assignments/8324653) as text copied into bCourses. This is not a formal problem set, so you don't need to worry about formatting nor about explaining/commenting your answers, nor do you need to put your answers in your GitHub class repository. In fact it's even fine with me if you hand-write the answers and scan them to an electronic document. I just want to make sure you've worked through the tutorial. 
+- (Required) By Friday September 3 at 10 am, read through this [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash). Work through the first 10 problems at the end of the tutorial and [submit answers via bCourses (under Assignments)](https://bcourses.berkeley.edu/courses/1507757/assignments/8324653) as text copied into bCourses. This is not a formal problem set, so you don't need to worry about formatting nor about explaining/commenting your answers, nor do you need to put your answers in your GitHub class repository. In fact it's even fine with me if you hand-write the answers and scan them to an electronic document. I just want to make sure you've worked through the tutorial. 
    - You don't need to look at all the sections in the tutorial. Please see Section 2 of units/unit4-bash.pdf in the course repository for a list of the sections you can skip over. I'll be doing demonstrations on using the bash shell in class on Wednesday September 1, so that will be helpful as you work through the tutorial. 
 
 - (Required) Problem Set (PS) 1 will likely be due Wednesday September 8 at 10 am.
 
-- (Required) By Friday September 10 at 10 am, read the regular expression material in Section 3 of the [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash/archive/master.zip). (You can skip Section 3.6.) Then work through the regular expressions (regex) practice problems and turn in your answers through this online form [UNDER CONSTRUCTION]: https://forms.gle/XYZ. This is not one of the graded problem sets but rather an 'assignment' that will simply be noted as being completed or not.
+- (Required) By Friday September 10 at 10 am, read the regular expression material in Section 3 of the [tutorial on using the bash shell](https://github.com/berkeley-scf/tutorial-using-bash). (You can skip Section 3.6.) Then work through the regular expressions (regex) practice problems and turn in your answers through this online form [UNDER CONSTRUCTION]: https://forms.gle/XYZ. This is not one of the graded problem sets but rather an 'assignment' that will simply be noted as being completed or not.
 
 
 ## Events
@@ -38,7 +38,7 @@ materials, so you could also use those resources. You should do this by the end 
 
 - (Optional) Friday August 27, noon-3:30 pm in Evans 344: Help session for installing software, accessing a UNIX-style command line, and basic UNIX usage (e.g., the UNIX basics tutorial). You should have software installed, be able to accesss the command line, and have started to become familiar with basic UNIX usage before class on Wednesday September 1.
 
-- (Optional) TBD: two-hour R help session, date/time/location TBD, for those not yet familiar with R at the level of modules 1-5 of the R bootcamp (https://github.com/berkeley-scf/r-bootcamp-fall-2021/archive/main.zip).
+- (Optional) TBD: two-hour R help session, date/time/location TBD, for those not yet familiar with R at the level of modules 1-5 of the R bootcamp (https://github.com/berkeley-scf/r-bootcamp-fall-2021).
 
 - (Required) Friday September 3: First section/lab on using Git, setting up your GitHub repository for problem sets, and using RMarkdown/knitr to generate dynamic documents. Please come only to the section you are registered for given space limits in the room, unless you have talked with Chris and have his permission. 
 
