@@ -1,0 +1,359 @@
+---
+title: "Introduction to git and knitr"
+author: "Updated by Andrew Vaughn (Original by Jared Bennett with updates by Zoe Vernon)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: rmarkdown::pdf_document
+urlcolor: magenta
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this section we will learn and dicuss some tools that you will need to know to turn in your first problem set, namely git and knitr (either R Markdown, Rtex, or R Sweave). At the end there are also resources about code style and a couple notes to keep in mind when turning in your problem sets.  
+
+## Getting started with Git and GitHub
+### Learning Objectives
+
+ * Create a GitHub repository
+ * Create a local Git repository
+ * Practice adding, and committing changes to your (local) Git repo
+ * Practice pushing commited changes to a remote repo
+
+### Useful Links
+- A nice tutorial is available on the [Berkeley SCF github repo](https://github.com/berkeley-scf/tutorial-git-basics)
+- Save username and password ([Simple Answer](https://stackoverflow.com/questions/35942754/how-to-save-username-and-password-in-git), [Official Documentation](https://git-scm.com/docs/git-credential-store))
+
+### Create a New GitHub Repository
+There are two ways to start a repository:
+
+- create the repository on GitHub using your browser and then use `git clone`
+- use `git init` on your machine and then linking it to a remote server e.g. GitHub.
+
+We're going to cover creating one online:
+
+- Open your browser and Sign in to your GitHub account.
+- Locate the `+` button (next to your avatar).
+- Select the `New repository` option.
+- Choose a name for your repository: e.g. `demo-repo`.
+- In the __Description__ field add a brief description: e.g. "this is a demo repo"
+- add a .gitignore for R files.  Stops items like .Rhistory files from being added to your repo.  
+- Click the green button __Create repository__.
+
+
+### Adding a README file
+
+Initially, your repo is located on GitHub. To set it up locally, you must clone 
+the repository from GitHub.
+
+```{r, engine = 'bash', eval = FALSE}
+git clone https://github.com/berkeley-scf/tutorial-git-basics
+```
+
+It is customary to add a `README.md` file at the top level. This file must
+contain (at least) a description of what the repository is about. The following
+command will create a `README.md` file with some minimalist content:
+
+```{r, engine = 'bash', eval = FALSE}
+echo "# Demo Repo" >> README.md
+```
+
+So far there you have a "new" file in your local repo, but this change has
+not been recorded by Git. You can confirm this by checking the status of the repo:
+
+```{r, engine = 'bash', eval = FALSE}
+git status
+```
+
+Notice that Git knows that `README.md` is untracked. So let's add the 
+changes to Git's database:
+
+```{r, engine = 'bash', eval = FALSE}
+git add README.md
+```
+
+Check the status of the repo again:
+
+```{r, engine = 'bash', eval = FALSE}
+git status
+```
+
+Now Git is tracking the file `README.md`.
+Next, the changes need to __committed__ to the repository.  
+
+```{r, engine = 'bash', eval = FALSE}
+git commit -m "Create README"
+```
+
+### Pushing changes to a remote repo
+
+Now that you have linked your local repo with your remote repo, you can 
+start pushing (i.e. uploading) commits to GitHub.
+As part of the basic workflow with Git and GitHub, you want to constantly 
+check the status of your repo
+
+```{r, engine = 'bash', eval = FALSE}
+git status
+```
+
+Now let's push your recent commit to the remote branch (`origin`) from
+the local branch (`master`):
+
+```{r, engine = 'bash', eval = FALSE}
+git push origin master
+```
+
+Go to your Github repository and refresh the browser. If everything went fine,  you should be able to see the contents of your customized `README.md` file.
+
+If you or a collaborator make changes on your remote repo you must __pull__ the remote repo into your local repo before you attempt to __push__ the changes you made locally.  
+
+```{r, engine = 'bash', eval = FALSE}
+git pull
+```
+In summary, if you want to use git add files to a GitHub repo, the steps are:
+
+Step 0. \textbf{Pull} the repo (This is necessary if you local repo is ``out of date'', meaning there are changes on the remote repo that are not present in your local repo. This is not necessary if your local repo contains the most recently made changes.)
+
+Step 1. Make edits to/create new files in your local repo
+
+Step 2. \textbf{Add} the files you edited/created
+
+Step 3. \textbf{Commit} your update with a helpful message
+
+Step 4. \textbf{Push} the update to the master branch
+
+
+## knitr and R Markdown Files
+
+### Learning Objectives:
+
+ - Differentiate between `.R` and `.Rmd` files
+ - To understand dynamic documents
+ - To gain familiarity with R Markdown `.Rmd` files
+ - To gain familiarity with code chunks
+
+### Useful Links
+- SCF tutorial on [dynamic documents](https://github.com/berkeley-scf/tutorial-dynamic-docs)
+- [knitr in a knutshell](http://kbroman.org/knitr_knutshell/) tutorial with information about R Markdown and knitr with LaTeX.  
+- [R Markdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- Complete R Markdown [guide](https://bookdown.org/yihui/rmarkdown/)
+- R Sweave [tutorial](https://www.r-bloggers.com/sweave-tutorial-1-using-sweave-r-and-make-to-generate-a-pdf-of-multiple-choice-questions/)
+
+### Opening and knitting an `Rmd` file
+
+In the menu bar of RStudio, click on __File__, then __New File__,
+and choose __R Markdown__. Select the default option (Document),
+and click __Ok__. RStudio will open a new `.Rmd` file in the source pane.
+And you should be able to see a file with some default content.
+
+Locate the button __Knit HTML__, the one with an icon of a ball of yarn and two 
+needles. Click the button (knit to HTML) so you can see how `Rmd` files are 
+rendered and displayed as HTML documents. Alternatively, you can use a keyboard 
+shortcut: in Mac `Command+Shift+K`, in Windows `Ctrl+Shift+K`
+
+
+### What is an `Rmd` file?
+
+__Rmd__ files are a special type of file, referred to as a _dynamic document_.
+This is the fancy term we use to describe a document that allows us to combine 
+narrative (text) with R code in one single file.
+
+Rmd files are plain text files. This means that you can open an Rmd file 
+with any text editor (not just RStudio) and being able to see and edit its
+contents. 
+
+The main idea behind dynamic documents is simple yet very powerful: instead of 
+working with two separate files, one that contains the R code, and 
+another one that contains the narrative, you use an `.Rmd` file to include 
+both the commands and the narrative.
+
+One of the main advantages of this paradigm, 
+is that you avoid having to copy results from your computations and paste them 
+into a report file. In fact, there are more complex ways to work with dynamic 
+documents and source files. But the core idea is the same: combine narrative 
+and code in a way that you let the computer do the manual, repetitive, 
+and time consuming job.
+
+Rmd files is just one type of dynamic document that you will find in RStudio.
+In fact, RStudio provides other file formats that can be used 
+as dynamic documents: e.g. `.Rnw`, `.Rpres`, `.Rhtml`, etc.
+
+
+### Anatomy of an `Rmd` file
+
+The structure of an `.Rmd` file can be divided in two parts: 1) a __YAML header__, 
+and 2) the __body__ of the document. In addition to this structure, you should 
+know that `.Rmd` files use three types of syntaxes: YAML, Markdown, and R.
+
+The _YAML header_ consists of the first few lines at the top of the file. 
+This header is established by a set of three dashes `---` as delimiters 
+(one starting set, and one ending set). This part of the file requires you 
+to use YAML syntax (Yet Another Markup Language.)
+Within the delimiter sets of dashes, you specify settings (or metadata) that 
+will apply to the entire document. Some of the common 
+options are things like:
+
+- `title`
+- `author`
+- `date`
+- `output`
+
+The _body_ of the document is everything below the YAML header. It consists 
+of a mix of narrative and R code. All the text that is narrative is written 
+in a markup syntax called __Markdown__ (although you can also use LaTeX math 
+notation). In turn, all the text that is code 
+is written in R syntax inside _blocks of code_. 
+
+There are two types of blocks of code: 1) __code chunks__, and 
+2) __inline code__. Code chunks are lines of text separated from any lines of 
+narrative text. Inline code is code inserted within a line of narrative text .
+
+
+### How does an Rmd file work?
+
+Rmd files are plain text files. All that matters is the syntax of its content. 
+The content is basically divided in the header, and the body.
+
+- The header uses YAML syntax.
+- The narrative in the body uses Markdown syntax.
+- The code and commands use R syntax.
+
+The process to generate a nice rendered document from an Rmd file is 
+known as __knitting__. When you _knit_ an Rmd file, various R packages 
+and programs run behind the scenes. But the process can be broken down
+in three main phases: 1) Parsing, 2) Execution, and 3) Rendering.
+
+Parsing refers to examining line by line to identified components as yaml 
+header, or as markdown text, or as R code.
+
+Each component receives a special treatment and formatting.
+
+The most interesting part is in the pieces of text that are R code.
+Those are separated and executed if necessary. The commands may be included 
+in the final document. Also, the output may be included in the final document.
+Sometimes, nothing is executed nor included.
+
+Depending on the specified output format (e.g. HTML, pdf, word), all the
+components are assembled, and one single document is generated.
+
+
+### Yet Another Syntax to Learn
+
+R markdown (`Rmd`) files use [markdown](https://daringfireball.net/projects/markdown/)
+as the main syntax to write content.Markdown is a very lightweight type of markup 
+language, and it is relatively easy to learn.
+
+One of the most common sources of confusion when learning about R and Rmd 
+files has to do with the hash symbol `#`. As you know, `#` is the character 
+used by R to indicate comments. The issue is that the `#` character has a 
+different meaning in markdown syntax. Hashes in markdown are used to define 
+levels of headings.
+
+In an Rmd file, a hash `#` that is inside a code chunk will be treated as 
+an R comment. A hash outside a code chunk, will be treated as markdown syntax, 
+making its associated text a given type of heading.
+
+### Code chunks
+
+There are dozens of options available to control the executation of the code, 
+the formatting and display of both the commands and the output, the display 
+of images, graphs, and tables, and other fancy things. Here's a list of the 
+basic options you should become familiar with:
+
+- `cache`: whether to store the results from excecuted code, so that it does not need to be run on subsequent knits.  
+    + `TRUE`
+    + `FALSE`
+- `eval`: whether the code should be evaluated
+    + `TRUE`
+    + `FALSE`
+- `echo`: whether the code should be displayed
+    + `TRUE`
+    + `FALSE`
+    + numbers indicating lines in a chunk
+- `error`: whether to stop execution if there is an error
+    + `TRUE`
+    + `FALSE`
+- `results`: how to display the output
+    + `markup`
+    + `asis`
+    + `hold`
+    + `hide`
+- `comment`: character used to indicate output lines
+    + the default is a double hash `##`
+    + `""` empty character (to have a cleaner display)
+    
+Additionally, you can include inline code within your work. If you're describing 
+results, you don't want to hard-code a number or the amount of repititions you ran. 
+Instead, include variables or short functions as **r 2 + 2**, which is rendered as `r 2+2`.
+
+### LaTeX
+
+Rmarkdown files render LaTeX through an external generator. This means that you can 
+write any math equations or LaTeX syntax within a specific chunk, and install the 
+required LaTeX libraries outside of R, and it will be rendered properly.
+
+Inline code chunks are setoff with single dollar signs, ie `$\beta$` is rendered 
+as $\beta$. This is great for small equations, Greek letters, and references to variables.
+
+LaTeX chunks can also be significantly more complicated. Independent chunks are 
+setoff with double dollar signs, ie `$$ Complex LaTeX Thing $$`, such as the following 
+equation: 
+$$
+D(\theta_l,T_x) = \left\{
+         \begin{array}{ll}
+             \theta_{l[0]}^{'}=\theta_l 								& \quad i = 0 \\
+             \theta_{l[i+1]}^{'} = \theta_{l[i]}^{'} *F(\overline{L_{[t-i-T_x]}})	& \quad i \leq T_l
+         \end{array}
+     \right.
+$$
+ 
+
+## R Sweave 
+An alternative to R Markdown is R Sweave.  R Sweave knits R code together in the form of a LaTeX document.  There is an example R Sweave document `example_sweave.Rnw` included in this folder.  This can serve as a template for you if you choose to use this format for your problem sets.  
+
+The options for code chunks listed in the Rmd section above are the same as the options used in Rnw code chunks.  As you can see in the `example_sweave.Rnw` document the syntax to designate code chunks is different.  In Sweave documents you will use <<>>= to start the chunk and @ to end the chunk.  
+
+To compile the PDF click the __Compile PDF__ button.   
+
+### Updating Preferences to knit using knitr
+Sweave is older way to knit together code and text, while knitr is more updated and 
+allows for better formatting.  By default R Studio sets R Sweave documents to be run using 
+Sweave to switch to knitr open the __RStudio__ menu in the menu bar, and choose __Preferences__. In __Preferences__ go to the __Sweave__ tab and change the PDF generation to Weave Rnw 
+files using knitr.  
+
+### Opening an R Sweave
+In the menu bar of RStudio, click on __File__, then __New File__,
+and choose __R Sweave__. Select the default option (Document),
+and click __Ok__. RStudio will open a new `.Rnw` file in the source pane.
+And you should be able to see a file with some default content.
+
+If you opened an Rnw file before changing the from Sweave to knitr, the default content will contain `\SweaveOpts{concordance=TRUE}` you will need to remove this line of code if you have changed the preferences to generate the PDF 
+using knitr. 
+
+## Rtex
+The final option is to use the Rtex file format. This file format again uses knitr to combine code chunks with text in the form of a LaTeX document. 
+
+For instructions of how to use this see the [dynamic documents](https://github.com/berkeley-scf/tutorial-dynamic-docs) tutorial.  The integration with RStudio is not great, so there is no automated way to open a .Rtex file from RStudio's menu.  Also you will need to use the command line to compile.  
+
+## Code style 
+
+### Useful Links
+- [Homework Submission](https://github.com/berkeley-stat243/stat243-fall-2019/blob/master/howtos/submitting-electronically.txt)
+- [Hadley Wickham Style Guide](https://style.tidyverse.org/)
+- [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)
+- [Weird One with Links](https://jef.works/R-style-guide/)
+
+### Additional notes on style
+You don't need to follow the exact style of any of those - use your own judgment and figure out what style you like and be consistent in using that style. But you should do the following:
+
+ - use white space to make it easier to read your code
+ - have your code lines be no more than 80 characters
+ - give your objects and functions meaningful (and not overly long) names
+ - comment your code
+ - indent your code as needed so one can see what lines of code go together in a block
+
+You should NOT include periods in names of objects (this contradicts Google's style guide). The reason is that periods are used to mean something specific in R's S3 object oriented programming syntax (e.g., `predict.lm`) and that periods are used in other languages specifically for object-oriented syntax. So I'd suggest either `calculate_mle` or `calculateMLE`, not `calculate.mle`. 
+
+
+
+
