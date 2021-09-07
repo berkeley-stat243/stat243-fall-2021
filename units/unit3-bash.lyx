@@ -605,6 +605,14 @@ mission4
 \end_layout
 
 \begin_layout Standard
+That code only works if the files don't have spaces in their names.
+ If there are spaces, we need double quotes around each file name, which
+ is hard to do in the shell because double quotes are interpreted by the
+ shell as giving the beginning and ending of strings, rather than being
+ passed along for further processing.
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 Our fifth mission
