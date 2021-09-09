@@ -917,5 +917,350 @@ Figure out a way to make this into a new delimited file in which the delimiter
  of fixed patterns.
 \end_layout
 
+\begin_layout Section
+Regular expressions
+\end_layout
+
+\begin_layout Standard
+Some of this material is duplicated from Section 3 of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "String Processing tutorial"
+target "https://github.com/berkeley-scf/tutorial-string-processing"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Overview
+\end_layout
+
+\begin_layout Standard
+Regular expressions are a domain-specific language for finding patterns
+ and are one of the key functionalities in scripting languages such as Python
+ and R, as well as the UNIX commands 
+\emph on
+grep
+\emph default
+, 
+\emph on
+sed
+\emph default
+, and 
+\emph on
+awk
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The basic idea of regular expressions is that they allow us to find matches
+ of strings or patterns in strings, as well as do substitution.
+ Regular expressions are good for tasks such as: 
+\end_layout
+
+\begin_layout Itemize
+extracting pieces of text from documents;
+\end_layout
+
+\begin_layout Itemize
+creating variables from information found in text;
+\end_layout
+
+\begin_layout Itemize
+cleaning and transforming text into a uniform format; 
+\end_layout
+
+\begin_layout Itemize
+mining text by treating documents as data; and 
+\end_layout
+
+\begin_layout Itemize
+scraping the web for data.
+ 
+\end_layout
+
+\begin_layout Standard
+That said, if we can avoid using regular expressions, it's generally a good
+ idea to use more specialized code that understands the structure of particular
+ formats.
+ For example, recall our case of using R functions that treat HTML or XML
+ or JSON in a structured way based on the exact syntax of HTML/XML/JSON.
+ Doing that work using regular expressions would have been more difficult
+ and error-prone.
+\end_layout
+
+\begin_layout Standard
+See Section 3 of the 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Using the bash shell"
+target "https://github.com/berkeley-scf/tutorial-using-bash"
+literal "false"
+
+\end_inset
+
+
+\emph default
+ tutorial for details on regular expression syntax.
+ For other resources, Duncan Temple Lang (UC Davis Statistics) has written
+ a nice tutorial that is part of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "string processing tutorial"
+target "https://github.com/berkeley-scf/tutorial-string-processing"
+literal "false"
+
+\end_inset
+
+ repository or check out Sections 9.9 and 11 of 
+\begin_inset CommandInset href
+LatexCommand href
+name "Paul Murrell's book"
+target "http://www.stat.auckland.ac.nz/~paul/ItDT"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also, here's a 
+\begin_inset CommandInset href
+LatexCommand href
+name "cheatsheet on regular expressions"
+target "https://github.com/rstudio/cheatsheets/raw/master/strings.pdf"
+literal "false"
+
+\end_inset
+
+ (see the second page) and here is a 
+\begin_inset CommandInset href
+LatexCommand href
+name "website where you can interactively test regular expressions on example strings"
+target "https://regex101.com"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Versions of regular expressions
+\end_layout
+
+\begin_layout Standard
+One thing that can cause headaches is differences in version of regular
+ expression syntax used.
+ As discussed the grep man page, 
+\emph on
+extended regular expressions
+\emph default
+ are standard, with 
+\emph on
+basic regular expressions
+\emph default
+ providing somewhat less functionality and 
+\emph on
+Perl regular expressions
+\emph default
+ additional functionality.
+ In R, as can be seen in 
+\family typewriter
+help(regex)
+\family default
+, 
+\emph on
+stringr
+\emph default
+ provides 
+\emph on
+ICU regular expressions
+\emph default
+, which are based on Perl regular expressions.
+ More details can be found in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "regex Wikipedia page"
+target "https://en.wikipedia.org/wiki/Regular_expression"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The tutorial on using bash provides a full documentation of the various
+ 
+\emph on
+extended regular expressions
+\emph default
+ syntax, which we'll focus on here.
+ This should be sufficient for most usage and should be usable in R and
+ Python, but if you notice something funny going on, it might be due to
+ differences between the regular expressions versions.
+ 
+\end_layout
+
+\begin_layout Subsection
+General principles for working with regex
+\end_layout
+
+\begin_layout Standard
+The syntax is very concise, so it's helpful to break down individual regular
+ expressions into the component parts to understand them.
+ As Murrell notes, since regex are their own language, it's a good idea
+ to build up a regex in pieces as a way of avoiding errors just as we would
+ with any computer code.
+ 
+\emph on
+str_detect
+\emph default
+ in R's 
+\emph on
+stringr
+\emph default
+ and 
+\emph on
+re.findall
+\emph default
+ in Python are particularly useful in seeing 
+\series bold
+what
+\series default
+ was matched to help in understanding and learning regular expression syntax
+ and debugging your regex.
+ As with many kinds of coding, I find that debugging my regex is usually
+ what takes most of my time.
+ 
+\end_layout
+
+\begin_layout Subsection
+Practice problems
+\end_layout
+
+\begin_layout Standard
+Write a regular expression that matches the following:
+\end_layout
+
+\begin_layout Enumerate
+Only the strings 
+\begin_inset Quotes eld
+\end_inset
+
+cat
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+at
+\begin_inset Quotes erd
+\end_inset
+
+, and 
+\begin_inset Quotes eld
+\end_inset
+
+t
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The strings 
+\begin_inset Quotes eld
+\end_inset
+
+cat
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+caat
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+caaat
+\begin_inset Quotes erd
+\end_inset
+
+, etc.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+dog
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Dog
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+dOg
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+doG
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+DOg
+\begin_inset Quotes erd
+\end_inset
+
+, etc.
+ (the word dog in any combination of lower and upper case).
+\end_layout
+
+\begin_layout Enumerate
+Any line with exactly two words separated by any amount of whitespace (spaces
+ or tabs).
+ There may or may not be whitespace at the beginning or end of the line.
+\end_layout
+
+\begin_layout Enumerate
+Any positive number with or without a decimal point.
+\end_layout
+
 \end_body
 \end_document
