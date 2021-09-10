@@ -97,7 +97,7 @@ grep("[^z]", c("a^2", "93", "zit", "azar", "zzz"))
 
 ## Search for either a '^' (as a regular charcter) or a 'z':
 grep("[\\^z]", c("a^2", "93", "zit", "azar", "zzz"))
-# [1] 1 2 3 5
+# [1] 1 3 4 5
 
 ## This fails because '\^' is not an escape sequence:
 grep("[\^z]", c("a^2", "93", "zit", "azar", "zzz"))

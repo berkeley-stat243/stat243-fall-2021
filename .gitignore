@@ -43,3 +43,6 @@ vignettes/*.pdf
 
 # SQLite files
 *.db
+
+# Mac stuff
+.DS_Store
