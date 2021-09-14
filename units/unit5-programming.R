@@ -53,7 +53,7 @@ args <- commandArgs(TRUE)
 # and the second as a character string and the third as a boolean:
 numericArg <- as.numeric(args[1])
 charArg <- args[2]
-logicalArg <- as.logical(args[3]
+logicalArg <- as.logical(args[3])
 cat("First arg is: ", numericArg, "; second is: ", 
    charArg, "; third is: ", logicalArg, ".\n")
 
@@ -164,8 +164,8 @@ install.packages('dplyr_VERSION.tar.gz', repos = NULL, type = 'source')
 
 ## @knitr namespace
 search()
-## ls(pos = 10) # for the stats package
-ls(pos = 10)[1:5] # just show the first few
+## ls(pos = 5) # for the stats package
+ls(pos = 5)[1:5] # just show the first few
 ls("package:stats")[1:5] # equivalent
 
                                            

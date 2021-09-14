@@ -1884,12 +1884,6 @@ Some common conversions are converting numbers that are being interpreted
  and converting between logical TRUE/FALSE vectors and numeric 1/0 vectors.
  In some cases R will automatically do conversions behind the scenes in
  a smart way (or occasionally not so smart way).
- We saw see implicit conversion (also called coercion) when we read in character
-s into R using 
-\emph on
-read.table()
-\emph default
- - strings are often automatically coerced to factors.
  Consider these examples of implicit coercion:
 \end_layout
 
