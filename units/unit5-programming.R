@@ -533,33 +533,33 @@ tsSimClass$set("public", "simulate", function() {
 })
 
 ## @knitr R6use, fig.width=7
-master <- tsSimClass$new(1:100, 2, 1)
-master
+myts <- tsSimClass$new(1:100, 2, 1)
+myts
 set.seed(1)
 ## here's a simulated time series
-devs <- master$simulate()
-plot(master$getTimes(), devs, type = 'l', xlab = 'time',
+y <- myts$simulate()
+plot(myts$getTimes(), y, type = 'l', xlab = 'time',
      ylab = 'process values')
 ## here's a second simulated time series
-devs2 <- master$simulate()
-lines(master$getTimes(), devs2, lty = 2)
+y2 <- myts$simulate()
+lines(myts$getTimes(), y2, lty = 2)
 
-master2 <- tsSimClass$new(1:100, 2, 3)
+myts2 <- tsSimClass$new(1:100, 2, 3)
 set.seed(1)
 ## here's a simulated time series with a different value of
 ## the correlation parameter (corParam)
-devs <- master2$simulate()
-lines(master2$getTimes(), devs, col = 'red')
+y <- myts2$simulate()
+lines(myts2$getTimes(), y, col = 'red')
 ## That simulated time series is less wiggly because the corParam value
 ## is larger than before.
 
-mycopy <- master
-## 'mycopy' and 'master' are names for the same underlying object
-myRealCopy <- master$clone()  # myRealCopy is a true copy and a new object
-master$changeTimes(seq(0,1000, length = 100))
-master$getTimes()[1:5] # this and 
-mycopy$getTimes()[1:5] # this are the same
-myRealCopy$getTimes()[1:5] # this is different
+mytsRef <- myts
+## 'mytsRef' and 'myts' are names for the same underlying object
+mytsFullCopy <- myts$clone()  # mytsFullCopy is a true copy and a new object
+myts$changeTimes(seq(0,1000, length = 100))
+myts$getTimes()[1:5] # this and 
+mytsRef$getTimes()[1:5] # this are the same
+mytsFullCopy$getTimes()[1:5] # this is different
 
                                            
 ## @knitr R6access, eval=FALSE
@@ -567,7 +567,7 @@ myRealCopy$getTimes()[1:5] # this is different
 ## the next line would be dangerous if 'times' were public, since
 ## changing 'times' should result in changing the correlation matrix and
 ## changing U.
-master$times <- 1:10 
+myts$times <- 1:10 
 
 
                                            
