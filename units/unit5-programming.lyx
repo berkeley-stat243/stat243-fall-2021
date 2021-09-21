@@ -5094,8 +5094,8 @@ Where are arguments evaluated?
 \end_layout
 
 \begin_layout Standard
-User-supplied arguments are evaluated in the calling frame, while default
- arguments are evaluated in the frame of the function:
+User-supplied arguments are evaluated in the calling frame (why?), while
+ default arguments are evaluated in the frame of the function (why?):
 \end_layout
 
 \begin_layout Standard
@@ -5127,7 +5127,12 @@ Here, when
 \emph on
 f()
 \emph default
- is called, 
+ is called, promises for z*5 and 
+\family typewriter
+x*3
+\family default
+ are created.
+ Then when the code is evaluated, 
 \emph on
 z
 \emph default
@@ -5141,14 +5146,13 @@ x
 \emph default
  in the frame of the function, while 
 \family typewriter
-y = x*3
+x*3
 \family default
- is evaluated in the frame of the function.
-\end_layout
-
-\begin_layout Standard
-Challenge: How could I experimentally determine if the default argument
- is treated as a promise as well?
+ is evaluated in the frame of the function and assigned to 
+\emph on
+y
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
