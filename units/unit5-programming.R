@@ -1195,9 +1195,9 @@ older_yog
 # 7: Efficiency
 #####################################################
 
-### 7.2 Other approaches to speeding up R                  
+### 7.3 Other approaches to speeding up R                  
 
-### 7.2.2 Byte compiling
+### 7.3.2 Byte compiling
 
 ## @knitr byte
 library(compiler); library(rbenchmark)
@@ -1214,7 +1214,7 @@ benchmark(f(x), fc(x), y <- exp(x), replications = 5)
 
 ## @knitr
 
-### 7.3 Challenges                  
+### 7.4 Challenges                  
                   
 ## @knitr mixture-example
 lik <- matrix(as.numeric(NA), nr = n, nc = p)
@@ -1424,7 +1424,7 @@ n <- 1e6
 microbenchmark(tmp <- 1:n)
 object.size(tmp)  # incorrect as of R 3.5
 object_size(tmp)  # incorrect as of R 3.5
-mem_change(mySeq <- 1:n)
+mem_change(mySeq <- 1:n)  # not sure why the result is negative!
 length(serialize(mySeq, NULL)) 
 
 ## @knitr hidden3, eval=FALSE
@@ -1466,6 +1466,7 @@ gc()
 ### 8.5 Delayed copying (copy-on-change)
 
 ## @knitr copy-on-change-fun, eval=TRUE
+rm(x)
 rm(y)
 gc(reset = TRUE)
 
@@ -1524,15 +1525,18 @@ address(y)
 
 
 ## @knitr named-r4
+
 a <- rnorm(5)
-## .Internal(inspect(a))  ##  see below for result in R 4.0
+##  See below for result without RStudio or knitting messing things up
+## .Internal(inspect(a))  
 ## @556accc65948 14 REALSXP g0c4 [REF(1)] (len=5, tl=0) 0.524365,0.55554,0.700011,-0.621318,-0.924413
 ## refs(a)
 ## [1] 1
 address(a)
 ## [1] "0x556accc65948"
 b <- a
-## .Internal(inspect(b))  ##  see below for result in R 4.0
+##  See below for result without RStudio or knitting messing things up
+## .Internal(inspect(b))  
 ## @556accc65948 14 REALSXP g0c4 [REF(2)] (len=5, tl=0) 0.524365,0.55554,0.700011,-0.621318,-0.924413
 ## refs(a)
 ## [1] 2
@@ -1542,6 +1546,7 @@ address(b)
 # [1] "0x556accc65948"
 
 a[2] <- 0
+##  See below for result without RStudio or knitting messing things up
 ## .Internal(inspect(a))
 ## @556accc657f8 14 REALSXP g0c4 [REF(1)] (len=5, tl=0) 0.524365,0,0.700011,-0.621318,-0.924413
 ## .Internal(inspect(b))
@@ -1554,48 +1559,6 @@ b <- a
 rm(b)
 ## refs(a)
 ## [1] 1
-                                           
-## @knitr tracemem
-a <- 1:10     
-tracemem(a)      
-## b and a share memory      
-b <- a      
-b[1] <- 1  
-## result when done through knitr is not as in plain R   
-untracemem(a)   
-address(a)
-address(b)
-
-rm(x, y)
-f <- function(x) sum(x^2)
-y <- rnorm(10)
-## result of next line should be 1 if executed in clean R session
-## refs(y)  # knitting contaminates the result here
-
-f(y)
-## refs(y)  # knitting contaminates the result here
-address(y)
-y[3] <- 2
-address(y)
-
-
-
-## @knitr memuse1
-x <- rnorm(1e7) 
-myfun <- function(y){ 
-	z <- y 
-	return(mean(z)) 
-} 
-myfun(x)
-
-
-## @knitr memuse2
-x <- rnorm(1e7)
-x[1] <- NA
-myfun <- function(y){ 
-	return(mean(y, na.rm = TRUE))
-}
-myfun(x)
 
                                            
 ## @knitr

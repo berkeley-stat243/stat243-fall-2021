@@ -6586,7 +6586,8 @@ What happens when an R function is evaluated? The user-provided function
  A new environment with its own frame is created, with the frame on the
  call stack.
  Assignment to the argument names is done in the environment, including
- any default arguments.
+ any default arguments (as promises if the input arguments are variables
+ or code).
  The body of the function is evaluated in the environment.
  Any look-up of variables not found in the environment is done using R's
  lexical scoping rules to look in the series of enclosing environments.
@@ -6718,7 +6719,7 @@ system.time()
 \emph default
  and 
 \emph on
-benchmark()
+(micro)benchmark()
 \emph default
 ), and then play around with alternative specifications.
  And as you gain more experience, you'll get some intuition for what approaches
@@ -6726,20 +6727,33 @@ benchmark()
  by what matters and what doesn't.
  It's often worth trying out a bunch of different ideas; 
 \emph on
-system.time()
+system.time(), microbenchmark()
 \emph default
- and 
+ (or 
 \emph on
 benchmark()
 \emph default
- are your workhorse tools in this context.
+) are your workhorse tools in this context.
+\end_layout
+
+\begin_layout Subsection
+Writing efficient code 
 \end_layout
 
 \begin_layout Standard
 For material on efficient R coding, including tools for timing and profiling
  your code to understand where the bottlenecks are, see the tutorial, 
 \emph on
-Writing efficient R code.
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Writing efficient R code"
+target "https://github.com/berkeley-scf/tutorial-efficient-R"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -6858,7 +6872,7 @@ Here are some of the highlights of
 \emph on
 pqR
 \emph default
- in terms of efficiency, as discussed at 
+ (from a couple years ago) in terms of efficiency, as discussed at 
 \begin_inset ERT
 status open
 
@@ -6912,19 +6926,6 @@ vec[1:n]
 \end_layout
 
 \end_deeper
-\begin_layout Enumerate
-As we'll see in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Lazy-evaluation,-delayed"
-
-\end_inset
-
-, R often avoids making copies of objects when it is not necessary.
- However, the scheme used to do this can be improved so that even fewer
- copies are made.
-\end_layout
-
 \begin_layout Enumerate
 pqR automatically uses multiple cores for some calculations.
 \end_layout
@@ -7528,7 +7529,8 @@ pryr
 In general, don't try to run this code within RStudio, as some of how RStudio
  works affects memory use.
  Also, some of the output in this PDF is missing or incorrect relative to
- running the code directly within R.
+ running the code directly within R, because of effects from the knitting
+ process.
  
 \end_layout
 
@@ -8646,13 +8648,9 @@ pryr
 \end_layout
 
 \begin_layout Standard
-In older versions of R (before R 4.0) there were some shortcomings in how
- R managed this, and I am compiling this PDF on an older version of R (R
- 3.6).
- So I need to insert comments showing examples of what the results would
- be in R 4.0.
- Also, knitting to PDF contaminates things.
- 
+We'll see this live in class.
+ Unfortunately both knitting and RStudio can give us confusing results,
+ so I'm adding the clean results from just running in R here in comments.
 \end_layout
 
 \begin_layout Standard
@@ -8666,7 +8664,7 @@ status open
 
 \begin_layout Plain Layout
 
-named-r4
+named-r4, eval=FALSE
 \end_layout
 
 \end_inset
@@ -8677,6 +8675,12 @@ named-r4
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In older versions of R (before R 4.0) there were some shortcomings in how
+ R managed this, and one could see different results than shown below.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -8719,153 +8723,6 @@ If you're using an older version of R, you can view the NAMED count either
 pryr::refs()
 \emph default
 .
-\end_layout
-
-\begin_layout Standard
-Here are examples of how the NAMED count can be fooled into making a copy
- unnecessarily.
- Why do I say these copies are unnecessary and why is NAMED fooled?
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-X in frist case points to Y
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-named
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We can use the 
-\emph on
-tracemem()
-\emph default
- function to assess what is going on without all those 
-\emph on
-inspect()
-\emph default
- calls.
- Anything surprising in what you see?
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-tracemem
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Challenge
-\series default
-: How much memory is used in the following calculation?
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-memuse1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-How about here? What is going on?
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-memuse2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This makes sense if we look at 
-\emph on
-mean.default()
-\emph default
-.
- Consider where additional memory is used.
- 
 \end_layout
 
 \begin_layout Subsection
