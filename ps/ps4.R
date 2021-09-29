@@ -68,7 +68,7 @@ for(i in 1:n) {
 
 ## @knitr problem5-part1
 
-x <- 1:10
+x <- rnorm(10)
 scaler_constructor <- function(input){
 	data <- input
 	g <- function(param) return(param * data) 
@@ -82,7 +82,7 @@ scaler(3)
 
 ## @knitr problem5-part2
 
-x <- 1:10
+x <- rnorm(10)
 scaler_constructor <- function(data){
 	g <- function(param) return(param * data) 
 	return(g)
