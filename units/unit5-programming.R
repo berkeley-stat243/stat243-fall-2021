@@ -1338,6 +1338,7 @@ system.time(
 
 ### 8.2 Monitoring overall memory use
 
+### 8.2.1 Monitoring use within R
                                            
 ## @knitr gc
 rm(x)
@@ -1377,7 +1378,6 @@ ls.sizes <- function(howMany = 10, minSize = 1){
 
 ## @knitr serialize
 
-
 ## size of a closure
 x <- rnorm(1e7)
 f <- function(input){
@@ -1400,41 +1400,36 @@ object.size(e)
 object_size(e)
 length(serialize(e, NULL))
 
-## @knitr inspect
+## @knitr
+
+### 8.4 Hidden uses and hidden savings of memory
+
+### 8.4.1 Using inspect()
+
+## @knitr inspect-intro
+
 x <- rnorm(5)
 .Internal(inspect(x))
-obj <- list(a = rnorm(5), b = list(d = "adfs"))
+
+### 8.4.2 How lists are stored
+
+## @knitr inspect
+nums <- rnorm(5)
+obj <- list(a = nums, b = nums, c = rnorm(5), d = list(some_string = "adfs"))
 .Internal(inspect(obj$a))
+.Internal(inspect(obj$b))
+.Internal(inspect(obj$c))
 .Internal(inspect(obj))
 
-                                           
+                                          
 ## @knitr pryr-address
-obj <- list(a = rnorm(5), b = list(d = "adfs"))
 address(x)  # from pryr
 address(obj)
 address(obj$a) # doesn't work
 
-
-
-## @knitr sequences
-
-library(microbenchmark)
-
-n <- 1e6
-microbenchmark(tmp <- 1:n)
-object.size(tmp)  # incorrect as of R 3.5
-object_size(tmp)  # incorrect as of R 3.5
-mem_change(mySeq <- 1:n)  # not sure why the result is negative!
-length(serialize(mySeq, NULL)) 
-
-## @knitr hidden3, eval=FALSE
-x <- rnorm(1e7)
-y <- x[1:(length(x) - 1)]
-
-
 ## @knitr
-                                           
-### 8.4 Hidden uses of memory
+
+### 8.4.3 Replacement functions
 
 ## @knitr hidden1, eval=FALSE
 rm(x)
@@ -1462,7 +1457,26 @@ address(x)
 gc()
 
 ## @knitr
-                                                                                     
+
+## 8.4.4 Fast representation of sequences
+
+## @knitr sequences
+
+library(microbenchmark)
+
+n <- 1e6
+microbenchmark(tmp <- 1:n)
+object.size(tmp)  # incorrect as of R 3.5
+object_size(tmp)  # incorrect as of R 3.5
+mem_change(mySeq <- 1:n)  # not sure why the result is negative!
+length(serialize(mySeq, NULL)) 
+
+## @knitr hidden3, eval=FALSE
+x <- rnorm(1e7)
+y <- x[1:(length(x) - 1)]
+
+## @knitr
+
 ### 8.5 Delayed copying (copy-on-change)
 
 ## @knitr copy-on-change-fun, eval=TRUE
@@ -1471,10 +1485,13 @@ rm(y)
 gc(reset = TRUE)
 
 f <- function(x){
-	print(gc())
-	.Internal(inspect(x))
-	return(x)
+    print(gc())
+    print(x[1])
+    print(gc())
+    .Internal(inspect(x))
+    return(x)
 }
+
 y <- rnorm(1e7)
 gc()
 .Internal(inspect(y))

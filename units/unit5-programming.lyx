@@ -7846,92 +7846,6 @@ Error: vector memory exhausted (limit reached?)
 \end_layout
 
 \begin_layout Standard
-We can use an internal function called 
-\emph on
-inspect()
-\emph default
- to see where in memory an object is stored.
- We'll see that this can be a handy tool for seeing where copies are made
- and where they are not.
- Here we can see how the overall list is stored as well as the elements
- of the list and the attributes of the list.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-inspect
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The 
-\emph on
-pryr
-\emph default
- package provides 
-\emph on
-address()
-\emph default
- or 
-\emph on
-inspect()
-\emph default
- as an alternative to 
-\emph on
-.Internal(inspect())
-\emph default
- though as we see here it doesn't give us the richness of information about
- complicated objects that 
-\emph on
-inspect()
-\emph default
- does.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-pryr-address
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Apparently there is a memory profiler in R, 
 \emph on
 Rprofmem
@@ -7956,115 +7870,8 @@ status open
 
 \end_layout
 
-\begin_layout Paragraph
-Faster representations of sequences
-\end_layout
-
-\begin_layout Standard
-As mentioned above, as of R 3.5.0, 
-\family typewriter
-1:n
-\family default
- is not stored in memory as a vector of length 
-\emph on
-n
-\emph default
-, but rather is represented by the first and last value in the sequence.
- However, some of the functions we use to determine object size don't give
- us the right answer in this case.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-sequences
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-One implication is that in older versions of R, indexing large subsets can
- involve a lot of memory use.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-hidden3, eval=FALSE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In this case, in older versions of R, more memory is used than just for
- 
-\emph on
-x
-\emph default
- and 
-\emph on
-y
-\emph default
-, because the index sequence itself uses a bunch of memory.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-object.size and object_size fail here 
-\end_layout
-
-\begin_layout Plain Layout
-mem_used and mem_change work correctly 
-\end_layout
-
-\begin_layout Plain Layout
-serialize expands it out...
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
-Monitoring overall memory use
+Monitoring overall memory use on a UNIX-style computer
 \end_layout
 
 \begin_layout Standard
@@ -8378,7 +8185,141 @@ literal "false"
 \end_layout
 
 \begin_layout Subsection
-Hidden uses of memory
+Hidden uses and hidden savings of memory
+\end_layout
+
+\begin_layout Subsubsection
+Using inspect() to understand storage and memory use for data structures
+\end_layout
+
+\begin_layout Standard
+We can use an internal function called 
+\emph on
+inspect()
+\emph default
+ to see where in memory an object is stored.
+ We'll see that this can be a handy tool for seeing where copies are made
+ and where they are not.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+inspect-intro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+How lists are stored
+\end_layout
+
+\begin_layout Standard
+Here we can use 
+\emph on
+inspect()
+\emph default
+ to see how the overall list is stored as well as the elements of the list
+ and the attributes of the list.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+inspect
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+pryr
+\emph default
+ package provides 
+\emph on
+address()
+\emph default
+ or 
+\emph on
+inspect()
+\emph default
+ as an alternative to 
+\emph on
+.Internal(inspect())
+\emph default
+ though as we see here it doesn't give us the richness of information about
+ complicated objects that 
+\emph on
+inspect()
+\emph default
+ does.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+pryr-address
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similar tricks are used for storing character vectors.
+\end_layout
+
+\begin_layout Subsubsection
+Replacement functions
 \end_layout
 
 \begin_layout Itemize
@@ -8446,6 +8387,112 @@ hidden2, eval=TRUE
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Fast representations of sequences
+\end_layout
+
+\begin_layout Standard
+As of R 3.5.0, 
+\family typewriter
+1:n
+\family default
+ is not stored in memory as a vector of length 
+\emph on
+n
+\emph default
+, but rather is represented by the first and last value in the sequence.
+ However, some of the functions we use to determine object size don't give
+ us the right answer in this case.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+sequences
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One implication is that in older versions of R, indexing large subsets can
+ involve a lot of memory use.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+hidden3, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case, in older versions of R, more memory is used than just for
+ 
+\emph on
+x
+\emph default
+ and 
+\emph on
+y
+\emph default
+, because the index sequence itself uses a bunch of memory.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+object.size and object_size fail here
+\end_layout
+
+\begin_layout Plain Layout
+mem_used and mem_change work correctly
+\end_layout
+
+\begin_layout Plain Layout
+serialize expands it out...
 \end_layout
 
 \end_inset
