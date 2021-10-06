@@ -22,8 +22,8 @@ bits('@')
 ## @knitr bits
 
 library(pryr)
-bits(0)
-bytes(0)
+bits(0L)
+bytes(0L)
 
 bits(1L)
 bytes(1L)

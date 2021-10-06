@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -33,6 +33,8 @@ knitr
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -62,6 +64,7 @@ knitr
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -74,7 +77,10 @@ knitr
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -104,6 +110,7 @@ Gentle, Computational Statistics, Chapter 2.
 LatexCommand href
 name "http://www.lahey.com/float.htm"
 target "http://www.lahey.com/float.htm"
+literal "false"
 
 \end_inset
 
@@ -154,6 +161,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 chunk_setup, include=FALSE
 \end_layout
 
@@ -335,6 +343,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 char-bits
 \end_layout
 
@@ -373,9 +382,18 @@ R actually uses 4 bytes per integer, so it can encode -2147483647 - 2147483647
 
 ).
  Note that in general, rather than be stored simply as the sign and then
- a number in base 2, integers are actually stored in a different binary
- encoding to facilitate arithmetic.
- 
+ a number in base 2, integers (at least the negative ones) are actually
+ stored in different binary encoding to facilitate arithmetic.
+ Here we use the 
+\begin_inset Quotes eld
+\end_inset
+
+L
+\begin_inset Quotes erd
+\end_inset
+
+ to force R to store the number as an integer.
+ More on that later in the Unit.
 \end_layout
 
 \begin_layout Standard
@@ -388,6 +406,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 bits
 \end_layout
 
@@ -417,6 +436,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 not-closed
 \end_layout
 
@@ -478,6 +498,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 storage
 \end_layout
 
@@ -516,6 +537,7 @@ mebibyte
 LatexCommand href
 name "here for more details"
 target "https://en.wikipedia.org/wiki/Megabyte"
+literal "false"
 
 \end_inset
 
@@ -565,6 +587,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 int-max-bits
 \end_layout
 
@@ -607,6 +630,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 imprecision
 \end_layout
 
@@ -652,6 +676,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 machine-precision
 \end_layout
 
@@ -821,6 +846,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 bits-floating
 \end_layout
 
@@ -891,6 +917,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 what-exact
 \end_layout
 
@@ -1015,6 +1042,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 double-max
 \end_layout
 
@@ -1092,6 +1120,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 ints-represent, tidy=FALSE
 \end_layout
 
@@ -1179,6 +1208,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 force-ints
 \end_layout
 
@@ -1261,6 +1291,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 precision, tidy=FALSE
 \end_layout
 
@@ -1288,6 +1319,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 precision-implications, tidy=FALSE
 \end_layout
 
@@ -1389,6 +1421,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 spacing-example
 \end_layout
 
@@ -1418,6 +1451,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 spacing-ints
 \end_layout
 
@@ -1472,6 +1506,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 spacing-doubles, tidy=FALSE
 \end_layout
 
@@ -1512,6 +1547,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 higher-precision, eval=FALSE
 \end_layout
 
@@ -1597,6 +1633,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 non-associative
 \end_layout
 
@@ -1726,6 +1763,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 comparisons
 \end_layout
 
@@ -1768,6 +1806,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 approx-equality
 \end_layout
 
@@ -1846,6 +1885,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 catastrophic-cancel, tidy=FALSE
 \end_layout
 
@@ -1896,6 +1936,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 catastrophic-cancel-small, tidy=FALSE
 \end_layout
 
@@ -1948,6 +1989,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 real-catastrophe, tidy=FALSE
 \end_layout
 
@@ -1997,6 +2039,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 magnitude-diff
 \end_layout
 
@@ -2215,6 +2258,7 @@ status open
 status open
 
 \begin_layout Plain Layout
+
 numerical-linalg, cache=TRUE
 \end_layout
 
