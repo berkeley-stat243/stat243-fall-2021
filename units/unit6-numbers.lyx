@@ -645,17 +645,23 @@ imprecision
 \end_layout
 
 \begin_layout Standard
-Notice that we can represent the result accurately only up to the 16th decimal
- place.
- This suggests no need to show more than 16 decimal places and no need to
- print out any more when writing to a file.
+Notice that we can represent the result accurately only up to 16 significant
+ digits.
+ This suggests no need to show more than 16 significant digits and no need
+ to print out any more when writing to a file (except that if the number
+ is bigger than 
+\begin_inset Formula $10^{16}$
+\end_inset
+
+ then we need extra digits to correctly show the magnitude of the number
+ if not using scientific notation).
  And of course, often we don't need anywhere near that many.
  
 \emph on
 Machine epsilon
 \emph default
- is the term used for indicating the accuracy of real numbers and it is
- defined as the smallest float, 
+ is the term used for indicating the (relative) accuracy of real numbers
+ and it is defined as the smallest float, 
 \begin_inset Formula $x$
 \end_inset
 
@@ -688,6 +694,10 @@ machine-precision
 \end_inset
 
 
+\end_layout
+
+\begin_layout Paragraph
+Floating point representation
 \end_layout
 
 \begin_layout Standard
@@ -1352,7 +1362,7 @@ machine epsilon
 \end_inset
 
  is 
-\begin_inset Formula $1\times2^{-52}\approx2.2\times10^{-16}$
+\begin_inset Formula $\epsilon=1\times2^{-52}\approx2.2\times10^{-16}$
 \end_inset
 
 .
@@ -1387,7 +1397,10 @@ since the next largest number from
 \end_inset
 
 .
- Suppose 
+\end_layout
+
+\begin_layout Standard
+Suppose 
 \begin_inset Formula $x=1\times10^{6}$
 \end_inset
 
@@ -1408,7 +1421,7 @@ since the next largest number from
 \end_inset
 
 .
- 
+ This is equivalent to our discussion that we have only 16 digits of accuracy.
 \end_layout
 
 \begin_layout Standard
@@ -1470,7 +1483,7 @@ The absolute spacing is
 \begin_inset Formula $x\epsilon$
 \end_inset
 
-, so 
+, so we have spacings of 
 \begin_inset Formula $2^{52}\times2^{-52}=1$
 \end_inset
 
@@ -1482,7 +1495,19 @@ The absolute spacing is
 \begin_inset Formula $2^{54}\times2^{-52}=4$
 \end_inset
 
-.
+ for numbers of magnitude 
+\begin_inset Formula $2^{52}$
+\end_inset
+
+, 
+\begin_inset Formula $2^{53}$
+\end_inset
+
+, and 
+\begin_inset Formula $2^{54}$
+\end_inset
+
+, respectively.
 \end_layout
 
 \begin_layout Standard
@@ -1491,7 +1516,7 @@ With a bit more work (e.g., using Mathematica), one can demonstrate that doubles
  the 64-bit structure we have discussed and that the spacing is as we have
  discussed.
  The results below show the spacing that results, in base 10, for numbers
- around 1.
+ around 0.1.
  The numbers R reports are spaced in increments of individual bits in the
  base 2 representation.
 \end_layout

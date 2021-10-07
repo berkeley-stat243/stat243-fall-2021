@@ -77,13 +77,17 @@ bits(-1L)
 
 a <- 0.3
 b <- 0.2
-formatC(a, 20, format = 'f')
 formatC(b, 20, format = 'f')
+formatC(a, 20, format = 'f')
 formatC(a - b, 20, format = 'f')
 formatC(0.1, 20, format = 'f')
 formatC(1/3, 20, format = 'f')
 ## so empirically, it looks like we're accurate up to the
 ##  16th decimal place
+
+## actually, the key is the number of digits, not decimal places
+formatC(18.2, 20, format = 'f')
+
 
 formatC(0.75, 20, format = 'f')
 formatC(0.50, 20, format = 'f')
