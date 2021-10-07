@@ -1,6 +1,6 @@
 #########################################################
 ### Demo code for Unit 6 of Stat243, "Computer numbers"
-### Chris Paciorek, October 2020
+### Chris Paciorek, October 2021
 #########################################################
 
 ############################
@@ -189,7 +189,6 @@ dg(12345678123456780000 - 12345678123456770000)
 
 
 ## @knitr spacing-example
-
 dg(1000000.1)
 
 ## @knitr spacing-ints
