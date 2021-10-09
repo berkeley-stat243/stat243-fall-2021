@@ -1628,7 +1628,7 @@ thrown
 
 .
  Another mathematical concept we should consider here is that computer arithmeti
-c does not obey the associative and distribute laws, i.e., 
+c does not obey the associative and distributive laws, i.e., 
 \begin_inset Formula $(a+b)+c$
 \end_inset
 
@@ -1645,7 +1645,7 @@ c does not obey the associative and distribute laws, i.e.,
 \end_inset
 
 .
- Here's an example:
+ Here's an example with multiplication:
 \end_layout
 
 \begin_layout Standard
@@ -1992,8 +1992,9 @@ But the result is accurate only to 8 places + 20 = 28 decimal places, as
 
 \begin_layout Standard
 It's best to do any subtraction on numbers that are not too large.
- For example, we can get catastrophic cancellation when computing a sum
- of squares in a naive way: 
+ For example, if we compute the sum of squares in a naive way, we can lose
+ all of the information in the calculation because the information is in
+ digits that are not computed or stored accurately: 
 \begin_inset Formula 
 \[
 s^{2}=\sum x_{i}^{2}-n\bar{x}^{2}
@@ -2159,17 +2160,13 @@ for
 \end_inset
 
 .
- What will happen if 
-\begin_inset Formula $z_{j}$
+ What will happen if the 
+\begin_inset Formula $z$
 \end_inset
 
- or any 
-\begin_inset Formula $z_{k}$
-\end_inset
-
- is very large in magnitude (either positive or negative)? How can we reexpress
- the equation so as to be able to do the calculation? Hint: think about
- multiplying by 
+ values are very large in magnitude (either positive or negative)? How can
+ we reexpress the equation so as to be able to do the calculation? Hint:
+ think about multiplying by 
 \begin_inset Formula $\frac{c}{c}$
 \end_inset
 
