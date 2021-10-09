@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Introduction to Python</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.6">
+  <style type="text/css">
+    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #4f8fa0; -webkit-text-stroke: #4f8fa0}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #000000; -webkit-text-stroke: #000000}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #0d5f18; -webkit-text-stroke: #0d5f18}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #325b8e; -webkit-text-stroke: #325b8e}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #535353; -webkit-text-stroke: #535353}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #35915d; -webkit-text-stroke: #35915d}
+    li.li3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    li.li4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #4f8fa0; -webkit-text-stroke: #4f8fa0}
+    li.li5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier; color: #000000; -webkit-text-stroke: #000000}
+    li.li7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    li.li12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 12.0px Times; text-decoration: underline ; font-kerning: none; color: #0000e9; -webkit-text-stroke: 0px #0000e9}
+    span.s3 {-webkit-text-stroke: 0px #000000}
+    span.s4 {text-decoration: underline ; font-kerning: none}
+    span.s5 {font-kerning: none; color: #535353; -webkit-text-stroke: 0px #535353}
+    span.s6 {font-kerning: none; color: #325b8e; -webkit-text-stroke: 0px #325b8e}
+    span.s7 {font-kerning: none; color: #35915d; -webkit-text-stroke: 0px #35915d}
+    span.s8 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s9 {font-kerning: none; color: #0d5f18; -webkit-text-stroke: 0px #0d5f18}
+    span.s10 {font: 12.0px Courier; font-kerning: none}
+    span.s11 {font-kerning: none; color: #08196b; -webkit-text-stroke: 0px #08196b}
+    span.s12 {font: 12.0px Courier; font-kerning: none; color: #535353; -webkit-text-stroke: 0px #535353}
+    span.s13 {font: 12.0px Courier; font-kerning: none; color: #35915d; -webkit-text-stroke: 0px #35915d}
+    span.s14 {font: 12.0px Times; font-kerning: none}
+    span.s15 {font-kerning: none; color: #130869; -webkit-text-stroke: 0px #130869}
+    span.s16 {font-kerning: none; color: #4f8fa0; -webkit-text-stroke: 0px #4f8fa0}
+    ol.ol1 {list-style-type: decimal}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Introduction to Python</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Background</b></span></h1>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Preparation</b></span></h2>
+<p class="p3"><span class="s1">This tutorial assumes you are familiar with R.</span></p>
+<p class="p3"><span class="s1">You will also need Python and Jupyter Notebook installed on your computer, as well as a few core additional packages, including numpy, scipy, and pandas.  Instead of Jupyter Notebook you are free to use IPython, although I have set up a Python notebook with the code from the tutorital ready to run, so I would suggest using Jupyter.</span></p>
+<p class="p3"><span class="s1">To get started you will need to install Python on your system.  I suggest using the Anaconda installation of Python if you do not already have Python on your computer.  </span></p>
+<p class="p3"><span class="s1">Resources for installing Anaconda can be found here: <a href="https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x"><span class="s2">MacOS</span></a>, <a href="https://phoenixnap.com/kb/how-to-install-anaconda-ubuntu-18-04-or-20-04"><span class="s2">Ubuntu</span></a> or more generally <a href="(https://docs.anaconda.com/anaconda/install/"><span class="s2">here</span></a>.</span></p>
+<p class="p3"><span class="s1">Packages can generally be installed via pip, or via conda if you have the Anaconda (or Miniconda) installation of Python. The following shows how to do this from the command line on MacOS or Linux.</span></p>
+<p class="p4"><span class="s1"><i>## using conda</i></span></p>
+<p class="p5"><span class="s1">conda list</span></p>
+<p class="p5"><span class="s1">conda install numpy</span></p>
+<p class="p5"><span class="s1">conda install ipython</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><i>## using pip</i></span></p>
+<p class="p5"><span class="s1">pip install numpy</span></p>
+<p class="p5"><span class="s1">pip install ipython</span></p>
+<p class="p4"><span class="s1"><i># or to install within your home directory if you do not have admin control of the computer</i></span></p>
+<p class="p5"><span class="s1">pip install --user numpy</span></p>
+<p class="p3"><span class="s1">For additional help with installation, please see the <a href="http://ipython.org/install.html"><span class="s2">IPython installation page</span></a>.</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Resources</b></span></h2>
+<p class="p3"><span class="s1">Useful written references and tutorials:</span></p>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/index.html"><span class="s4">https://docs.python.org/3/index.html</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/library/index.html"><span class="s4">https://docs.python.org/3/library/index.html</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="https://scipy-lectures.github.io/"><span class="s4">https://scipy-lectures.github.io/</span></a></span></li>
+</ul>
+<p class="p3"><span class="s1">Some introductory video lectures:</span></p>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://www.youtube.com/watch?v=a_Z_6brm9ZQ"><span class="s4">https://www.youtube.com/watch?v=a_Z_6brm9ZQ</span></a></span></li>
+</ul>
+<p class="p3"><span class="s1">While working through this tutorial, you should type the example code
+snippets at an interactive Python terminal. I set up a IPython notebook (python_intro.ipynb)
+that has the code in this tutortial which you can use.  Alternatively, you use a
+IPython shell and type the code yourself. </span></p>
+<p class="p3"><span class="s1">To start an IPython shell, type the following at a bash prompt:</span></p>
+<p class="p5"><span class="s1">ipython</span></p>
+<p<br></p>
+<p class="p3"><span class="s1">To start an Jupyter IPython notebook, type this:</span></p>
+<p class="p5"><span class="s1">jupyter notebook</span></p>
+<p<br></p>
+<p class="p3"><span class="s1">A notebook should open in your browser.</span></p>
+<p class="p3"><span class="s1">Alternatively you can access Jupyter notebooks through a service called <a href="https://jupyter.stat.berkeley.edu/"><span class="s2">Jupyterhub on the SCF</span></a>.</span></p>
+<p class="p3"><span class="s1">Side note: to have all output (not just the last result) printed in the Jupyter notebook, you can run this in a cell in your notebook.</span></p>
+<p class="p5"><span class="s1">from IPython.core.interactiveshell import InteractiveShell</span></p>
+<p class="p5"><span class="s1">InteractiveShell.ast_node_interactivity </span><span class="s5">=</span><span class="s1"> </span><span class="s6">"all"</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Python 2 vs. 3</b></span></h2>
+<p class="p3"><span class="s1">Python 3 is the current version of Python. For many years the old version (Python 2) has co-existed with Python 3 and Python 2 has been used by many people despite the existence of Python 3. Python 2 is now being phased out.</span></p>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Introduction</b></span></h1>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Formatting Python code</b></span></h2>
+<p class="p3"><span class="s1">Unlike most languages, in Python indentation determines code blocks, including functions, loops, and if-else statements.</span></p>
+<p class="p3"><span class="s1">The standard is one tab or 4 spaces, but you can use other spacing if it's consistent within a block of code.</span></p>
+<p class="p5"><span class="s1">a </span><span class="s5">=</span><span class="s1"> </span><span class="s7">3</span></p>
+<p class="p4"><span class="s8"><span class="Apple-converted-space"> </span>a </span><span class="s5">=</span><span class="s8"> </span><span class="s7">3</span><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s1"><i># this will cause an IndentationError, at least in Python itself, if not IPython</i></span></p>
+<p class="p3"><span class="s1">Note that because indentation determines the beginning and end of code blocks, the following two pieces of code do different things.</span></p>
+<p class="p5"><span class="s9"><b>if</b></span><span class="s1"> a</span><span class="s5">&gt;=</span><span class="s7">4</span><span class="s1">: <span class="Apple-converted-space">   </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>print(</span><span class="s6">'a is big'</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>if</b></span><span class="s1">(a </span><span class="s5">==</span><span class="s1"> </span><span class="s7">4</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>print(</span><span class="s6">'a is 4'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><b>else</b></span><span class="s8">:</span></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">    </span>print(</span><span class="s1">'a is small'</span><span class="s8">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s9"><b>if</b></span><span class="s1"> a</span><span class="s5">&gt;=</span><span class="s7">4</span><span class="s1">: <span class="Apple-converted-space">   </span></span></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">  </span>print(</span><span class="s1">'a is big'</span><span class="s8">)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s9"><b>if</b></span><span class="s1">(a </span><span class="s5">==</span><span class="s1"> </span><span class="s7">4</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>print(</span><span class="s6">'a is 4'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s1"><b>else</b></span><span class="s8">:</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>print(</span><span class="s6">'a is not 4'</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1">The importance of indentation can cause problems when cutting and pasting code into a Python session.</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Objects</b></span></h2>
+<p class="p3"><span class="s1">Everything is an object in Python. Roughly, this means that it can be tagged with a variable (i.e., given a name) and passed as an argument to a function. Often it means that everything has <i>attributes</i> and <i>methods</i>.</span></p>
+<p class="p3"><span class="s1">Certain objects in Python are mutable (e.g., lists, dictionaries), while other objects are immutable (e.g., tuples, strings, sets). Mutable means one can change parts of the object.</span></p>
+<p class="p3"><span class="s1">Many objects can be composite (e.g., a list of dictionaries or a dictionary of lists, tuples, and strings).</span></p>
+<p class="p3"><span class="s1">Here's a list in Python. It's similar to a list in R in that it can store heterogeneous information, but the syntax is a bit different.</span></p>
+<p class="p3"><span class="s1">Also note that indexing in Python starts at 0 not at 1.</span></p>
+<p class="p5"><span class="s1">myList </span><span class="s5">=</span><span class="s1"> [</span><span class="s7">1</span><span class="s1">, </span><span class="s7">2</span><span class="s1">, </span><span class="s6">'foo'</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">myList[</span><span class="s7">0</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">myList[</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">myList[</span><span class="s7">1</span><span class="s1">] </span><span class="s5">=</span><span class="s1"> </span><span class="s7">2.5</span></p>
+<p class="p5"><span class="s1">myList</span></p>
+<p class="p3"><span class="s1">Here's a tuple in Python. What's different compared to the list?</span></p>
+<p class="p5"><span class="s1">myTuple </span><span class="s5">=</span><span class="s1"> (</span><span class="s7">1</span><span class="s1">, </span><span class="s7">2</span><span class="s1">, </span><span class="s6">'foo'</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">myTuple[</span><span class="s7">1</span><span class="s1">] </span><span class="s5">=</span><span class="s1"> </span><span class="s7">2.5</span></p>
+<p class="p5"><span class="s1">myTuple</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Variables</b></span></h2>
+<p class="p3"><span class="s1">As in R and other interpreted languages, variables are not their values in Python (think "I am not my name, I am the person named XXX"). You can think of variables as tags on objects. In particular, variables can point to (be bound to) an object of one type and then reassigned to an object of another type without error.</span></p>
+<p class="p9"><span class="s8">a </span><span class="s5">=</span><span class="s8"> </span><span class="s1">'foobar'</span></p>
+<p class="p5"><span class="s1">a</span></p>
+<p class="p5"><span class="s1">a </span><span class="s5">*</span><span class="s1"> </span><span class="s7">4</span></p>
+<p class="p5"><span class="s1">len(a)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">a </span><span class="s5">=</span><span class="s1"> </span><span class="s7">3</span></p>
+<p class="p5"><span class="s1">a</span></p>
+<p class="p5"><span class="s1">a</span><span class="s5">*</span><span class="s7">4</span></p>
+<p class="p5"><span class="s1">len(a)</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Modules, files, packages, import</b></span></h2>
+<p class="p3"><span class="s1">While you will often explore things from an interactive Python prompt, you will save your code in files for reuse as well as to document what you’ve done. You can use Python code saved in a plain text file from a Python prompt or other files by importing it. Typically, this is done at the top of a file (if you are working at a prompt, you just need to import it before you want to use the functionality).</span></p>
+<p class="p3"><span class="s1">Note that the use of </span><span class="s10">mytest.</span><span class="s1"> is similar to our discussion of package namespaces in R.</span></p>
+<p class="p5"><span class="s11">cat</span><span class="s1"> mytest.py<span class="Apple-converted-space">  </span># special IPython functionality to call the operating system</span></p>
+<p class="p4"><span class="s9"><b>del</b></span><span class="s8">(a)</span><span class="s5">;</span><span class="s8"> </span><span class="s9"><b>del</b></span><span class="s8">(hello) <span class="Apple-converted-space">  </span></span><span class="s1"><i># delete any existing objects</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s8">import mytest<span class="Apple-converted-space">          </span></span><span class="s1"><i># make available objects/functions in mytest.py</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s8">mytest.hello() <span class="Apple-converted-space">        </span></span><span class="s1"><i># access using object-oriented style syntax</i></span></p>
+<p class="p5"><span class="s1">mytest.a</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">hello()</span></p>
+<p class="p5"><span class="s1">a</span></p>
+<p class="p3"><span class="s1">We can import everything in the test.py file if we want. Why might this not be a great idea?</span></p>
+<p class="p5"><span class="s1">from mytest import </span><span class="s5">*</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">hello()</span></p>
+<p class="p5"><span class="s1">a</span></p>
+<p class="p3"><span class="s1">As in R, you can also load in additional supporting packages for extra functionality. In contrast to R, a lot of basic functionality is provided in supporting packages that need to be loaded before you can use it.</span></p>
+<p class="p3"><span class="s1">Here are some examples of importing Python packages and using functionality from them:</span></p>
+<p class="p5"><span class="s1">from math import cos</span></p>
+<p class="p5"><span class="s1">cos(</span><span class="s7">0</span><span class="s1">)</span></p>
+<p class="p4"><span class="s8">sin(</span><span class="s7">0</span><span class="s8">)<span class="Apple-converted-space">    </span></span><span class="s1"><i># why doesn't this work?</i></span></p>
+<p class="p5"><span class="s1">import math</span></p>
+<p class="p5"><span class="s1">math.cos(</span><span class="s7">0</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">math.sin(</span><span class="s7">0</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">import numpy as np</span></p>
+<p class="p5"><span class="s1">numpy.arctan(</span><span class="s7">1</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">np.arctan(</span><span class="s7">1</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">import scipy as sp</span></p>
+<p class="p5"><span class="s1">import matplotlib.pyplot as plt</span></p>
+<p class="p3"><span class="s1">Note as seen above for numpy and scipy, it's common to import a package but give it a shortened name, 'np' and 'sp' in this case.</span></p>
+<p class="p3"><span class="s1">The different packages have different namespaces, which helps to avoid problems with different packages using the same names for different functions.</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Documentation and getting help</b></span></h2>
+<p class="p3"><span class="s1">We can get help like this.</span></p>
+<p class="p5"><span class="s1">In [</span><span class="s7">1</span><span class="s1">]: import numpy as np</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">In [</span><span class="s7">2</span><span class="s1">]: np.ndim?</span></p>
+<p class="p5"><span class="s1">Type:<span class="Apple-converted-space">        </span>function</span></p>
+<p class="p5"><span class="s1">String form: </span><span class="s5">&lt;</span><span class="s1">function ndim at </span><span class="s7">0x7fcabd864938</span><span class="s5">&gt;</span></p>
+<p class="p5"><span class="s1">File:<span class="Apple-converted-space">        </span></span><span class="s5">/</span><span class="s1">usr</span><span class="s5">/</span><span class="s1">lib64</span><span class="s5">/</span><span class="s1">python2.</span><span class="s7">7</span><span class="s5">/</span><span class="s1">site</span><span class="s5">-</span><span class="s1">packages</span><span class="s5">/</span><span class="s1">numpy</span><span class="s5">/</span><span class="s1">core</span><span class="s5">/</span><span class="s1">fromnumeric.py</span></p>
+<p class="p5"><span class="s1">Definition:<span class="Apple-converted-space">  </span>np.ndim(a)</span></p>
+<p class="p5"><span class="s1">Docstring:</span></p>
+<p class="p5"><span class="s1">Return the number of dimensions of an array.</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">Parameters</span></p>
+<p class="p10"><span class="s1">----------</span></p>
+<p class="p5"><span class="s1">a : array_like</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>Input array.<span class="Apple-converted-space">  </span>If it </span><span class="s9"><b>is</b></span><span class="s1"> </span><span class="s9"><b>not</b></span><span class="s1"> already an ndarray, a conversion </span><span class="s9"><b>is</b></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>attempted.</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">Returns</span></p>
+<p class="p10"><span class="s1">-------</span></p>
+<p class="p5"><span class="s1">number_of_dimensions : int</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>The number of dimensions </span><span class="s9"><b>in</b></span><span class="s1"> `a`.<span class="Apple-converted-space">  </span>Scalars are zero</span><span class="s5">-</span><span class="s1">dimensional.</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">See Also</span></p>
+<p class="p10"><span class="s1">--------</span></p>
+<p class="p5"><span class="s1">ndarray.ndim : equivalent method</span></p>
+<p class="p5"><span class="s1">shape : dimensions of array</span></p>
+<p class="p5"><span class="s1">ndarray.shape : dimensions of array</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">Examples</span></p>
+<p class="p10"><span class="s1">--------</span></p>
+<p class="p5"><span class="s5">&gt;&gt;&gt;</span><span class="s1"> np.ndim([[</span><span class="s7">1</span><span class="s1">,</span><span class="s7">2</span><span class="s1">,</span><span class="s7">3</span><span class="s1">],[</span><span class="s7">4</span><span class="s1">,</span><span class="s7">5</span><span class="s1">,</span><span class="s7">6</span><span class="s1">]])</span></p>
+<p class="p11"><span class="s1">2</span></p>
+<p class="p5"><span class="s5">&gt;&gt;&gt;</span><span class="s1"> np.ndim(np.array([[</span><span class="s7">1</span><span class="s1">,</span><span class="s7">2</span><span class="s1">,</span><span class="s7">3</span><span class="s1">],[</span><span class="s7">4</span><span class="s1">,</span><span class="s7">5</span><span class="s1">,</span><span class="s7">6</span><span class="s1">]]))</span></p>
+<p class="p11"><span class="s1">2</span></p>
+<p class="p5"><span class="s5">&gt;&gt;&gt;</span><span class="s1"> np.ndim(</span><span class="s7">1</span><span class="s1">)</span></p>
+<p class="p11"><span class="s1">0</span></p>
+<p class="p3"><span class="s1">Docstrings are an important part of Python. A docstring is a character string that occurs as the first statement in a module, function, class, or method definition. Such a docstring becomes the <b>doc</b> special attribute of that object. All modules (e.g., test.py is a module) should normally have docstrings, and all functions and classes exported by a module should also have docstrings.</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Decoding error messages</b></span></h2>
+<p class="p3"><span class="s1">Run the following code and try to tease out where the error is. The tricky part is that the error occurs within a function where the function comes from a module (separate code file).</span></p>
+<p class="p5"><span class="s1">import days</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">days.print_friday_message()</span></p>
+<p class="p3"><span class="s1">The list of function calls that led to the error is called a <i>traceback</i>. (Recall that in R you can get similar output using </span><span class="s10">traceback()</span><span class="s1"> after an error or setting </span><span class="s10">options(error = recover)</span><span class="s1"> before an error.)</span></p>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Data Structures</b></span></h1>
+<p class="p3"><span class="s1">Python has a number of basic data structure types that are widely used. There are both similarities and differences from basic data structures in R.</span></p>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/library/stdtypes.html"><span class="s4">https://docs.python.org/3/library/stdtypes.html</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/tutorial/datastructures.html"><span class="s4">https://docs.python.org/3/tutorial/datastructures.html</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/reference/datamodel.html"><span class="s4">https://docs.python.org/3/reference/datamodel.html</span></a></span></li>
+</ul>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Numbers</b></span></h2>
+<p class="p3"><span class="s1">Python has integers, floats, and complex numbers with the usual operations.</span></p>
+<p class="p11"><span class="s1">2</span><span class="s5">*</span><span class="s1">3</span></p>
+<p class="p11"><span class="s1">2</span><span class="s5">/</span><span class="s1">3</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"><i># be careful - if you try `2/3` in Python 2, you'll get different behavior.</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x </span><span class="s5">=</span><span class="s1"> </span><span class="s7">1.1</span></p>
+<p class="p5"><span class="s1">type(x)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x </span><span class="s5">*</span><span class="s1"> </span><span class="s7">2</span></p>
+<p class="p5"><span class="s1">x </span><span class="s5">**</span><span class="s1"> </span><span class="s7">2</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">(type(</span><span class="s7">1</span><span class="s1">), type(</span><span class="s7">1.1</span><span class="s1">), type(</span><span class="s7">1</span><span class="s5">+</span><span class="s1">2j))</span></p>
+<p class="p5"><span class="s1">y </span><span class="s5">=</span><span class="s1"> </span><span class="s7">1</span><span class="s5">+</span><span class="s1">2j</span></p>
+<p class="p3"><span class="s1">We can apply various functions to numbers, as expected.</span></p>
+<p class="p5"><span class="s1">import math</span></p>
+<p class="p5"><span class="s1">math.cos(</span><span class="s7">0</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">math.cos(math.pi)</span></p>
+<p class="p3"><span class="s1">The <i>math</i> package in the standard library includes many additional numerical operations.</span></p>
+<p class="p3"><span class="s1">If you type the name of a module or package followed by period (.) and tab you should see the objects and functions in that module/package.</span></p>
+<p class="p5"><span class="s1">math. <span class="Apple-converted-space">   </span></span></p>
+<p class="p5"><span class="s1">math.acos <span class="Apple-converted-space">      </span>math.degrees<span class="Apple-converted-space">    </span>math.fsum <span class="Apple-converted-space">      </span>math.pi</span></p>
+<p class="p5"><span class="s1">math.acosh<span class="Apple-converted-space">      </span>math.e<span class="Apple-converted-space">          </span>math.gamma<span class="Apple-converted-space">      </span>math.pow</span></p>
+<p class="p5"><span class="s1">math.asin <span class="Apple-converted-space">      </span>math.erf<span class="Apple-converted-space">        </span>math.hypot<span class="Apple-converted-space">      </span>math.radians</span></p>
+<p class="p5"><span class="s1">math.asinh<span class="Apple-converted-space">      </span>math.erfc <span class="Apple-converted-space">      </span>math.isinf<span class="Apple-converted-space">      </span>math.sin</span></p>
+<p class="p5"><span class="s1">math.atan <span class="Apple-converted-space">      </span>math.exp<span class="Apple-converted-space">        </span>math.isnan<span class="Apple-converted-space">      </span>math.sinh</span></p>
+<p class="p5"><span class="s1">math.atan2<span class="Apple-converted-space">      </span>math.expm1<span class="Apple-converted-space">      </span>math.ldexp<span class="Apple-converted-space">      </span>math.sqrt</span></p>
+<p class="p5"><span class="s1">math.atanh<span class="Apple-converted-space">      </span>math.fabs <span class="Apple-converted-space">      </span>math.lgamma <span class="Apple-converted-space">    </span>math.tan</span></p>
+<p class="p5"><span class="s1">math.ceil <span class="Apple-converted-space">      </span>math.factorial<span class="Apple-converted-space">  </span>math.log<span class="Apple-converted-space">        </span>math.tanh</span></p>
+<p class="p5"><span class="s1">math.copysign <span class="Apple-converted-space">  </span>math.floor<span class="Apple-converted-space">      </span>math.log10<span class="Apple-converted-space">      </span>math.trunc</span></p>
+<p class="p5"><span class="s1">math.cos<span class="Apple-converted-space">        </span>math.fmod <span class="Apple-converted-space">      </span>math.log1p <span class="Apple-converted-space">     </span></span></p>
+<p class="p5"><span class="s1">math.cosh <span class="Apple-converted-space">      </span>math.frexp<span class="Apple-converted-space">      </span>math.modf</span></p>
+<p class="p3"><span class="s1"><b>Exercises</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">Using the section on "Built-in Types" from the <a href="https://docs.python.org/3/library/index.html"><span class="s2">official "The Python Standard Library" reference</span></a>, figure out how to compute:</span></li>
+  <ol class="ol1">
+    <li class="li12"><span class="s3"></span><span class="s1">\((\lceil \frac{3}{4} \rceil \times 4)^3\), and</span></li>
+    <li class="li12"><span class="s3"></span><span class="s1">\(\sqrt{-1}\).</span></li>
+  </ol>
+</ul>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Objects and object-oriented programming</b></span></h2>
+<p class="p3"><span class="s1">We'll talk about this in more detail later, but it's worth mentioning here that Python is an object-oriented language. What this means is that variables in Python are objects that are instances of a class.</span></p>
+<p class="p3"><span class="s1">Objects have methods that can be used on them and attributes (member data) that are part of the object. All objects in a class have the same methods and same member data 'slots', but different objects will have different values in those slots.</span></p>
+<p class="p3"><span class="s1">Note that even the basic numeric structures behave like objects. We can use tab completion to see what methods are available for an object and what member data are part of an object.</span></p>
+<p class="p5"><span class="s1">x </span><span class="s5">=</span><span class="s1"> </span><span class="s7">3.0</span></p>
+<p class="p5"><span class="s1">type(x)</span></p>
+<p class="p5"><span class="s1">x.</span></p>
+<p class="p4"><span class="s1"><i># x.as_integer_ratio<span class="Apple-converted-space">  </span>x.hex <span class="Apple-converted-space">              </span>x.real</i></span></p>
+<p class="p4"><span class="s1"><i># x.conjugate <span class="Apple-converted-space">        </span>x.imag <span class="Apple-converted-space">             </span></i></span></p>
+<p class="p4"><span class="s1"><i># x.fromhex <span class="Apple-converted-space">          </span>x.is_integer <span class="Apple-converted-space">       </span></i></span></p>
+<p class="p3"><span class="s1">Which of those are attributes/metadata ('member data') and which are methods ('member functions')? If it's a method, say </span><span class="s10">foo</span><span class="s1">, you can run the method as </span><span class="s10">x.foo()</span><span class="s1">. If it's member data, you can see its value with </span><span class="s10">x.foo</span><span class="s1">.</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Tuples</b></span></h2>
+<p class="p3"><span class="s1">Tuples are immutable sequences of (zero or more) objects. Functions in Python often return tuples.</span></p>
+<p class="p5"><span class="s1">x </span><span class="s5">=</span><span class="s1"> </span><span class="s7">1</span><span class="s5">;</span><span class="s1"> y </span><span class="s5">=</span><span class="s1"> </span><span class="s6">'foo'</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">xy </span><span class="s5">=</span><span class="s1"> (x, y)</span></p>
+<p class="p5"><span class="s1">type(xy)</span></p>
+<p class="p5"><span class="s1">xy </span><span class="s5">=</span><span class="s1"> x,y</span></p>
+<p class="p5"><span class="s1">type(xy)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">xy</span></p>
+<p class="p5"><span class="s1">xy[</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">xy[</span><span class="s7">1</span><span class="s1">] </span><span class="s5">=</span><span class="s1"> </span><span class="s7">3</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">a,b </span><span class="s5">=</span><span class="s1"> x,y</span></p>
+<p class="p5"><span class="s1">a</span></p>
+<p class="p5"><span class="s1">b</span></p>
+<p class="p3"><span class="s1"><b>Exercises</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">Create the following: </span><span class="s10">x=5</span><span class="s1"> and </span><span class="s10">y=6</span><span class="s1">. Now swap their values using a single line of code. (How would you do this in R?)</span></li>
+  <li class="li12"><span class="s3"></span><span class="s1">What happens when you multiply a tuple by a number? how is this different than similar syntax in R?</span></li>
+  <li class="li12"><span class="s3"></span><span class="s1">What's nice about using immutable objects in your code?</span></li>
+</ul>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Lists</b></span></h2>
+<p class="p3"><span class="s1">Lists are mutable sequences of (zero or more) objects.</span></p>
+<p class="p5"><span class="s1">dice </span><span class="s5">=</span><span class="s1"> [</span><span class="s7">1</span><span class="s1">, </span><span class="s7">2</span><span class="s1">, </span><span class="s7">3</span><span class="s1">, </span><span class="s7">4</span><span class="s1">, </span><span class="s7">5</span><span class="s1">, </span><span class="s7">6</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">dice.extend([</span><span class="s7">7</span><span class="s1">,</span><span class="s7">8</span><span class="s1">])</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dice.insert(</span><span class="s7">3</span><span class="s1">, </span><span class="s7">100</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1">Indexing (also called 'slicing') in Python starts at 0 and ends at the length of the object minus 1.</span></p>
+<p class="p5"><span class="s1">dice </span><span class="s5">=</span><span class="s1"> [</span><span class="s7">1</span><span class="s1">, </span><span class="s7">2</span><span class="s1">, </span><span class="s7">3</span><span class="s1">, </span><span class="s7">4</span><span class="s1">, </span><span class="s7">5</span><span class="s1">, </span><span class="s7">6</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">dice[</span><span class="s7">0</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">dice[</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">dice[</span><span class="s7">6</span><span class="s1">]</span></p>
+<p class="p3"><span class="s1">One can also use sequences. Figure out what is going on here:</span></p>
+<p class="p5"><span class="s1">dice </span><span class="s5">=</span><span class="s1"> [</span><span class="s7">1</span><span class="s1">, </span><span class="s7">2</span><span class="s1">, </span><span class="s7">3</span><span class="s1">, </span><span class="s7">4</span><span class="s1">, </span><span class="s7">5</span><span class="s1">, </span><span class="s7">6</span><span class="s1">, </span><span class="s7">7</span><span class="s1">, </span><span class="s7">8</span><span class="s1">, </span><span class="s7">9</span><span class="s1">, </span><span class="s7">10</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">dice[</span><span class="s7">1</span><span class="s1">::</span><span class="s7">2</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">dice[</span><span class="s7">1</span><span class="s1">:</span><span class="s7">4</span><span class="s1">:</span><span class="s7">2</span><span class="s1">]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dice[</span><span class="s7">1</span><span class="s1">::</span><span class="s7">2</span><span class="s1">] </span><span class="s5">=</span><span class="s1"> dice[::</span><span class="s7">2</span><span class="s1">]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dice</span></p>
+<p class="p3"><span class="s1"><b>Exercises</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">What do you get if you multiply a list of numbers by a number? We'll need to use numpy if we want this to behave like we might expect based on R.</span></li>
+  <li class="li3"><span class="s3"></span><span class="s1">What does the following tell you about copying and use of memory in Python?<br>
+</span><span class="s10">a </span><span class="s12">=</span><span class="s10"> [</span><span class="s13">1</span><span class="s10">, </span><span class="s13">3</span><span class="s10">, </span><span class="s13">5</span><span class="s10">]</span></li>
+  <li class="li5"><span class="s3"></span><span class="s1">b </span><span class="s5">=</span><span class="s1"> a</span></li>
+  <li class="li5"><span class="s3"></span><span class="s1">id(a)</span></li>
+  <li class="li5"><span class="s3"></span><span class="s1">id(b)</span></li>
+  <li class="li4"><span class="s3"><i></i></span><span class="s1"><i># this should confirm what you might suspect</i></span></li>
+  <li class="li5"><span class="s3"></span><span class="s1">a[</span><span class="s7">1</span><span class="s1">] </span><span class="s5">=</span><span class="s1"> </span><span class="s7">5</span><span class="s1"><br>
+</span><span class="s14"><br>
+</span></li>
+</ul>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Dictionaries</b></span></h2>
+<p class="p3"><span class="s1">Dictionaries are mutable, unordered collections of key-value pairs. They're like named lists or named vectors in R.</span></p>
+<p class="p9"><span class="s8">students </span><span class="s5">=</span><span class="s8"> {</span><span class="s1">"Jarrod Millman"</span><span class="s8">: [</span><span class="s1">'A'</span><span class="s8">, </span><span class="s1">'B+'</span><span class="s8">, </span><span class="s1">'A-'</span><span class="s8">],<span class="Apple-converted-space"> </span></span></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s1">"Thomas Kluyver"</span><span class="s8">: [</span><span class="s1">'A-'</span><span class="s8">, </span><span class="s1">'A-'</span><span class="s8">],<span class="Apple-converted-space"> </span></span></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s1">"Stefan van der Walt"</span><span class="s8">: </span><span class="s1">'and now for something completely different'</span><span class="s8">}</span></p>
+<p class="p5"><span class="s1">students</span></p>
+<p class="p5"><span class="s1">students.keys()</span></p>
+<p class="p5"><span class="s1">students.values()</span></p>
+<p class="p9"><span class="s8">students[</span><span class="s1">"Jarrod Millman"</span><span class="s8">]</span></p>
+<p class="p9"><span class="s8">students[</span><span class="s1">"Jarrod Millman"</span><span class="s8">][</span><span class="s7">1</span><span class="s8">]</span></p>
+<p class="p5"><span class="s1">students.</span></p>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Control flow</b></span></h1>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/tutorial/controlflow.html"><span class="s4">https://docs.python.org/3/tutorial/controlflow.html</span></a></span></li>
+</ul>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>If-then-else</b></span></h2>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/tutorial/controlflow.html#if-statements"><span class="s4">https://docs.python.org/3/tutorial/controlflow.html#if-statements</span></a></span></li>
+</ul>
+<p class="p3"><span class="s1">This is as expected based on your experience with other languages. As previously noted, the indentation is important.</span></p>
+<p class="p5"><span class="s1">x </span><span class="s5">=</span><span class="s1"> </span><span class="s7">2</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s9"><b>if</b></span><span class="s1"> a</span><span class="s5">&gt;=</span><span class="s7">4</span><span class="s1">: <span class="Apple-converted-space">   </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>print(</span><span class="s6">'a is big'</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>if</b></span><span class="s1">(a </span><span class="s5">==</span><span class="s1"> </span><span class="s7">4</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>print(</span><span class="s6">'a is 4'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><b>else</b></span><span class="s8">:</span></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">    </span>print(</span><span class="s1">'a is small'</span><span class="s8">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s9"><b>if</b></span><span class="s1"> a</span><span class="s5">&gt;=</span><span class="s7">4</span><span class="s1">: <span class="Apple-converted-space">   </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>print(</span><span class="s6">'a is big'</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>if</b></span><span class="s1">(a </span><span class="s5">==</span><span class="s1"> </span><span class="s7">4</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>print(</span><span class="s6">'a is 4'</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>else</b></span><span class="s1">:</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>print(</span><span class="s6">'a is not 4'</span><span class="s1">)</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>For-loops (and list comprehension)</b></span></h2>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements"><span class="s4">https://docs.python.org/3/tutorial/controlflow.html#for-statements</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/whatsnew/2.0.html#list-comprehensions"><span class="s4">https://docs.python.org/3/whatsnew/2.0.html#list-comprehensions</span></a></span></li>
+</ul>
+<p class="p3"><span class="s1">Here's basic use of a for loop. Once again indentation is critical, in this case for indicating where the loop ends.</span></p>
+<p class="p5"><span class="s9"><b>for</b></span><span class="s1"> x </span><span class="s9"><b>in</b></span><span class="s1"> [</span><span class="s7">1</span><span class="s1">,</span><span class="s7">2</span><span class="s1">,</span><span class="s7">3</span><span class="s1">,</span><span class="s7">4</span><span class="s1">]:</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>print(x)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s9"><b>for</b></span><span class="s1"> x </span><span class="s9"><b>in</b></span><span class="s1"> [</span><span class="s7">1</span><span class="s1">,</span><span class="s7">2</span><span class="s1">,</span><span class="s7">3</span><span class="s1">,</span><span class="s7">4</span><span class="s1">]:</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>y </span><span class="s5">=</span><span class="s1"> x</span><span class="s5">*</span><span class="s7">2</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>print(y, end</span><span class="s5">=</span><span class="s6">" "</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">print(</span><span class="s6">"\n"</span><span class="s1">)</span></p>
+<p class="p5"><span class="s9"><b>for</b></span><span class="s1"> x </span><span class="s9"><b>in</b></span><span class="s1"> range(</span><span class="s7">30</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>print(x)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>y </span><span class="s5">=</span><span class="s1"> x</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">print(y, end</span><span class="s5">=</span><span class="s6">" "</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1">Building up a list piece-by-piece is a common task, which can easily be done in a for-loop. An approach called 'List comprehension' provides a compact syntax to handle this task.</span></p>
+<p class="p5"><span class="s1">y </span><span class="s5">=</span><span class="s1"> [x </span><span class="s9"><b>for</b></span><span class="s1"> x </span><span class="s9"><b>in</b></span><span class="s1"> range(</span><span class="s7">4</span><span class="s1">)]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">vals </span><span class="s5">=</span><span class="s1"> [</span><span class="s5">-</span><span class="s7">4</span><span class="s1">, </span><span class="s7">3</span><span class="s1">, </span><span class="s5">-</span><span class="s7">1</span><span class="s1">, </span><span class="s7">2.5</span><span class="s1">, </span><span class="s7">7</span><span class="s1">]</span></p>
+<p class="p4"><span class="s8">[x </span><span class="s9"><b>for</b></span><span class="s8"> x </span><span class="s9"><b>in</b></span><span class="s8"> vals </span><span class="s9"><b>if</b></span><span class="s8"> x </span><span class="s5">&gt;</span><span class="s8"> </span><span class="s7">0</span><span class="s8">]<span class="Apple-converted-space">  </span></span><span class="s1"><i># list comprehension</i></span></p>
+<p class="p3"><span class="s1"><b>Exercises</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">See what </span><span class="s10">[1, 2, 3] + 3</span><span class="s1"> returns. Try to explain what happened and why.</span></li>
+  <li class="li12"><span class="s3"></span><span class="s1">Use list comprehension to perform element-wise addition of a scalar to a list of scalars.</span></li>
+</ul>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Functions</b></span></h1>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions"><span class="s4">https://docs.python.org/3/tutorial/controlflow.html#defining-functions</span></a></span></li>
+</ul>
+<p class="p3"><span class="s1">Here's an example that illustrates both positional arguments (always first) and named arguments.</span></p>
+<p class="p5"><span class="s9"><b>def</b></span><span class="s1"> add(x, y</span><span class="s5">=</span><span class="s7">1</span><span class="s1">, absol</span><span class="s5">=</span><span class="s15">False</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>if</b></span><span class="s1"> absol:</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9"><b>return</b></span><span class="s1">(abs(x</span><span class="s5">+</span><span class="s1">y))</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>else</b></span><span class="s1">:</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9"><b>return</b></span><span class="s1">(x</span><span class="s5">+</span><span class="s1">y)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">add(</span><span class="s7">3</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">add(</span><span class="s7">3</span><span class="s1">, </span><span class="s7">5</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">add(</span><span class="s7">3</span><span class="s1">, absol</span><span class="s5">=</span><span class="s15">True</span><span class="s1">, y</span><span class="s5">=-</span><span class="s7">5</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">add(y</span><span class="s5">=-</span><span class="s7">5</span><span class="s1">, x</span><span class="s5">=</span><span class="s7">3</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">add(y</span><span class="s5">=-</span><span class="s7">5</span><span class="s1">, </span><span class="s7">3</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1"><b>Exercises</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">Define a function that will take the sqrt of a number and will (if requested by the user) set the square root of a negative number to 0.</span></li>
+</ul>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Math and Statistics</b></span></h1>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>NumPy and SciPy</b></span></h2>
+<p class="p3"><span class="s1">Standard lists in Python are not amenable to mathematical manipulation unlike standard vectors in R. Instead we generally work with numpy arrays. These arrays can be of various dimensions (i.e., vectors, matrices, multi-dimensional arrays). One important difference between R and numpy objects is that numpy performs operations <i>in place</i> - i.e. the object itself is modified and no copies are made.</span></p>
+<p class="p5"><span class="s1">z </span><span class="s5">=</span><span class="s1"> [</span><span class="s7">0</span><span class="s1">, </span><span class="s7">1</span><span class="s1">, </span><span class="s7">2</span><span class="s1">]<span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">y </span><span class="s5">=</span><span class="s1"> np.array(z)</span></p>
+<p class="p5"><span class="s1">y</span><span class="s5">*</span><span class="s7">3</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s8">y.dtype<span class="Apple-converted-space">  </span></span><span class="s1"><i># what type of value is stored in the array</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x </span><span class="s5">=</span><span class="s1"> np.array([[</span><span class="s7">1</span><span class="s1">, </span><span class="s7">2</span><span class="s1">], [</span><span class="s7">3</span><span class="s1">, </span><span class="s7">4</span><span class="s1">]], dtype</span><span class="s5">=</span><span class="s1">np.float64)</span></p>
+<p class="p4"><span class="s8">x</span><span class="s5">*</span><span class="s8">x <span class="Apple-converted-space">        </span></span><span class="s1"><i># element wise multiplication</i></span></p>
+<p class="p4"><span class="s8">x.dot(x)<span class="Apple-converted-space">    </span></span><span class="s1"><i># matrix multiplication</i></span></p>
+<p class="p5"><span class="s1">x.T <span class="Apple-converted-space">        </span></span><span class="s16"><i># transpose</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">np.linalg.svd(x) <span class="Apple-converted-space">  </span></span><span class="s16"><i># do an SVD</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s8">e </span><span class="s5">=</span><span class="s8"> np.linalg.eig(x)<span class="Apple-converted-space">  </span></span><span class="s1"><i># find eigenvalues and vectors</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p4"><span class="s8">e[</span><span class="s7">0</span><span class="s8">]<span class="Apple-converted-space">  </span></span><span class="s1"><i># first eigenvalue (not the largest in this case...)</i></span></p>
+<p class="p4"><span class="s8">e[</span><span class="s7">1</span><span class="s8">][:, </span><span class="s7">0</span><span class="s8">] </span><span class="s1"><i># corresponding eigenvector</i></span></p>
+<p class="p3"><span class="s1">All of the elements of the array must be of the same type.</span></p>
+<p class="p3"><span class="s1">There are a variety of numpy functions that allow us to do standard mathematical/statistical manipulations.</span></p>
+<p class="p3"><span class="s1">Here we'll use some of those functions in addition to some syntax for subsetting and vectorized calculations.</span></p>
+<p class="p5"><span class="s1">np.linspace(</span><span class="s7">0</span><span class="s1">, </span><span class="s7">1</span><span class="s1">, </span><span class="s7">5</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">np.random.seed(</span><span class="s7">0</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">x </span><span class="s5">=</span><span class="s1"> np.random.normal(size</span><span class="s5">=</span><span class="s7">10</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">pos </span><span class="s5">=</span><span class="s1"> x </span><span class="s5">&gt;</span><span class="s1"> </span><span class="s7">0</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">y </span><span class="s5">=</span><span class="s1"> x[pos]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x[[</span><span class="s7">1</span><span class="s1">, </span><span class="s7">3</span><span class="s1">, </span><span class="s7">4</span><span class="s1">]]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x[pos] </span><span class="s5">=</span><span class="s1"> </span><span class="s7">0</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">np.cos(x)</span></p>
+<p class="p3"><span class="s1">scipy has even more numerical routines, including working with distributions and additional linear algebra.</span></p>
+<p class="p5"><span class="s1">import scipy.stats as st</span></p>
+<p class="p5"><span class="s1">st.norm.cdf(</span><span class="s7">1.96</span><span class="s1">, </span><span class="s7">0</span><span class="s1">, </span><span class="s7">1</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">st.norm.cdf(</span><span class="s7">1.96</span><span class="s1">, </span><span class="s7">0.5</span><span class="s1">, </span><span class="s7">2</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">st.norm(</span><span class="s7">0.5</span><span class="s1">, </span><span class="s7">2</span><span class="s1">).cdf(</span><span class="s7">1.96</span><span class="s1">)</span></p>
+<p class="p3"><span class="s1"><b>Exercise</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">See what happens if you try to create a numpy array with a mix of numbers and character strings.</span></li>
+  <li class="li12"><span class="s3"></span><span class="s1">Try to add a vector to a matrix; how does this compare to R?</span></li>
+</ul>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Pandas</b></span></h2>
+<p class="p3"><span class="s1">Pandas provides a Python implementation of R's dataframe capabilities. Let's see some example code.</span></p>
+<p class="p5"><span class="s1">import pandas as pd</span></p>
+<p class="p5"><span class="s1">dat </span><span class="s5">=</span><span class="s1"> pd.read_csv(</span><span class="s6">'gapminder.csv'</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">dat.head()</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dat.columns</span></p>
+<p class="p9"><span class="s8">dat[</span><span class="s1">'year'</span><span class="s8">]</span></p>
+<p class="p5"><span class="s1">dat.year</span></p>
+<p class="p5"><span class="s1">dat[</span><span class="s7">0</span><span class="s1">:</span><span class="s7">5</span><span class="s1">]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dat.sort_values([</span><span class="s6">'year'</span><span class="s1">, </span><span class="s6">'country'</span><span class="s1">])</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dat.loc[</span><span class="s7">0</span><span class="s1">:</span><span class="s7">5</span><span class="s1">, [</span><span class="s6">'year'</span><span class="s1">, </span><span class="s6">'country'</span><span class="s1">]]<span class="Apple-converted-space">  </span></span><span class="s16"><i># R-style indexing</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dat[dat.year </span><span class="s5">==</span><span class="s1"> </span><span class="s7">1952</span><span class="s1">]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p9"><span class="s8">ndat </span><span class="s5">=</span><span class="s8"> dat[[</span><span class="s1">'pop'</span><span class="s8">,</span><span class="s1">'lifeExp'</span><span class="s8">,</span><span class="s1">'gdpPercap'</span><span class="s8">]]</span></p>
+<p class="p5"><span class="s1">ndat.apply(</span><span class="s9"><b>lambda</b></span><span class="s1"> col: col.max() </span><span class="s5">-</span><span class="s1"> col.min())</span></p>
+<p class="p3"><span class="s1">Now let's see the sort of split-apply-combine functionality that is popular in dplyr and related R packages.</span></p>
+<p class="p5"><span class="s1">dat2007 </span><span class="s5">=</span><span class="s1"> dat[dat.year </span><span class="s5">==</span><span class="s1"> </span><span class="s7">2007</span><span class="s1">].copy() <span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dat2007.groupby(</span><span class="s6">'continent'</span><span class="s1">, as_index</span><span class="s5">=</span><span class="s15">False</span><span class="s1">).mean()</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s9"><b>def</b></span><span class="s1"> stdize(vals):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>return</b></span><span class="s1">((vals </span><span class="s5">-</span><span class="s1"> vals.mean()) </span><span class="s5">/</span><span class="s1"> vals.std())</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">dat2007[</span><span class="s6">'lifeExpZ'</span><span class="s1">] </span><span class="s5">=</span><span class="s1"> dat2007.groupby(</span><span class="s6">'continent'</span><span class="s1">)[</span><span class="s6">'lifeExp'</span><span class="s1">].transform(stdize)</span></p>
+<p class="p3"><span class="s1"><b>Exercise</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">Use <i>pd.merge()</i> to merge the continent means for life expectancy for 2007 back into the original <i>dat2007</i> dataFrame.</span></li>
+</ul>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Additional topics</b></span></h1>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Style</b></span></h2>
+<p class="p3"><span class="s1">Adopting standard coding conventions is good practice.</span></p>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://www.python.org/dev/peps/pep-0008/"><span class="s4">https://www.python.org/dev/peps/pep-0008/</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/tutorial/controlflow.html#intermezzo-coding-style"><span class="s4">https://docs.python.org/3/tutorial/controlflow.html#intermezzo-coding-style</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt"><span class="s4">https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt</span></a></span></li>
+  <li class="li7"><span class="s3"><a href="http://matplotlib.org/devel/coding_guide.html"><span class="s4">http://matplotlib.org/devel/coding_guide.html</span></a></span></li>
+</ul>
+<p class="p3"><span class="s1">The first link above is the official "Style Guide for Python Code", usually referred to as PEP8 (PEP is an acronym for Python Enhancement Proposal). There are a couple of potentially helpful tools for helping you conform to the standard. The <a href="https://pypi.python.org/pypi/pep8"><span class="s2">pep8</span></a> package that provides a commandline tool to check your code against some of the PEP8 standard conventions. Similarly, <a href="https://pypi.python.org/pypi/autopep8"><span class="s2">autopep8</span></a> provides a tool to automatically format your code so that it conforms to the PEP8 standards. I have used both a little and they seem to work fairly well.</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Classes</b></span></h2>
+<ul class="ul1">
+  <li class="li7"><span class="s3"><a href="https://docs.python.org/3/tutorial/classes.html"><span class="s4">https://docs.python.org/3/tutorial/classes.html</span></a></span></li>
+</ul>
+<p class="p3"><span class="s1">We've already seen a bunch of object-oriented behavior. Here we'll see how to make our own classes and objects that are instances (realizations) of a class.</span></p>
+<p class="p5"><span class="s9"><b>class</b></span><span class="s1"> Rectangle(object):</span></p>
+<p class="p4"><span class="s8"><span class="Apple-converted-space">    </span>dim </span><span class="s5">=</span><span class="s8"> </span><span class="s7">2</span><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s1"><i># class variable</i></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>counter </span><span class="s5">=</span><span class="s1"> </span><span class="s7">0</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>def</b></span><span class="s1"> </span><span class="s11">__init__</span><span class="s1">(</span><span class="s15">self</span><span class="s1">, height, width):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s15">self</span><span class="s1">.height </span><span class="s5">=</span><span class="s1"> height<span class="Apple-converted-space">  </span></span><span class="s16"><i># instance variable</i></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s15">self</span><span class="s1">.width </span><span class="s5">=</span><span class="s1"> width<span class="Apple-converted-space">    </span></span><span class="s16"><i># instance variable</i></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s15">self</span><span class="s1">.set_diagonal()</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>Rectangle.counter </span><span class="s5">+=</span><span class="s1"> </span><span class="s7">1</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>def</b></span><span class="s1"> </span><span class="s11">__repr__</span><span class="s1">(</span><span class="s15">self</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9"><b>return</b></span><span class="s1">(</span><span class="s6">"{0} by {1} rectangle"</span><span class="s1">.format(</span><span class="s15">self</span><span class="s1">.height, </span><span class="s15">self</span><span class="s1">.width)) <span class="Apple-converted-space">       </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>def</b></span><span class="s1"> area(</span><span class="s15">self</span><span class="s1">, verbose </span><span class="s5">=</span><span class="s1"> </span><span class="s15">False</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>if</b></span><span class="s1"> verbose:</span></p>
+<p class="p9"><span class="s8"><span class="Apple-converted-space">        </span>print(</span><span class="s1">'Computing the area... '</span><span class="s8">)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s9"><b>return</b></span><span class="s1">(</span><span class="s15">self</span><span class="s1">.height</span><span class="s5">*</span><span class="s15">self</span><span class="s1">.width)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s9"><b>def</b></span><span class="s1"> set_diagonal(</span><span class="s15">self</span><span class="s1">):</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s15">self</span><span class="s1">.diagonal </span><span class="s5">=</span><span class="s1"> pow(</span><span class="s15">self</span><span class="s1">.height</span><span class="s5">**</span><span class="s7">2</span><span class="s1"> </span><span class="s5">+</span><span class="s1"> </span><span class="s15">self</span><span class="s1">.width</span><span class="s5">**</span><span class="s7">2</span><span class="s1">, </span><span class="s7">0.5</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x </span><span class="s5">=</span><span class="s1"> Rectangle(</span><span class="s7">10</span><span class="s1">, </span><span class="s7">5</span><span class="s1">)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x.dim</span></p>
+<p class="p5"><span class="s1">x.dim </span><span class="s5">=</span><span class="s1"> </span><span class="s6">'foo'</span></p>
+<p class="p5"><span class="s1">x.dim </span><span class="s16"><i># hmmm</i></span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">x.area()</span></p>
+<p class="p5"><span class="s1">Rectangle.area(x)</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">y </span><span class="s5">=</span><span class="s1"> Rectangle(</span><span class="s7">4</span><span class="s1">, </span><span class="s7">8</span><span class="s1">)</span></p>
+<p class="p5"><span class="s1">y.counter</span></p>
+<p class="p5"><span class="s1">x.counter</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Strings</b></span></h2>
+<p class="p3"><span class="s1">Strings are immutable sequences of (zero or more) characters.</span></p>
+<p class="p3"><span class="s1"><b>Sequences</b></span></p>
+<p class="p3"><span class="s1">Unlike numbers, Python strings are container objects. Specifically, it is a sequence. Python has several sequence types including strings, tuples, and lists. Sequence types share some common functionality, which we can demonstrate with strings.</span></p>
+<p class="p3"><span class="s1"><b>Indexing</b></span></p>
+<p class="p3"><span class="s1">To see how indexing works in Python let’s use the string containing the digits 0 through 9.</span></p>
+<p class="p5"><span class="s1">import string</span></p>
+<p class="p5"><span class="s1">string.digits<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1">string.digits[</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">string.digits[</span><span class="s5">-</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p3"><span class="s1">Note that indexing starts at 0 (unlike R and Fortran, but like C). Also negative integers index starting from the end of the sequence. You can find the length of a sequence using the <i>len</i> function.</span></p>
+<p class="p3"><span class="s1"><b>Slicing</b></span></p>
+<p class="p3"><span class="s1">Slicing allows you to select a subset of a string (or any sequence) by specifying start and stop indices as well as a step, which you specify using the </span><span class="s10">start:stop:step</span><span class="s1"> notation inside of square braces.</span></p>
+<p class="p5"><span class="s1">string.digits[</span><span class="s7">1</span><span class="s1">:</span><span class="s7">5</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">string.digits[</span><span class="s7">1</span><span class="s1">:</span><span class="s7">5</span><span class="s1">:</span><span class="s7">2</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">string.digits[</span><span class="s7">1</span><span class="s1">::</span><span class="s7">2</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">string.digits[:</span><span class="s7">5</span><span class="s1">:</span><span class="s5">-</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">string.digits[</span><span class="s7">1</span><span class="s1">:</span><span class="s7">5</span><span class="s1">:</span><span class="s5">-</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p5"><span class="s1">string.digits[</span><span class="s5">-</span><span class="s7">3</span><span class="s1">:</span><span class="s5">-</span><span class="s7">7</span><span class="s1">:</span><span class="s5">-</span><span class="s7">1</span><span class="s1">]</span></p>
+<p class="p3"><span class="s1"><b>Subsequence testing</b></span></p>
+<p class="p5"><span class="s16"><i>'23'</i></span><span class="s1"> </span><span class="s9"><b>in</b></span><span class="s1"> string.digits<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s16"><i>'25'</i></span><span class="s1"> </span><span class="s9"><b>not</b></span><span class="s1"> </span><span class="s9"><b>in</b></span><span class="s1"> string.digits</span></p>
+<p class="p3"><span class="s1"><b>String methods</b></span></p>
+<p class="p9"><span class="s8">string1 </span><span class="s5">=</span><span class="s8"> </span><span class="s1">"my string"</span></p>
+<p class="p5"><span class="s1">string1.</span></p>
+<p class="p5"><span class="s1">string1.capitalize<span class="Apple-converted-space">  </span>string1.islower <span class="Apple-converted-space">    </span>string1.rpartition</span></p>
+<p class="p5"><span class="s1">string1.center<span class="Apple-converted-space">      </span>string1.isspace <span class="Apple-converted-space">    </span>string1.rsplit</span></p>
+<p class="p5"><span class="s1">string1.count <span class="Apple-converted-space">      </span>string1.istitle <span class="Apple-converted-space">    </span>string1.rstrip</span></p>
+<p class="p5"><span class="s1">string1.decode<span class="Apple-converted-space">      </span>string1.isupper <span class="Apple-converted-space">    </span>string1.split</span></p>
+<p class="p5"><span class="s1">string1.encode<span class="Apple-converted-space">      </span>string1.join<span class="Apple-converted-space">        </span>string1.splitlines</span></p>
+<p class="p5"><span class="s1">string1.endswith<span class="Apple-converted-space">    </span>string1.ljust <span class="Apple-converted-space">      </span>string1.startswith</span></p>
+<p class="p5"><span class="s1">string1.expandtabs<span class="Apple-converted-space">  </span>string1.lower <span class="Apple-converted-space">      </span>string1.strip</span></p>
+<p class="p5"><span class="s1">string1.find<span class="Apple-converted-space">        </span>string1.lstrip<span class="Apple-converted-space">      </span>string1.swapcase</span></p>
+<p class="p5"><span class="s1">string1.format<span class="Apple-converted-space">      </span>string1.partition <span class="Apple-converted-space">  </span>string1.title</span></p>
+<p class="p5"><span class="s1">string1.index <span class="Apple-converted-space">      </span>string1.replace <span class="Apple-converted-space">    </span>string1.translate</span></p>
+<p class="p5"><span class="s1">string1.isalnum <span class="Apple-converted-space">    </span>string1.rfind <span class="Apple-converted-space">      </span>string1.upper</span></p>
+<p class="p5"><span class="s1">string1.isalpha <span class="Apple-converted-space">    </span>string1.rindex<span class="Apple-converted-space">      </span>string1.zfill</span></p>
+<p class="p5"><span class="s1">string1.isdigit <span class="Apple-converted-space">    </span>string1.rjust<span class="Apple-converted-space">       </span></span></p>
+<p class="p5"><span class="s1">string1.upper()</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">string1.upper?</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p9"><span class="s8">string1 </span><span class="s5">+</span><span class="s8"> </span><span class="s1">" is your string."</span></p>
+<p class="p4"><span class="s1"><i>"*"</i></span><span class="s5">*</span><span class="s7">10</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">string1[</span><span class="s7">3</span><span class="s1">:]</span></p>
+<p class="p5"><span class="s1">string1[</span><span class="s7">3</span><span class="s1">:</span><span class="s7">4</span><span class="s1">]<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1">string1[</span><span class="s7">4</span><span class="s1">::</span><span class="s7">2</span><span class="s1">]</span></p>
+<p class="p6"><span class="s1"></span><br></p>
+<p class="p5"><span class="s1">string1[</span><span class="s7">3</span><span class="s1">:</span><span class="s7">5</span><span class="s1">] </span><span class="s5">=</span><span class="s1"> </span><span class="s6">'ts'</span></p>
+<p class="p5"><span class="s1">string1 </span><span class="s5">&gt;</span><span class="s1"> </span><span class="s6">"ab"</span></p>
+<p class="p5"><span class="s1">string1 </span><span class="s5">&gt;</span><span class="s1"> </span><span class="s6">"zz"</span></p>
+<p class="p5"><span class="s1">string1.__</span></p>
+<p class="p5"><span class="s1">string1.__add__ <span class="Apple-converted-space">          </span>string1.__len__</span></p>
+<p class="p5"><span class="s1">string1.__class__ <span class="Apple-converted-space">        </span>string1.__lt__</span></p>
+<p class="p5"><span class="s1">string1.__contains__<span class="Apple-converted-space">      </span>string1.__mod__</span></p>
+<p class="p5"><span class="s1">string1.__delattr__ <span class="Apple-converted-space">      </span>string1.__mul__</span></p>
+<p class="p5"><span class="s1">string1.__doc__ <span class="Apple-converted-space">          </span>string1.__ne__</span></p>
+<p class="p5"><span class="s1">string1.__eq__<span class="Apple-converted-space">            </span>string1.__new__</span></p>
+<p class="p5"><span class="s1">string1.__format__<span class="Apple-converted-space">        </span>string1.__reduce__</span></p>
+<p class="p5"><span class="s1">string1.__ge__<span class="Apple-converted-space">            </span>string1.__reduce_ex__</span></p>
+<p class="p5"><span class="s1">string1.__getattribute__<span class="Apple-converted-space">  </span>string1.__repr__</span></p>
+<p class="p5"><span class="s1">string1.__getitem__ <span class="Apple-converted-space">      </span>string1.__rmod__</span></p>
+<p class="p5"><span class="s1">string1.__getnewargs__<span class="Apple-converted-space">    </span>string1.__rmul__</span></p>
+<p class="p5"><span class="s1">string1.__getslice__<span class="Apple-converted-space">      </span>string1.__setattr__</span></p>
+<p class="p5"><span class="s1">string1.__gt__<span class="Apple-converted-space">            </span>string1.__sizeof__</span></p>
+<p class="p5"><span class="s1">string1.__hash__<span class="Apple-converted-space">          </span>string1.__str__</span></p>
+<p class="p5"><span class="s1">string1.__init__<span class="Apple-converted-space">          </span>string1.__subclasshook__</span></p>
+<p class="p3"><span class="s1"><b>Exercises</b></span></p>
+<ul class="ul1">
+  <li class="li12"><span class="s3"></span><span class="s1">Using this string: </span><span class="s10">x = 'The ant wants what all ants want.'</span><span class="s1">, solve the following string manipulation problems using string indexing, slicing, methods, and subsequence testing:</span></li>
+  <ol class="ol1">
+    <li class="li12"><span class="s3"></span><span class="s1">Convert the string to all lower case letters (don’t change x).</span></li>
+    <li class="li12"><span class="s3"></span><span class="s1">Count the number of occurrences of the substring </span><span class="s10">ant</span><span class="s1">.</span></li>
+    <li class="li12"><span class="s3"></span><span class="s1">Create a list of the words occurring in </span><span class="s10">x</span><span class="s1">. Make sure to remove punctuation and convert all words to lowercase.</span></li>
+    <li class="li12"><span class="s3"></span><span class="s1">Using only string methods on </span><span class="s10">x</span><span class="s1">, create the following string: </span><span class="s10">The chicken wants what all chickens want.</span></li>
+    <li class="li12"><span class="s3"></span><span class="s1">Using indexing and the </span><span class="s10">+</span><span class="s1"> operator, create the following string: </span><span class="s10">The tna wants what all ants want.</span></li>
+    <li class="li12"><span class="s3"></span><span class="s1">Do the same thing except using a string method instead.</span></li>
+  </ol>
+  <li class="li12"><span class="s3"></span><span class="s1">What can you do with the <i>in</i> and <i>not in</i> operators? What R operator is this like and how is it different?</span></li>
+  <li class="li12"><span class="s3"></span><span class="s1">Figure out what code you could run to figure out if Python is explicitly counting the number of characters when it does </span><span class="s10">len(x)</span><span class="s1">?</span></li>
+  <li class="li12"><span class="s3"></span><span class="s1">Compare the time for computing the length of a (long) string in Python and R. What can you infer about what is happening behind the scenes?</span></li>
+</ul>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>A Note on the Contents</b></span></h1>
+<p class="p3"><span class="s1">This content was adapted by Chris Paciorek from <a href="http://www.jarrodmillman.com/capstone/bootcamp/standard.html"><span class="s2">material prepared by K. Jarrod Millman</span></a> and is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="s2">CC BY-NC-SA 4.0 license</span></a>.</span></p>
+</body>
+</html>
