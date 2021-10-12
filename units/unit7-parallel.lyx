@@ -1751,21 +1751,70 @@ If you need to parallelize over prediction methods or in other contexts
  However, in many cases, this sort of grouping in advance (called prescheduling
  or 'static' allocation of tasks to workers) is the default.
  This is also the case with the future package – the default is to group
- the tasks in advance, so that each worker processes one future, containing
- multiple tasks.
+ the tasks in advance into 
+\begin_inset Quotes eld
+\end_inset
+
+chunks
+\begin_inset Quotes erd
+\end_inset
+
+, so that each worker processes one future (one chunk), containing multiple
+ tasks.
  
 \end_layout
 
 \begin_layout Standard
-Here we see how to use the 
+First we'll set up an artificial example with four slow tasks and 12 fast
+ tasks and see the speed of running with the default of prescheduling.
+ Whether to preschedule or not is controlled by either the 
 \emph on
 future.scheduling
 \emph default
- and 
+ or 
 \emph on
 future.chunk.size
 \emph default
- arguments to avoid prescheduling in a toy example.
+ arguments.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<parallel-lapply-preschedule>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And here we prevent prescheduling.
+ I find the 
+\emph on
+future.chunk.size
+\emph default
+ argument easier to understand than the 
+\emph on
+future.scheduling
+\emph default
+ argument.
+ 
+\emph on
+future.chunk.size
+\emph default
+ says how many tasks to group together.
+ So setting equal to 1 means no grouping and therefore not using static
+ allocation.
 \end_layout
 
 \begin_layout Standard

@@ -132,7 +132,7 @@ system.time(
 
 ### 5.4 Scenario 4: parallelizing over multiple prediction methods
 
-## @knitr parallel-lapply-no-preschedule
+## @knitr parallel-lapply-preschedule
 
 library(future.apply)
 nCores <- 4
@@ -146,7 +146,6 @@ n <- rep(c(1e7, 1e5, 1e5, 1e5), each = 4)
 
 fun <- function(i) {
     cat("working on ", i, "; ")
-    set.seed(i)  # probably ok, but not best practice - more in Section 5.7
     mean(lgamma(exp(rnorm(n[i]))))
 }
 
@@ -159,30 +158,28 @@ system.time(fun(5))  # .03 sec.
 system.time(
 	res <- future_sapply(seq_along(n), fun, future.seed = TRUE)
 )
-## this is the default: 1 future (4 tasks) per worker
+## this is the default: 1 future (and therefore 4 tasks) per worker
 system.time(
     res <- future_sapply(seq_along(n), fun, future.scheduling = 1,
                          future.seed = TRUE)
 )
-## 4 tasks per chunk, 1 chunk (1 future) per worker
+## equivalently, 4 tasks per chunk, 1 chunk (1 future) per worker
 system.time(
     res <- future_sapply(seq_along(n), fun, future.chunk.size = 4,
                          future.seed = TRUE)
 )
 
+## @knitr parallel-lapply-no-preschedule
+
 ## Dynamic allocation ## 
 
-## 4 futures (with one task per future) per worker 
-system.time(
-    res <- future_sapply(seq_along(n), fun, future.scheduling = 4,
-                       future.seed = TRUE)
-)
 ## 1 task per chunk, 4 chunks (4 futures) per worker 
 system.time(
     res <- future_sapply(seq_along(n), fun, future.chunk.size = 1,
                          future.seed = TRUE)
 )
 
+## or, equivalently, we could specify future.scheduling = 4
 
 ## @knitr doFuture
 
