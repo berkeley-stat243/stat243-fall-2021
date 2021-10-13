@@ -1,0 +1,12 @@
+Dear Professor Paciorek,
+
+I am an Economics PhD student currently working on a project that requires a lot of computational power.  I was wondering if you had any advice about at what level I should be parallelizing my code since it involves:
+
+ - 5-fold cross-validation of a model that uses multiple threads to begin with
+ - 100 iterations of that 5-fold cross-validation 
+ - Randomization inference over the median statistic produced in the last 2 steps
+
+Any advice would be greatly appreciated!
+
+Thank you,
+...
