@@ -201,59 +201,6 @@ This unit will be fairly Linux-focused as most serious parallel computation
 Some scenarios for parallelization
 \end_layout
 
-\begin_layout Paragraph
-An example
-\end_layout
-
-\begin_layout Standard
-Here's a question I got recently:
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Dear Professor Paciorek,
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-I am an Economics PhD student currently working on a project that requires
- a lot of computational power.
- I was wondering if you had any advice about at what level I should be paralleli
-zing my code since it involves: 
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-5-fold cross-validation of a model that uses multiple threads to begin with
- 
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-100 iterations of that 5-fold cross-validation 
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Randomization inference over the median statistic produced in the last 2
- steps 
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Any advice would be greatly appreciated!
-\end_layout
-
-\begin_layout Paragraph
-Some scenarios
-\end_layout
-
 \begin_layout Itemize
 You need to fit a single statistical/machine learning model, such as a random
  forest or regression model, to your data.
@@ -2081,7 +2028,15 @@ Simply start R as you usually would.
 \end_layout
 
 \begin_layout Standard
-Here we'll use foreach with the future-based doFuture backend.
+Here we'll use 
+\emph on
+foreach
+\emph default
+ with the future-based 
+\emph on
+doFuture
+\emph default
+ backend.
 \end_layout
 
 \begin_layout Standard
@@ -2104,7 +2059,11 @@ status open
 \end_layout
 
 \begin_layout Standard
-To use future_lapply, set up the plan in similar fashion to above.
+To use 
+\emph on
+future_lapply
+\emph default
+, set up the plan in similar fashion to above.
  You can then do:
 \end_layout
 
@@ -2239,8 +2198,27 @@ status open
 \end_layout
 
 \begin_layout Standard
-Parallelizing across nodes requires copying any big data across machines
- (one can't fork processes across nodes), which will be slow.
+And here is code you can use to demonstrate that when using multicore, no
+ copies are made.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<parallel-nocopy-check, eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection

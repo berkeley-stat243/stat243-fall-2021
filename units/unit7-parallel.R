@@ -248,6 +248,18 @@ system.time(tmp <- future_sapply(1:100, do_analysis,
 plan(multicore, workers = 4)  # forks (where supported, not Windows); no copying!
 system.time(tmp <- future_sapply(1:100, do_analysis))  # 6.5 sec.
 
+## @knitr parallel-nocopy-check
+
+x <- c(3.1, 2.5, 7.3)
+pryr::address(x)
+
+future_sapply(1:2, function(i) {
+    ## First, use the global 'x' just in case anything funny going on
+    ## before object is used.
+    y <- x[1]   
+    pryr::address(x)
+})
+
 
 ## @knitr
 

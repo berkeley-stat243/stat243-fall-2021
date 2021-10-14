@@ -1,6 +1,6 @@
 ############################################################
 ### Demo code for Unit 7 of Stat243, "Parallel processing"
-### Chris Paciorek, October 2020
+### Chris Paciorek, October 2021
 ############################################################
 
 
