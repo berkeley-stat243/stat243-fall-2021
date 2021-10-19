@@ -2,6 +2,7 @@
 library(foreach)
 library(doFuture)
 library(microbenchmark)
+library(doRNG)
 
 # note this code and example is from this website
 # https://nceas.github.io/oss-lessons/parallel-computing-in-r/parallel-computing-in-r.html
@@ -18,7 +19,7 @@ registerDoFuture()
 # do computation 
 # parallel
 microbenchmark({
-  r <- foreach(i = 1:n_boot, .combine = rbind) %dopar% {
+  r <- foreach(i = 1:n_boot, .combine = rbind) %dorng% {
     # fit logistic regression on bootstrapped samples and return coefficients
     ind <- sample(100, 100, replace = TRUE)
     result1 <- glm(data[ind, 2] ~ data[ind, 1], family = binomial(logit))

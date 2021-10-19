@@ -1,0 +1,292 @@
+---
+title: "Parallel R"
+author: "Andrew Vaughn"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+urlcolor: magenta
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(0)
+```
+
+
+Many tasks that are computationally expensive are embarrassingly parallel. A few 
+common tasks that fit the description:
+
+- Simulations with independent replicates
+- Bootstrapping
+- Cross-validation
+- Multivariate Imputation by Chained Equations (MICE)
+- Fitting multiple regression models
+- cross-validation
+
+
+## `lapply` Refresher
+
+`lapply` takes one parameter (a vector/list), feeds that variable into the 
+function, and returns a list:
+
+```{r}
+  lapply(1:3, function(x) c(x, x^2, x^3))
+```
+
+You can feed it additional values by adding named parameters:
+
+```{r}
+  lapply(1:3/3, round, digits=3)
+```
+
+These tasks are embarrassingly parallel as the elements are calculated independently, 
+i.e. second element is independent of the result from the first element. After 
+learning to code using `lapply` parallelizing your code is simple.
+
+\newpage
+## `future` Package
+
+The [future](https://cran.r-project.org/web/packages/future/index.html) package 
+attempts to provide a simple and uniform framework for evaluating expressions on 
+various resources. 
+
+```{r}
+library(future)
+
+v %<-% {
+  cat("Hello world!\n")
+  3.14
+}
+
+v
+```
+
+Notice, the definition is evaluated when the variable is called, instead of when 
+the variable is defined. There are several methods for controlling how futures are 
+evaluated. The types of futures are listed in \ref{table:res}, and implemented as `plan()`s.
+
+\begin{table}
+\centering
+\caption{Future Resolution Strategies}
+\begin{tabular}{ c c c } 
+ \hline
+ \textbf{Name} & \textbf{OS} & \textbf{Description} \\
+ \textit{synchronous} & & \textit{non-parallel} \\
+ sequential & all & sequentially in current  R process \\ 
+ transparent & all & as sequential w/ early signaling and w/out local \\ 
+ \textit{asynchronous} &  & \textit{parallel} \\
+ multiprocess & all & multicore if possible, multisession otherwise \\
+ multisession & all & background R sessions (current machine) \\
+ multicore & not Windows/Rstudio & forked process \\
+ cluster & all & external R session, current or local machines \\
+ remote & all & remote R sessions \\
+ \hline
+\end{tabular}
+\label{table:res}
+\end{table}
+
+Futures can also be evaluated *asynchronously* in a different R process by setting 
+the `plan()` to one of the *asynchronous* options.
+```{r}
+plan(strategy = multiprocess)
+
+w %<-% {
+  cat("Hello world!\n")
+  3.14
+}
+
+w
+```
+
+The `future` package is extended by the `future.apply` package, which implements 
+the *apply* family of functions from base `R`.
+
+```{r}
+library(future.apply)
+
+# set evaluation plan
+# explicit about namespace so you know where these functions are coming from.
+nCores = 2
+future::plan(strategy = multiprocess, workers = nCores)
+
+future.apply::future_sapply(X = 2:4, FUN = function(exponent){2^exponent})
+
+
+```
+
+
+### Variable Scope
+
+On Mac/Linux, you can set the `plan` to be explicitly `multicore` (this is what 
+`multiprocess` defaults to on Mac/Linux). This creates forked processes, which use 
+the current environmental variables. On Windows, you can set `multisession`, which is 
+the Windows default of `multiprocess`, which creates background `R` sessions. This 
+requires copying all necessary variables to the processes.  
+
+The `future` package attempts to handle most of this for you, using the [globals](https://cran.r-project.org/web/packages/globals/index.html) 
+package. See below, where the `plan` is explicitly `multisession`, meaning that it 
+should fail because I didn't explicitly copy `base` to each process. However, `future` 
+identifies that `base` is necessary and supplies it to each child process.  
+It provides a similar service for functions/objects in packages, except that packages 
+are attached to the child process, so no copying is necessary. See the [vignette](https://cran.r-project.org/web/packages/future/vignettes/future-4-issues.html) 
+on globals for the `future` package.
+
+```{r}
+nCores = 2
+future::plan(strategy = multisession, workers = nCores)
+base = 2
+
+# should fail, but doesn't
+future.apply::future_sapply(X = 2:4, FUN = function(exponent){base^exponent})
+
+# safer way
+globals = "base"
+future.apply::future_sapply(X = 2:4, FUN = function(exponent){base^exponent})
+
+```
+
+
+### Using `future_sapply`
+(I DO NOT RECOMMEND SAPPLY STATEMENTS)  
+Sometimes, we only want a simple return value, such as a vector/matrix. Here are 
+a few examples using the `future_sapply` function.
+
+```{r}
+# setup plan
+nCores = 2
+future::plan(strategy = multisession, workers = nCores)
+
+# setup base and name globals
+#  remember, the globals thing is not necessary
+base = 3
+globals = "base"
+
+# sapply
+future.apply::future_sapply(X = 2:4, FUN = function(x){base^x})
+```
+
+Matrix output with names (this is why we need the `as.character`):
+
+```{r}
+
+future.apply::future_sapply(X = as.character(2:4), FUN = function(x){
+  x <- as.numeric(x)
+  c("base" = base^x, "self" = x^x)
+})
+
+
+
+```
+
+
+## The `foreach` Package via `doFuture`
+
+The idea behind the `foreach` package is to create 'a hybrid of the standard for 
+loop and lapply function' and its ease of use has made it rather popular. The set-up 
+is slightly different, you need "register" the the plan as below:
+
+```{r}
+#library(foreach)
+library(doFuture)
+
+nCores = 2
+plan(strategy = multiprocess, workers = nCores)
+registerDoFuture()
+
+```
+
+The `foreach` function can be viewed as being a more controlled version of the 
+`future_sapply` that allows combining the results into a suitable format. By specifying 
+the `.combine` argument we can choose how to combine our results, below is a vector, 
+matrix, and a list example:
+
+```{r}
+foreach(exponent = 2:4,
+        .combine = c) %dopar% {
+          base^exponent
+        }
+```
+
+Now using `rbind`.
+
+```{r}
+foreach(exponent = 2:4, 
+        .combine = rbind)  %dopar% { 
+            base^exponent
+        }
+```
+
+
+Now a list.
+
+```{r}
+foreach(exponent = 2:4, 
+        .combine = list,
+        .multicombine = TRUE)  %dopar% {
+          base^exponent
+        } 
+```
+
+Note that the last is the default and can be achieved without any tweaking, just 
+`foreach(exponent = 2:4) %dopar%`. In the example it is worth noting the `.multicombine` 
+argument that is needed to avoid a nested list. The nesting occurs due to the 
+sequential `.combine` function calls, i.e. `list(list(result.1, result.2), result.3)`:
+
+```{r}
+foreach(exponent = 2:4, 
+        .combine = list,
+        .multicombine = FALSE)  %dopar% {
+          base^exponent
+        } 
+```
+
+
+### Variable Scope
+
+The variable scope constraints are slightly different for the `foreach` package. 
+Variable within the same local environment are by default available:
+
+```{r}
+foreach(exponent = 2:4, 
+        .combine = c)  %dopar%  
+  base^exponent
+```
+
+While variables from a parent environment should not be available, i.e. the 
+following will throw an error using a different parallel backend. However, `future` 
+ensures that all globals necessary inside the function are available.
+
+```{r}
+test <- function() {
+  foreach(exponent = 2:4, 
+          .combine = c)  %dopar%  {
+           base^exponent 
+          }
+}
+
+test()
+```
+
+A nice feature is that you can use the `.export` option within `foreach` to ensure 
+variables are exported to child processes. Note that as it is part of the parallel 
+call it will have the latest version of the variable, i.e. the following change 
+in "base" will work:
+
+```{r}
+base <- 4
+
+test <- function () {
+  foreach(exponent = 2:4, 
+          .combine = c,
+          .export = "base")  %dopar%  {
+            base^exponent
+          }
+}
+
+test()
+```
+
+Similarly you can load packages with the .packages option, e.g. `.packages = c("rms", "mice")`. 
+I strongly recommend always exporting the variables you need as it limits issues 
+that arise when encapsulating the code within functions.
+
+Now move on to `scfOverview.pdf`
