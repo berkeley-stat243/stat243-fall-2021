@@ -143,7 +143,7 @@ dbDisconnect(db)
 
 ## find the largest viewcounts in the questions table
 dbGetQuery(db,
-'select distinct viewcount from questions order by viewcount desc limit 10')
+'select title, viewcount from questions order by viewcount desc limit 10')
 ## now get the questions that are viewed the most
 dbGetQuery(db, 'select * from questions where viewcount > 100000')
 
