@@ -1,0 +1,20 @@
+#!/bin/bash
+
+####################
+# SBATCH OPTIONS
+####################
+#SBATCH --job-name=example              # job name fore queue, default may be u$
+#SBATCH --partition=low                 # high/low/gpu, default if empty is low
+#SBATCH --error=ex.err                  # error file, default if empty is slurm$
+#SBATCH --output=ex.out                 # standard out file, no default
+#SBATCH --time=00:01:00                 # optional, max runtime of job hours:minutes:seconds
+#SBATCH --nodes=1                       # only use 1 node, MPI option
+#SBATCH --ntasks=1                      # how many tasks to start
+#SBATCH --cpus-per-task=1               # number of cores to use, multi-core/mu$
+
+####################
+# What to run
+####################
+
+R CMD BATCH --no-save exR.R exR.Rout
+
