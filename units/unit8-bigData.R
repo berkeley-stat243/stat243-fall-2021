@@ -1,13 +1,13 @@
 ############################################################
 ### Demo code for Unit 8 of Stat243, "Databases and Big Data"
-### Chris Paciorek, October 2020
+### Chris Paciorek, October 2021
 ############################################################
 
 #####################################################
 # 2: MapReduce, Dask, Spark, and Hadoop
 #####################################################
 
-### 2.3.14 sparklyr example
+### 2.3.13 sparklyr example
 
 ## @knitr sparklyr
 
