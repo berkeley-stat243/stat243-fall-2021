@@ -139,8 +139,7 @@ status open
 sim study in meta-analysis work comparing summary stats and indiv data https://o
 nlinelibrary-wiley-com.libproxy.berkeley.edu/doi/epdf/10.1111/biom.13238 they
  show avg SE but don't say how it is calculated could ask students to say
- what conclude from tables Bcs 2021#4 https://onlinelibrary-wiley-com.libproxy.ber
-keley.edu/doi/epdf/10.1111/biom.13220
+ what conclude from tables 
 \end_layout
 
 \end_inset
@@ -2775,17 +2774,17 @@ so
 \end_inset
 
 , where 
-\begin_inset Formula $w_{i}^{*}=f(x_{i})/g(x_{i})$
+\begin_inset Formula $w_{i}=f(x_{i})/g(x_{i})$
 \end_inset
 
  act as weights.
- Often in Bayesian contexts, we know 
+ (Often in Bayesian contexts, we know 
 \begin_inset Formula $f(x)$
 \end_inset
 
  only up to a normalizing constant.
  In this case we need to use 
-\begin_inset Formula $w_{i}=w_{i}^{*}/\sum_{i}w_{i}^{*}$
+\begin_inset Formula $w_{i}^{*}=w_{i}/\sum_{j}w_{j}$
 \end_inset
 
 .
