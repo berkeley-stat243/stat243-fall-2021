@@ -139,7 +139,8 @@ status open
 sim study in meta-analysis work comparing summary stats and indiv data https://o
 nlinelibrary-wiley-com.libproxy.berkeley.edu/doi/epdf/10.1111/biom.13238 they
  show avg SE but don't say how it is calculated could ask students to say
- what conclude from tables Bcs 2021#4 
+ what conclude from tables Bcs 2021#4 https://onlinelibrary-wiley-com.libproxy.ber
+keley.edu/doi/epdf/10.1111/biom.13220
 \end_layout
 
 \end_inset
@@ -755,6 +756,18 @@ The simulation variance is
 \end_inset
 
  terms in the numerator.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that in the simulation setting, the randomness in the system is very
+ well-defined (as it is in survey sampling, but unlike in most other application
+s of statistics), because it comes from the RNG that we perform as part
+ of our attempt to estimate 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
  Happily, we are in control of 
 \begin_inset Formula $m$
 \end_inset
@@ -780,7 +793,7 @@ n example include:
 
 \begin_layout Itemize
 Uncertainty in our estimate of bias: 
-\begin_inset Formula $\widehat{\mbox{Var}}(\widehat{E(\hat{\beta}})$
+\begin_inset Formula $\widehat{\mbox{Var}}(\widehat{E(\hat{\beta})-\beta})$
 \end_inset
 
 .
@@ -820,12 +833,19 @@ Sometimes the
 \end_inset
 
  are generated in a dependent fashion (e.g., sequential MC or MCMC), in which
- case this variance estimator does not hold because the samples are not
- IID, but the estimator 
+ case this variance estimator, 
+\begin_inset Formula $\widehat{\mbox{Var}}(\hat{\phi})$
+\end_inset
+
+ does not hold because the samples are not IID, but the estimator 
 \begin_inset Formula $\hat{\phi}$
 \end_inset
 
- is still correct.
+ is still a valid, unbiased estimator of 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
  
 \begin_inset Note Note
 status open
@@ -840,18 +860,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Note that in this case the randomness in the system is very well-defined
- (as it is in survey sampling, but unlike in most other applications of
- statistics), because it comes from the RNG that we perform as part of our
- attempt to estimate 
-\begin_inset Formula $\phi$
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1391,6 +1399,11 @@ When one has a very large number of inputs, one can use the Latin hypercube
  We would then analyze main effects and perhaps two-way interactions to
  assess which inputs seem to be most important.
  
+\end_layout
+
+\begin_layout Standard
+Even amongst statisticians, taking an experimental design approach to a
+ simulation study is not particularly common, but it's worth considering.
 \end_layout
 
 \begin_layout Section
