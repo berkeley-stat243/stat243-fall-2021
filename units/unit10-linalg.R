@@ -85,6 +85,8 @@ x <- solve(A, b)
 bPerturbed <- c(32.1, 22.9, 33.1, 30.9)
 xPerturbed <- solve(A, bPerturbed)
 
+## @knitr ill-cond2
+
 e <- eigen(A)
 norm2(x - xPerturbed)  ## delta x
 norm2(b - bPerturbed)  ## delta b
@@ -92,18 +94,22 @@ norm2(x - xPerturbed)/norm2(x)
 (e$val[1]/e$val[4])*norm2(b - bPerturbed)/norm2(b)
 
 ## @knitr improve-cond
-x1 <- 1990:2010
-x2 <- x1 - 2000 # centered
-x3 <- x2/10 # centered and scaled
-X1 <- cbind(rep(1, 21), x1, x1^2)
-X2 <- cbind(rep(1, 21), x2, x2^2)
-X3 <- cbind(rep(1, 21), x3, x3^2)
+
+t1 <- 1990:2010  # naive covariate
+X1 <- cbind(rep(1, 21), t1, t1^2)
 e1 <- eigen(crossprod(X1))
 e1$values
+
+t2 <- t1 - 2000 # centered
+X2 <- cbind(rep(1, 21), t2, t2^2)
 e2 <- eigen(crossprod(X2))
 e2$values
+
+t3 <- t2/10 # centered and scaled
+X3 <- cbind(rep(1, 21), t3, t3^2)
 e3 <- eigen(crossprod(X3))
 e3$values
+
 
 ## @knitr
 

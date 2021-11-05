@@ -60,6 +60,7 @@ rnorm(10)
 set.seed(1)
 rnorm(5)
 savedSeed <- .Random.seed
+rnorm(5)
 tmp <- sample(1:50, 2000, replace = TRUE)
 .Random.seed <- savedSeed
 rnorm(5)
