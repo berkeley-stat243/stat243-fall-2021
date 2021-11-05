@@ -72,15 +72,15 @@ How does this compare to how R finds objects?
 
 (Work on these if you finish quickly/are curious)
 
-12) Can you create a closure with embedded data, like we did in R?
+11) Can you create a closure with embedded data, like we did in R?
 
-13) Can you determine if the speed of looking up values in a dictionary varies 
+12) Can you determine if the speed of looking up values in a dictionary varies 
 with the size of the dictionary (this will indicate if something like hashing is 
 going on or if the look up has to scan through all the elements).
 
-14) Compare the Python debugger to R's debugger.
+13) Compare the Python debugger to R's debugger.
 
-15) If you create classes and objects in Python's object-oriented system, what are 
+14) If you create classes and objects in Python's object-oriented system, what are 
 the similarities and differences relative to R's R6 system? There is a brief section 
 on object-oriented programming in Python in the lab 6 materials.
 
