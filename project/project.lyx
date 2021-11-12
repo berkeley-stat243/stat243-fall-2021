@@ -1,0 +1,420 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{/accounts/gen/vis/paciorek/latex/paciorek-asa,times,graphics}
+\input{/accounts/gen/vis/paciorek/latex/paciorekMacros}
+
+\hypersetup{unicode=true, pdfusetitle,
+bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true,}
+%\renewcommand{\baselinestretch}{1.5}
+
+%\renewcommand{\baselinestretch}{1.5}
+\end_preamble
+\use_default_options false
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Stat243: Final group project
+\begin_inset Newline newline
+\end_inset
+
+Due Friday Dec.
+ 17, 5 pm
+\end_layout
+
+\begin_layout Standard
+The project will be done in groups of three, with students assigned randomly.
+\end_layout
+
+\begin_layout Standard
+A few comments.
+ First, the project, when split amongst the group members, is not intended
+ to be a huge undertaking.
+ The goals of the project are to give you experience in working collaboratively
+ and developing a well-designed, well-tested piece of software.
+\end_layout
+
+\begin_layout Standard
+The project will be graded as a letter grade and will count for about as
+ much as two problem sets in your final grade.
+\end_layout
+
+\begin_layout Standard
+Please use standard citation practices to cite any papers/online reasources/peop
+le whose ideas you make use of.
+ Please do not consult with class members who are not in your group.
+\end_layout
+
+\begin_layout Section*
+Problem
+\end_layout
+
+\begin_layout Standard
+Your task is to make an R package to implement a genetic algorithm for variable
+ selection in regression problems, including both linear regression and
+ GLMs.
+ Some details on genetic algorithms are available in Section 3.4 of the Givens
+ and Hoeting book on Computational Statistics - see the 
+\begin_inset CommandInset href
+LatexCommand href
+name "electronic book available through UC Library search"
+target "https://onlinelibrary.wiley.com/doi/book/10.1002/9781118555552"
+literal "false"
+
+\end_inset
+
+, or the PDF of Chapter 3 in the 
+\emph on
+project
+\emph default
+ directory of the class GitHub repo.
+ You should also be able to find plenty of other information about genetic
+ algorithms online.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Your solution should allow the user to provide reasonable inputs, in terms
+ of specifying a dataset and regression model formula, as well as the type
+ of regression.
+ Much of this is information you should just be able to pass along to 
+\emph on
+lm()
+\emph default
+ or 
+\emph on
+glm()
+\emph default
+.
+ By default you should just use AIC as your objective criterion/fitness
+ function, but allow users to provide their own fitness function.
+ Similarly you can use the genetic operators described in Givens and Hoeting
+ for variable selection, but ideally your code should be general enough
+ that a user could provide additional operators.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Your solution should involve modular code, with functions or OOP methods
+ that implement discrete tasks.
+ You should have an overall design and style that is consistent across the
+ components, in terms of functions vs.
+ OOP methods, naming of objects, etc.
+ 
+\end_layout
+
+\begin_layout Enumerate
+In terms of efficiency, the generations are inherently sequential.
+ However, you should try to vectorize as much as possible.
+ If you like, you can allow for parallel processing on a single machine
+ when working with the population in a given generation, in particular the
+ evaluation of the fitness function, but it is not required.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Show the results of using your implementation on two or more examples.
+ Have the use of the package on the examples be coded in the example section
+ of the R help for your main function.
+\end_layout
+
+\begin_layout Enumerate
+Formal testing is required, with a set of tests where results are compared
+ to some known truth.
+ You should have tests for the overall function and any modules that do
+ anything complicated.
+ For testing the overall function, since the algorithm is stochastic, you'll
+ need to think carefully about how to set this up.
+ You should also have unit tests for individual functions that carry out
+ the individual computations that make up the algorithm.
+ See more details below on how to set up the tests.
+ There is more information on testing here: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://r-pkgs.had.co.nz/tests.html"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+You should be writing your own code for essentially everything except the
+ model fitting and other standard functionality available in base R and
+ the R packages such as 
+\emph on
+stats
+\emph default
+ that are provided with the standard R installation.
+ If you'd like to use any other code or packages, please consult with me
+ first.
+\end_layout
+
+\begin_layout Section*
+Formatting requirements and additional information
+\end_layout
+
+\begin_layout Enumerate
+Your solution to the problem should have two parts: 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+An R package named 
+\emph on
+GA
+\emph default
+, including the .tar.gz file created by 
+\family typewriter
+R CMD build GA
+\family default
+.
+ I should be able to install your package by simply running 
+\family typewriter
+R CMD INSTALL GA_version.tar.gz
+\family default
+ or 
+\family typewriter
+install_github(paste0(username, '/GA'))
+\family default
+ where 
+\emph on
+username
+\emph default
+ contains the GitHub user name of the group member in whose GitHub account
+ the project resides.
+ A good starting place for information about R packages is Hadley Wickham's
+ book: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://r-pkgs.had.co.nz/"
+literal "false"
+
+\end_inset
+
+.
+ You can use 
+\emph on
+usethis::create_package
+\emph default
+ to create the initial set of directories for the package.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The package should include:
+\end_layout
+
+\begin_layout Enumerate
+A primary function called 
+\emph on
+select
+\emph default
+ that carries out the variable selection, located in a file 
+\emph on
+select.R
+\emph default
+ in the 
+\emph on
+R
+\emph default
+ directory of the package, and including appropriate code comments.
+\end_layout
+
+\begin_layout Enumerate
+Other supporting code in additional files in the 
+\emph on
+R
+\emph default
+ directory of the package, including appropriate code comments
+\end_layout
+
+\begin_layout Enumerate
+Formal tests, located in the package.
+ You can set this up with 
+\emph on
+usethis::use_testthat
+\emph default
+; however, I don't care about the exact structure of the tests folder in
+ your R package, so long as I can run 
+\family typewriter
+testthat::test_package('GA')
+\family default
+ or some standard invocation that you give me and have it run all your tests.
+ Please check that you can run the tests successfully when you install your
+ package outside of the context in which you are doing your development
+ (e.g., on the SCF).
+\end_layout
+
+\begin_layout Enumerate
+Help information for the main function, in the form of standard R documentation
+ in a file called
+\emph on
+ select.Rd
+\emph default
+ in the 
+\emph on
+man
+\emph default
+ directory.
+ You can either write 
+\emph on
+select.Rd
+\emph default
+ by hand or you can have it generated based on using the 
+\emph on
+roxygen2
+\emph default
+ package (see 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://adv-r.had.co.nz/Documenting-functions.html"
+literal "false"
+
+\end_inset
+
+ for an example), with the documentation included in the R code files.
+ You do not need help pages for your auxiliary functions.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A PDF document describing your solution, prepared in R Markdown or \SpecialChar LaTeX
++knitr.
+ The description does not need to be more than 2-4 pages, but should describe
+ the approach you took in terms of functions/modularity/object-oriented
+ programming, the testing that you carried out, and the results of applying
+ the implementation to the example(s).
+ It must include a paragraph describing the specific contributions of each
+ team member and which person/people were responsible for each component
+ of the work.
+ 
+\series bold
+Please submit a paper copy of the document to me - either directly to me,
+ under my door, or in my mailbox.
+ On your paper solution, please indicate the GitHub user name of the group
+ member in whose Github repository the final version of the project resides.
+
+\series default
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+You should start the process by mapping out the modular components you need
+ to write and how they will fit together, as well as what the primary function
+ will do.
+ After one person writes a component, another person on the team should
+ test it and, with the original coder, improve it.
+ You could also consider using pair programming for some of your development.
+\end_layout
+
+\begin_layout Enumerate
+You should use Git and GitHub to manage your collaboration, with branching
+ as needed and regular commits.
+ Please have the project be a repository named (exactly) 
+\emph on
+GA
+\emph default
+ within the github.com account of one of the project members.
+ Please make the repository private and share it with me (user 'paciorek'
+ on GitHub.com).
+ 
+\end_layout
+
+\end_body
+\end_document
