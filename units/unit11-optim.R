@@ -77,8 +77,8 @@ fp <- function(x) -sin(x)
 fpp <- function(x) -cos(x)
 xs <- seq(0, 2*pi, len = 300)
 
-x0 <- 1 # starting point
-fp(x0) # negative
+x0 <- 5.5 # starting point
+fp(x0) # positive
 fpp(x0) # negative
 x1 <- x0 - fp(x0)/fpp(x0) # whoops, we've gone uphill 
 ## because of the negative second derivative
@@ -103,7 +103,7 @@ points(pi, f(pi), pch = 16, cex = 1.5)
 
 ## in contrast, with better starting points we can find the minimum
 
-x0 <- 2 # ok starting point
+x0 <- 4.3 # ok starting point
 fp(x0) 
 fpp(x0) 
 x1 <- x0 - fp(x0)/fpp(x0) 
@@ -127,7 +127,7 @@ points(xvals, f(xvals), pch = as.character(1:length(xvals)), col = 'red', cex = 
 points(pi, f(pi), pch = 16, cex = 1.5)
 
 
-x0 <- 2.5 # good starting point
+x0 <- 3.8 # good starting point
 fp(x0) 
 fpp(x0) 
 x1 <- x0 - fp(x0)/fpp(x0) 
