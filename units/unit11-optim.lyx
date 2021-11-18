@@ -2319,11 +2319,11 @@ IRLS (IWLS) for Generalized Linear Models (GLMs)
 \end_layout
 
 \begin_layout Standard
-As most of you know, iterative reweighted least squares (also called iterative
+As many of you know, iterative reweighted least squares (also called iterative
  weighted least squares) is the standard method for estimation with GLMs.
  It involves linearizing the model and using working weights and working
- variances and solving a weighted least squares (WLS) problem (the generic
- WLS solution is 
+ variances and solving a weighted least squares (WLS) problem (recalling
+ that the generic WLS solution is 
 \begin_inset Formula $\hat{\beta}=(X^{\top}WX)^{-1}X^{\top}WY$
 \end_inset
 

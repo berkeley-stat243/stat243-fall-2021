@@ -435,6 +435,9 @@ xvals <- matrix(NA, nr = nIt, nc = 2)
 xvals[1, ] <- c(7, -4)
 ## 5, -10
 for(t in seq(2, nIt, by = 2)){
+    ## Note that full optimization along each axis is unnecessarily
+    ## expensive (since we are going to just take another step in the next
+    ## iteration. Just using for demonstration here.
 	newx1 <- optimize(f1, x2 = xvals[t-1, 2], interval = c(-40, 40))$minimum
 	xvals[t, ] <- c(newx1, xvals[t-1, 2])
 	newx2 <- optimize(f2, x1 = newx1, interval = c(-40, 40))$minimum
