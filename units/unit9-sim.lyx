@@ -136,6 +136,18 @@ Monahan: Numerical Methods of Statistics
 status open
 
 \begin_layout Plain Layout
+in 2021, students did terribly when asked about how to assess a std error
+ based on a simulation study.
+ How make this more clear? Perhaps have a short section on this?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 sim study in meta-analysis work comparing summary stats and indiv data https://o
 nlinelibrary-wiley-com.libproxy.berkeley.edu/doi/epdf/10.1111/biom.13238 they
  show avg SE but don't say how it is calculated could ask students to say

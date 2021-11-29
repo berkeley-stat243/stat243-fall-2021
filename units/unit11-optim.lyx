@@ -4923,6 +4923,15 @@ The EM algorithm is most readily motivated from a missing data perspective.
 \end_inset
 
  are membership indicators in a mixture modeling context.
+ (Note that in the case where you introduce 
+\begin_inset Formula $Z$
+\end_inset
+
+, that also means that one could also just directly maximize 
+\begin_inset Formula $L(\theta|x)$
+\end_inset
+
+, which in many cases may work better than using the EM algorithm.)
 \end_layout
 
 \begin_layout Standard

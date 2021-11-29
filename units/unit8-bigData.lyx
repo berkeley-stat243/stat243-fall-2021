@@ -129,6 +129,19 @@ Unit 8: Databases and Big Data
 status open
 
 \begin_layout Plain Layout
+make 'having' vs.
+ 'where' after group by clear.
+ Seems like it's always having regardless of whether one defines a new variable
+ from teh aggregation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 suggest that may reduce –executor-memory if having spark fail; may need
  more memory available for master process?
 \end_layout
