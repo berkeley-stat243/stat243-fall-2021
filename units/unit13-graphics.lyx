@@ -1506,7 +1506,9 @@ Interacting with graphics
 \end_layout
 
 \begin_layout Standard
-R is not well set up for interactive work, but one handy function is 
+Base R is not well set up for interactive work (in contrast there are lots
+ of additional packages and Shiny, which provide interactive functionality),
+ but one handy function is 
 \emph on
 identify()
 \emph default
