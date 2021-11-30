@@ -5737,7 +5737,7 @@ and differentiating gives the equations
 
 \end_inset
 
-which leads to the solution
+which gives us a system of equations that leads to the solution
 \begin_inset Formula 
 \begin{equation}
 \left(\begin{array}{c}
@@ -5749,16 +5749,18 @@ A & 0
 \end{array}\right)^{-1}\left(\begin{array}{c}
 -m\\
 b
-\end{array}\right)\label{eq:quadProg}
+\end{array}\right).\label{eq:quadProg}
 \end{equation}
 
 \end_inset
 
-which gives us 
+Using known results for inverses of matrices split into blocks, one gets
+ that 
 \begin_inset Formula $x^{*}=-Q^{-1}m+Q^{-1}A^{\top}(AQ^{-1}A^{\top})^{-1}(AQ^{-1}m+b)$
 \end_inset
 
 .
+ This can be readily coded up using strategies from Unit 10.
  
 \begin_inset Note Note
 status open
@@ -5796,9 +5798,18 @@ Note that if we have an approximation to the Hessian,
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Under inequality constraints there are a variety of methods but we won't
  go into them.
-\emph on
+\end_layout
+
+\end_inset
+
 
 \begin_inset Note Note
 status open
