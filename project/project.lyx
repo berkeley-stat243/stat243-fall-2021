@@ -157,8 +157,7 @@ project
 
 \begin_layout Enumerate
 Your solution should allow the user to provide reasonable inputs, in terms
- of specifying a dataset and regression model formula, as well as the type
- of regression.
+ of specifying a dataset and the type of regression.
  Much of this is information you should just be able to pass along to 
 \emph on
 lm()
@@ -168,8 +167,8 @@ lm()
 glm()
 \emph default
 .
- By default you should just use AIC as your objective criterion/fitness
- function, but allow users to provide their own fitness function.
+ By default you should just use AIC as your objective criterion but allow
+ users to provide their own objective function.
  Similarly you can use the genetic operators described in Givens and Hoeting
  for variable selection, but ideally your code should be general enough
  that a user could provide additional operators.

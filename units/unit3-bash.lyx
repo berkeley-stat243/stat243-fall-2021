@@ -176,6 +176,20 @@ read_chunk('unit3-bash.sh')
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+2022: can refer students to SWCarpentry workshop: https://swcarpentry.github.io/sh
+ell-novice/01-intro/index.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Shell basics
 \end_layout
