@@ -260,11 +260,7 @@ R CMD build GA
 \family typewriter
 R CMD INSTALL GA_version.tar.gz
 \family default
- or 
-\family typewriter
-install_github(paste0(username, '/GA'))
-\family default
- where 
+  where 
 \emph on
 username
 \emph default
