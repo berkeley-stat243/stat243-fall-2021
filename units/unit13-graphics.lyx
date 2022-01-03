@@ -129,6 +129,12 @@ Unit 13: Graphics
 status open
 
 \begin_layout Plain Layout
+2022: some hnits for making plots as files – add to section of this unit:
+ https://blog.revolutionanalytics.com/2009/01/10-tips-for-making-your-r-graphics-l
+ook-their-best.html
+\end_layout
+
+\begin_layout Plain Layout
 Yao book in library (Data points: visualization that means something) has
  various nice examples, though many not all that statistical
 \end_layout
