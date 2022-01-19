@@ -150,6 +150,21 @@ Unit 5: Programming concepts, illustrated with R
 status open
 
 \begin_layout Plain Layout
+2022: could refer to sys and processx packages as better ways to interact
+ with the OS: https://www.r-bloggers.com/2021/09/how-to-use-system-commands-in-you
+r-r-script-or-package/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 2021: not sure what this refers to but perhaps to where I note areas for
  improved efficiency: some code that could be more efficient - don't need
  full pertub alloc; inverse, order of ops 
