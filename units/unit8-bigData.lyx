@@ -129,7 +129,11 @@ Unit 8: Databases and Big Data
 status open
 
 \begin_layout Plain Layout
-make 'having' vs.
+2022: update big data in R stuff based on tutorial-databases?
+\end_layout
+
+\begin_layout Plain Layout
+2021?: make 'having' vs.
  'where' after group by clear.
  Seems like it's always having regardless of whether one defines a new variable
  from teh aggregation

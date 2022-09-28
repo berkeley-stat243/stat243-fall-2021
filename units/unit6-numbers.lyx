@@ -195,6 +195,25 @@ read_chunk("unit6-numbers.R")
 status open
 
 \begin_layout Plain Layout
+2022-06-18: The significand is also known as mantissa but the use of the
+ latter term is discouraged by the IEEE or Knuth (1969) since “mantissa”
+ has historically been used to refer to the factional part of a logarithm.
+ Furthermore, note that “normal number” has a different meaning in computing
+ (see above) than in mathematics (where a number is a normal number if,
+ for every natural number n ∈, all blocks of n digits are equally likely
+ to appear).
+ The meaning of a normal number in com- puting matches that of a normalized
+ number in mathematics.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 see PreciseSums package for more accurate summation - seems to indicate
  numpy has a good algo, which I don't remember being the case 
 \end_layout

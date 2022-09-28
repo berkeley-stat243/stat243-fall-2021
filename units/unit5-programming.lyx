@@ -155,6 +155,10 @@ status open
 r-r-script-or-package/
 \end_layout
 
+\begin_layout Plain Layout
+2022-06-17: mention Julia multiple dispatch when do R generic-function OOP
+\end_layout
+
 \end_inset
 
 

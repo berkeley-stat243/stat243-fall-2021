@@ -181,6 +181,11 @@ read_chunk('unit3-bash.sh')
 status open
 
 \begin_layout Plain Layout
+2022: lots of useful awk one liners but don't expect you to know: e.g., to
+ count fields: awk -F, 'NR == 1 {print NF}' tmp.csv
+\end_layout
+
+\begin_layout Plain Layout
 2022: bsd vs gnu linux command line diffs - grep needs -P on linux for lazy
  searches
 \end_layout
